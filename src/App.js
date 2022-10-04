@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.scss';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import WhattsApp from "./imgs/whatsapp.png"
+
+
+import Header from './components/accesos-comunes/header';
+import Footer from './components/accesos-comunes/footer';
+import Home from './components/accesos-comunes/home';
+import Contacto from './components/forms/contacto'; 
+import Usuarios from './components/forms/usuarios';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path='/usuarios' element={<Usuarios />} />
+      </Routes>
+      <Footer />
+      <img className='WSimg' src={WhattsApp} alt="WhatsAppLogo" />
+    </Router>
+
   );
 }
 
