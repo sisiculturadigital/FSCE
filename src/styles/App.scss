@@ -10,9 +10,25 @@ body {
 
 }
 
+.them-icon {
+  svg{
+    width: 20px;
+    height: 20px;
+    fill: rgb(117, 114, 114);
+
+    position: fixed;
+    bottom: 85px;
+    right: 30px;
+    z-index: 100;
+
+    cursor: pointer;
+  }
+}
+
 @import "./header.scss";
 @import "./home.scss";
 @import "./mision.scss";
 @import "./footer.scss";
 @import "./contacto.scss";
 @import "./usuarios.scss";
+@import "./nuevo-usuario.scss"

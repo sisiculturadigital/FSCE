@@ -1,3 +1,17 @@
+//colores
+//dark-colors
+$primary-color-dark: #212121;
+$secondary-color-dark: #151414;
+$accent-color-dark: #ff0000;
+$hover-color-dark: #771111;
+
+//light-colors
+$primary-color-light: rgb(224, 220, 220);
+$secondary-color-light: rgb(128, 124, 124);
+$accent-color-light: rgb(135, 14, 187);
+$hover-color-light: rgb(97, 16, 174);
+
+
 //styles for the rgb effect
 
 .rgb-rwr {
@@ -14,7 +28,7 @@
     position: absolute;
     left: -2px;
     top: -2px;
-    background: linear-gradient(10deg, #ff0000, rgb(242, 157, 157), rgb(136, 96, 96), #aa0606);
+    background: linear-gradient(10deg, $accent-color-dark, rgb(242, 157, 157), rgb(136, 96, 96), $accent-color-dark);
     background-size: 400%;
     width: calc(100% + 3px);
     height: calc(100% + 3px);
@@ -54,7 +68,7 @@
     color: white;
     font-size: 1.2rem;
     transition: 0.3s;
-    background-color: #d71313;
+    background-color: $accent-color-dark;
     box-shadow: -62px -14px 65px -51px rgba(0,0,0,0.72) inset;
     padding: 12px 35px;
     border-radius: 10px;
@@ -62,7 +76,7 @@
 
 
     &:hover {
-        background-color: #7b0a0a;
+        background-color: $hover-color-dark;
     }
 }
 
@@ -75,13 +89,13 @@
         top: 100%;
         width: 80%;
         height: 3px;
-        background-color: rgb(223, 19, 19);
+        background-color: $accent-color-dark;
         transform: scaleX(0);
         transition: transform 0.3s ease-in-out;
     }
 
     &:hover {
-        color: rgb(223, 19, 19);
+        color: $accent-color-dark;
     }
 
     &:hover::before {
@@ -101,7 +115,7 @@
 .linea-roja {
     width: 100%;
     height: 3px;
-    background-color: rgb(223, 19, 19);
+    background-color: $accent-color-dark;
     margin-top: 10px;
 }
 
