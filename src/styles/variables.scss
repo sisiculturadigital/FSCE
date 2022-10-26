@@ -112,6 +112,15 @@ $hover-color-light: rgb(97, 16, 174);
     padding: 10px;
 }
 
+@mixin grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: 500px) {
+        grid-template-columns: 1fr;
+    }
+}
+
 .linea-roja {
     width: 100%;
     height: 3px;

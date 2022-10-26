@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 body {
   margin: 0px;
   font-family: 'Nunito Sans', sans-serif;
@@ -25,10 +27,17 @@ body {
   }
 }
 
+.not-found {
+  @include min-height;
+}
+
 @import "./header.scss";
 @import "./home.scss";
 @import "./mision.scss";
 @import "./footer.scss";
 @import "./contacto.scss";
 @import "./usuarios.scss";
-@import "./nuevo-usuario.scss"
+@import "./nuevo-usuario.scss";
+@import "./institucional.scss";
+@import "./modal.scss";
+@import "./beneficios.scss";

@@ -1,0 +1,34 @@
+@import './variables.scss';
+
+.institucional-wrapper {
+    @include min-height;
+}
+
+.organigrama {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single-grid {
+    section {
+        border: solid 1px white;
+        p {
+            padding: 0 1rem;
+        }
+    }
+    margin-bottom: 50px;
+}
+
+.third-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    section {
+        border: solid 1px white;
+        text-align: center;
+        p {
+            padding: 0 1rem;
+        }
+    }
+}
