@@ -10,7 +10,6 @@ import WhattsApp from "./imgs/whatsapp.png"
 import { BsFillMoonStarsFill, BsFillBrightnessHighFill } from "react-icons/bs";
 
 
-
 import Header from './components/accesos-comunes/header';
 import Footer from './components/accesos-comunes/footer';
 import Home from './components/accesos-comunes/home';
@@ -70,7 +69,7 @@ function App() {
       
       <img className='WSimg' src={WhattsApp} alt="WhatsAppLogo" />
 
-    </Router>
+  </Router>
 
   );
 }
