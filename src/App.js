@@ -19,6 +19,7 @@ import NuevoUsuario from './components/forms/nuevoUsuario';
 import Institucional from './components/institucional';
 import NotFound from './components/accesos-comunes/notFound';
 import Beneficios from './components/beneficios';
+import Descargas from './components/descargas';
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
         <Route path='/beneficios' element={<Beneficios />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path='/usuarios' element={<Usuarios />} />
+        <Route path='/descargas' element={<Descargas />} />
 
         { estadoUsuarioVerificado === false ? null : <Route path='/registro' element={<NuevoUsuario />} />}
 

@@ -1,0 +1,20 @@
+
+.container-descargas {
+    padding: 30px;
+    .descargas-wrapper {
+        display: flex;
+        flex-direction: row;
+        .descargas-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            background-color: #FFF;
+            max-width: 284px;
+            img {
+                max-width: 284px;
+                max-height: 118px;
+                border-top: 10px;
+            }
+        }
+}
+}

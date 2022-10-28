@@ -28,8 +28,8 @@ const Header = () => {
                     </Link>
                 </div>
 
-                <button class="nav-toggle" aria-label="Abrir menú" onClick={openMenu}>
-                    <i class="fa-solid fa-bars"></i>
+                <button className="nav-toggle" aria-label="Abrir menú" onClick={openMenu}>
+                    <i className="fa-solid fa-bars"></i>
                 </button>
 
                 <div className= "header-navbar"
@@ -49,7 +49,7 @@ const Header = () => {
                         Transparencia
                     </Link>
                     
-                    <Link className='nav'onClick={cerrarMenu}>
+                    <Link to='/descargas' className='nav' onClick={cerrarMenu}>
                         Descargas
                     </Link>
                     
