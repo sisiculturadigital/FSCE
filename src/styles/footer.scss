@@ -4,30 +4,41 @@
     height: 50px;
     background-color: #151414;
     margin-top: 40px;
+    padding: 10px 0 10px 0;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    height: max-content;
+
 
     img {
         width: 40px;
         height: 40px;
         margin-left: 20px;
+
+        @media screen and (max-width: 700px){
+            width: 35px;
+            height: 35px;
+        }
     }
 
     h4 {
         color: rgb(140, 133, 133);
         font-size: 14px;
-        margin-left: 10%;
+        // margin-left: 10%;
+        margin: 0;
+        text-align: left;
     }
 
     .icons-container {
         display: flex;
         justify-content: space-between;
         width: 100px;;
-        margin-right: 90px;
+        // margin-right: 90px;
 
         svg {
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             fill: #fff;
             cursor: pointer;
             transition: 0.3s;
@@ -38,5 +49,11 @@
         }
 
     }
+
+
+    @media screen and (max-width: 700px){
+    padding: 5px 0 5px 0;
+    }
+
 
 }

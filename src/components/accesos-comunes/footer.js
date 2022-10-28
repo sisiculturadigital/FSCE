@@ -13,8 +13,8 @@ const Footer = () => {
         </h4>
         <div className='icons-container'>
             <FaFacebookSquare />
-            <FaTwitterSquare />
-            <FaLinkedin />
+            {/* <FaTwitterSquare />
+            <FaLinkedin /> */}
         </div>
     </div>
   );

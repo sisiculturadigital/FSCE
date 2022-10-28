@@ -1,47 +1,173 @@
 @import './variables.scss';
 
 .contacto-wrapper {
-    @include min-height;
-}
+    // @include min-height;
+    // display: block;
 
-.form-container {
+}
+// .form-container {
+//     display: block;
+//     // width: 50%;
+//     width: 450px;
+//     height: 500px;
+//     justify-content: space-around;
+//     align-items: center;
+//     flex-direction: column;
+//     margin: 0 auto;
+//     margin-top: 40px;
+//     border-radius: 10px;
+//     border: solid 1px white;
+//     button {
+//         // @include boton;
+//         margin: 0 auto;
+//         cursor: pointer;
+//     }
+// }
+
+// .linea-roja {
+//     width: 100%;
+//     height: 3px;
+//     background-color: $accent-color-dark;
+//     margin-top: 10px;
+// }
+
+// .grid-form-wrapper {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+
+//     input {
+//         width: 100%;
+//         height: 30px;
+//         // border: none;
+//         // border-bottom: solid 1px white;
+//         // background-color: transparent;
+//         // color: white;
+//         margin-bottom: 20px;
+//     }
+
+//     textarea {
+//         width: 100%;
+//         height: 100px;
+//         margin-bottom: 20px;
+//     }
+// }
+
+// ********* Modificado
+
+
+.sup_section{
     display: flex;
-    width: 50%;
-    height: 500px;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
-    margin-top: 40px;
-    border-radius: 10px;
-    border: solid 1px white;
-    button {
-        @include boton;
-        margin: 0 auto;
-        cursor: pointer;
+    flex-direction: row;
+
+    @media screen and (max-width: 1100px){
+        flex-direction: column;
+        gap: 30px;
     }
+
+    figure{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        
+        img{
+            width: 100%;
+            width: 500px;
+            height: 100%;
+            object-fit:cover;
+            @media screen and (max-width: 1100px){
+                margin: auto;
+                width: 500px;
+            }
+        }
+
+    @media screen and (max-width: 1100px){
+        margin: auto;
+    }
+
+    }
+    .formulario_container{
+        flex: 1;
+        padding: 20px;
+
+        h2{
+            margin: 0;
+        }
+        .linea{
+            width: 60px;
+            height: 3px;
+            background-color: red;
+            margin: 0 0 20px 0;
+            border-radius: 5px;
+        }
+        .form-contacto{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5px;
+            gap: 10px;
+            justify-content: space-between;
+            width: 500px;
+            gap: 20px;
+
+            
+            textarea{
+                box-sizing: border-box;
+                min-width: 100%;
+                max-width: 100%;
+                min-height: 100px;
+                max-height: 100px;
+                border-radius: 12px;
+                outline: none;
+                padding: 10px;
+                resize: none;
+            }
+            
+            #nombre, #email, #celular, #curso{
+                box-sizing: border-box;
+                width: 240px;
+                padding: 10px 12px;
+                border-radius: 8px;
+                outline: none;
+            }
+
+
+            .input_type_submit{
+                padding: 15px 0 15px 0;
+                display: block;
+                width: 100%;
+                border-radius: 8px;
+                outline: none;
+                border: 1px solid black;
+            }
+            
+            
+            
+        }
+        
+        @media screen and (max-width: 1100px){
+            margin: auto;
+            order: -1;
+        }
+
+
+    }
+
+  
+    // @media screen and (max-width: 1100px){
+    //     justify-content: column;
+    // }
+
 }
 
-.grid-form-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 
-    input {
-        width: 100%;
-        height: 30px;
-        // border: none;
-        // border-bottom: solid 1px white;
-        // background-color: transparent;
-        // color: white;
-        margin-bottom: 20px;
-    }
 
-    textarea {
-        width: 100%;
-        height: 100px;
-        margin-bottom: 20px;
-    }
-}
+
+
+
+
+
+
 
 .contact-info {
     display: grid;
@@ -63,3 +189,5 @@
         text-align: center;
     }
 }
+
+

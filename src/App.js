@@ -61,13 +61,13 @@ function App() {
       </Routes>
       <Footer />
 
-      { theme === 'light' 
+      {/* { theme === 'light' 
       ? 
       <div className='them-icon' onClick={setTheme} ><BsFillMoonStarsFill /></div> 
       : 
       <div className='them-icon' onClick={setTheme}><BsFillBrightnessHighFill /></div> }
       
-      <img className='WSimg' src={WhattsApp} alt="WhatsAppLogo" />
+      <img className='WSimg' src={WhattsApp} alt="WhatsAppLogo" /> */}
 
   </Router>
 

@@ -5,7 +5,10 @@ import { GrPhone, GrLocation, GrFormClock } from "react-icons/gr"
 const Contacto = () => {
   return (
     <div className='contacto-wrapper'> 
-        <div className='form-container'>
+        
+        
+        
+        {/* <div className='form-container'>
             <h1>Contáctanos</h1>
             <div className='linea-roja'></div>
             <form className='grid-form-wrapper'>                
@@ -20,9 +23,41 @@ const Contacto = () => {
 
                 <label>Mensaje</label>
                 <textarea id='menaje' name='mensaje' />
+                <button type='sumbmit'>Enviar</button>
             </form>
-            <button>Enviar</button>
+        </div> */}
+
+        <div className='sup_section'>
+
+            <figure>
+                <img src="https://depor.com/resizer/tWkgaFkRSfQvJrxQJP3zxVe35K4=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/DOSTJYG5PVBK3ELX3UXALXJYPQ.jpg" alt="centros-de-contacto" />
+            </figure>
+
+
+            <div className='formulario_container'>
+                <h2>Contáctanos</h2>
+                <div className='linea'></div>
+                <form className='form-contacto'>                
+                
+                    <input type='text' id='nombre' name='nombre' placeholder='Nombre' /> 
+
+                    <input type='email' id='email' name='email' placeholder='Email' />
+
+                    <input type='phone' id='celular' name='celular'  placeholder='Celular'/>
+
+                    <input type='text' id='curso' name='curso'  placeholder='Curso'/>
+
+                    <textarea id='mensaje' name='mensaje' />
+
+                    <button type='submit' className='input_type_submit'>Enviar</button>
+                </form>
+            </div>
+
         </div>
+
+        
+        
+
         <div className='contact-info'>
             <section className='phone'>
                 <GrPhone />
@@ -38,7 +73,7 @@ const Contacto = () => {
                     <p>
                         Av. Paseo del Bosque S/N
                         <br/>
-                        San Barja, Lima
+                        San Borja, Lima
                     </p>
                 </div>
             </section>
@@ -50,6 +85,8 @@ const Contacto = () => {
                 </p>
             </section>
         </div>
+
+
     </div>
   );
 };
