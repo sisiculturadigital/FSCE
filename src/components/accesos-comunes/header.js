@@ -1,20 +1,20 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import escudo from "../../imgs/escudo.png"
 import { Link } from 'react-router-dom';
-
+import arrow from "../../imgs/arrow.svg"
 
 const Header = () => {
 
     const [open, setOpen] = useState(false)
-    const header_navbar = useRef(null)
-    
+
+
     function openMenu(){
         setOpen(!open)
-        document.querySelector('.header-navbar').classList.toggle('open')
+        // document.querySelector('.header-navbar').classList.toggle('open')
     }
-    
-    function cerrarMenu(){
+
+    function cerrarMenu(e){
         setOpen(false)
         document.querySelector('.header-navbar').classList.remove('open')
     }
@@ -22,46 +22,62 @@ const Header = () => {
   return (
     <div className='header'>
         <div className='header-wrapper'>
-                <div className='header-img'>
-                    <Link to={"/"}  onClick={cerrarMenu} >
+         
+                <Link to={"/"}  onClick={cerrarMenu} className='escudo'>
+                    <figure>
                         <img src={escudo} alt={"escudo"} />
-                    </Link>
+                    </figure>
+                </Link>
+
+                <span>
+                    FSCE
+                </span>
+
+                <div className='triangulo'></div>
+                <div className='rectangulo'></div>
+               
+                <div className='nav-toggle-container'>
+                    <button className="nav-toggle" aria-label="Abrir menú" onClick={openMenu}>
+                        <i className="fa-solid fa-bars"></i>
+                    </button>
                 </div>
 
-                <button className="nav-toggle" aria-label="Abrir menú" onClick={openMenu}>
-                    <i className="fa-solid fa-bars"></i>
-                </button>
-
-                <div className= "header-navbar"
-                    ref= {header_navbar}> 
-                    <Link to='/' className='nav' onClick={cerrarMenu}>
+                <div className= {`header-navbar ${open ? 'open' : ''} `}> 
+                
+                    <Link to='/' className='nav' id='nav_inicio' onClick={cerrarMenu}>
                         Inicio
                     </Link>
+                    
                     <Link to='/institucional' className='nav'  onClick={cerrarMenu} >
-                        Institucional
+                        Institucional <img src={arrow} className='img_arrow' alt="flecha" />
                     </Link>
                     
                     <Link to='/beneficios' className='nav' onClick={cerrarMenu}>
-                        Beneficios
+                        Beneficios <img src={arrow} className='img_arrow' alt="flecha" />
                     </Link>
                     
                     <Link className='nav' onClick={cerrarMenu}>
-                        Transparencia
+                        Transparencia <img src={arrow} className='img_arrow' alt="flecha" />
                     </Link>
                     
-                    <Link to='/descargas' className='nav' onClick={cerrarMenu}>
-                        Descargas
+                    <Link className='nav'onClick={cerrarMenu}>
+                        Descargas <img src={arrow} className='img_arrow' alt="flecha" />
                     </Link>
                     
                     <Link to="/contacto" className='nav' onClick={cerrarMenu}>
-                        Contacto
+                        Contacto <img src={arrow} className='img_arrow' alt="flecha" />
                     </Link>
 
-                    <Link to='/usuarios' className='rgb-rwr' onClick={cerrarMenu}>
-                        Usuarios
-                    </Link>
                     
                 </div>
+
+                <Link to='/usuarios' className='nav-usuario' onClick={cerrarMenu}>
+                    Usuarios
+                </Link>
+
+
+
+
             </div>
     </div>
   );
