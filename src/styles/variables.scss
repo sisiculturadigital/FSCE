@@ -14,28 +14,28 @@ $hover-color-light: rgb(97, 16, 174);
 
 //styles for the rgb effect
 
-.rgb-rwr {
-    position: relative;
-    // margin: 300px auto 0;
+// .rgb-rwr {
+//     position: relative;
+//     // margin: 300px auto 0;
     
-    // height: 250px;
-    background: linear-gradient(0deg, rgb(10, 10, 10), #3f3a3a);
-    border-radius: 3px;
-  }
+//     // height: 250px;
+//     background: linear-gradient(0deg, rgb(10, 10, 10), #3f3a3a);
+//     border-radius: 3px;
+//   }
   
-.rgb-rwr:before, .rgb-rwr:after {
-    content: '';
-    position: absolute;
-    left: -2px;
-    top: -2px;
-    background: linear-gradient(10deg, $accent-color-dark, rgb(242, 157, 157), rgb(136, 96, 96), $accent-color-dark);
-    background-size: 400%;
-    width: calc(100% + 3px);
-    height: calc(100% + 3px);
-    z-index: -1;
-    animation: steam 20s linear infinite;
-    border-radius: 3px;
-}
+// .rgb-rwr:before, .rgb-rwr:after {
+//     content: '';
+//     position: absolute;
+//     left: -2px;
+//     top: -2px;
+//     background: linear-gradient(10deg, $accent-color-dark, rgb(242, 157, 157), rgb(136, 96, 96), $accent-color-dark);
+//     background-size: 400%;
+//     width: calc(100% + 3px);
+//     height: calc(100% + 3px);
+//     z-index: -1;
+//     animation: steam 20s linear infinite;
+//     border-radius: 3px;
+// }
   
 @keyframes steam {
     0% {
@@ -80,27 +80,34 @@ $hover-color-light: rgb(97, 16, 174);
     }
 }
 
+// Link
+
 @mixin nav-btn {
     position: relative;
+    
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 100%;
-        width: 80%;
-        height: 3px;
-        background-color: $accent-color-dark;
-        transform: scaleX(0);
-        transition: transform 0.3s ease-in-out;
-    }
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 100%;
+    //     width: 80%;
+    //     height: 3px;
+    //     background-color: $accent-color-dark;
+    //     transform: scaleX(0);
+    //     transition: transform 0.3s ease-in-out;
+    // }
 
-    &:hover {
-        color: $accent-color-dark;
-    }
+    // &:hover {
+    //     color: $accent-color-dark;
+    //     background-color: rgb(127, 61, 61);
+    // }
 
-    &:hover::before {
-        transform: scaleX(1);
-    }
+    // &:hover::before {
+    //     transform: scaleX(1);
+    // }
+    // &:active {
+    //     background-color: blue;
+    // }
 }
 
 @mixin link-basic-style {
@@ -111,6 +118,11 @@ $hover-color-light: rgb(97, 16, 174);
     margin-right: 20px;
     padding: 10px;
 }
+
+
+
+
+
 
 @mixin grid-form {
     display: grid;

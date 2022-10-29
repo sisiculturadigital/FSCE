@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FaFacebookSquare, FaTwitterSquare, FaLinkedin } from "react-icons/fa";
+import { FaFacebookSquare, FaInstagram,FaTwitterSquare, FaLinkedin } from "react-icons/fa";
 
 import peruFlag from "../../imgs/peru.png"
  
@@ -15,6 +15,7 @@ const Footer = () => {
             <FaFacebookSquare />
             {/* <FaTwitterSquare />
             <FaLinkedin /> */}
+            <FaInstagram />
         </div>
     </div>
   );
