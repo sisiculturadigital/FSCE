@@ -28,7 +28,6 @@ body {
 }
 
 .not-found {
-  @include min-height;
 }
 
 @import "./Components/header.scss";

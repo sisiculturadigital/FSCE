@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { openModal } from '../../../redux/modal/modalSlice';
 import AccesModal from '../../forms/accesModal';
 import { useDispatch } from 'react-redux';
@@ -24,18 +25,22 @@ const Usuarios = () => {
 
   return (
     <div className='usuarios-wrapper'>
+        
+        <h1>Ingresa</h1>
         <div className='form-usuario-container'>
-            <h1>Ingresa</h1>
             <form className='form-user'>
               <label>DNI</label>
               <input type='text' id='dni' name='dni' value={dni} onChange={handleChangeDni} />
                     
               <label>Contraseña</label>
-              <input type='text' id='contraseña' name='contraseña' value={contraseña}  />
+              <input type='password' id='contraseña' name='contraseña' />
               
-              <button type='submit'>ingresar</button>          
+              <input type='submit'  value='Ingresar' />
             </form>
-            <h3 onClick={startModal} className='links'>Registrate</h3>
+            
+            <button><Link>Regístrate</Link></button> 
+            
+            <h3 className='links'>Actualizar contraseña</h3>
             <h3 className='links'>Recuperar contraseña</h3>
         </div>
         <AccesModal />
