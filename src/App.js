@@ -16,9 +16,9 @@ import Home from './components/Views/Home/home';
 import Contacto from './components/forms/contacto'; 
 import Usuarios from './components/forms/usuarios';
 import NuevoUsuario from './components/forms/nuevoUsuario';
-import Institucional from './components/institucional';
-import NotFound from './components/accesos-comunes/notFound';
-import Beneficios from './components/beneficios';
+import Institucional from './components/Views/Institucional/institucional';
+// import NotFound from './components/accesos-comunes/notFound';
+import Beneficios from './components/Views/Beneficios/beneficios';
 import Descargas from './components/Views/Descargas/descargas';
 
 function App() {
