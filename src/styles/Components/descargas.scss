@@ -30,6 +30,7 @@
             }
             .title-preview {
                 padding: 13px 16px;
+                position: relative;
                 a {
                     text-decoration: none;
                     color: rgb(60,64,67);
@@ -46,6 +47,25 @@
                     width: 16px;
                     height: 16px;
                 }
+                .tooltiptext {
+                    visibility: hidden;
+                    background-color: #37383A;
+                    color: #CED0D3;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 5px 20px;
+                    font-size: 12px;
+                  
+                    /* Position the tooltip */
+                    position: absolute;
+                    top: 60%;
+                    left: 10%;
+                    z-index: 1;
+                  }
+                  
+                  &:hover .tooltiptext {
+                    visibility: visible;
+                  }
             }
         }
 }
