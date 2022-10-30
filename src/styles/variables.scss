@@ -1,123 +1,123 @@
 //colores
 //dark-colors
-$primary-color-dark: #212121;
-$secondary-color-dark: #151414;
-$accent-color-dark: #ff0000;
-$hover-color-dark: #771111;
+// $primary-color-dark: #212121;
+// $secondary-color-dark: #151414;
+// $accent-color-dark: #ff0000;
+// $hover-color-dark: #771111;
 
-//light-colors
-$primary-color-light: rgb(224, 220, 220);
-$secondary-color-light: rgb(128, 124, 124);
-$accent-color-light: rgb(135, 14, 187);
-$hover-color-light: rgb(97, 16, 174);
+// //light-colors
+// $primary-color-light: rgb(224, 220, 220);
+// $secondary-color-light: rgb(128, 124, 124);
+// $accent-color-light: rgb(135, 14, 187);
+// $hover-color-light: rgb(97, 16, 174);
 
 
-//styles for the rgb effect
+// //styles for the rgb effect
 
-// .rgb-rwr {
-//     position: relative;
-//     // margin: 300px auto 0;
+// // .rgb-rwr {
+// //     position: relative;
+// //     // margin: 300px auto 0;
     
-//     // height: 250px;
-//     background: linear-gradient(0deg, rgb(10, 10, 10), #3f3a3a);
-//     border-radius: 3px;
-//   }
+// //     // height: 250px;
+// //     background: linear-gradient(0deg, rgb(10, 10, 10), #3f3a3a);
+// //     border-radius: 3px;
+// //   }
   
-// .rgb-rwr:before, .rgb-rwr:after {
-//     content: '';
-//     position: absolute;
-//     left: -2px;
-//     top: -2px;
-//     background: linear-gradient(10deg, $accent-color-dark, rgb(242, 157, 157), rgb(136, 96, 96), $accent-color-dark);
-//     background-size: 400%;
-//     width: calc(100% + 3px);
-//     height: calc(100% + 3px);
-//     z-index: -1;
-//     animation: steam 20s linear infinite;
-//     border-radius: 3px;
+// // .rgb-rwr:before, .rgb-rwr:after {
+// //     content: '';
+// //     position: absolute;
+// //     left: -2px;
+// //     top: -2px;
+// //     background: linear-gradient(10deg, $accent-color-dark, rgb(242, 157, 157), rgb(136, 96, 96), $accent-color-dark);
+// //     background-size: 400%;
+// //     width: calc(100% + 3px);
+// //     height: calc(100% + 3px);
+// //     z-index: -1;
+// //     animation: steam 20s linear infinite;
+// //     border-radius: 3px;
+// // }
+  
+// @keyframes steam {
+//     0% {
+//       background-position: 0 0;
+//     }
+//     50% {
+//       background-position: 400% 0;
+//     }
+//     100% {
+//       background-position: 0 0;
+//     }
 // }
   
-@keyframes steam {
-    0% {
-      background-position: 0 0;
-    }
-    50% {
-      background-position: 400% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-}
-  
-.rgb-rwr:after {
-    filter: blur(14px);
-}
+// .rgb-rwr:after {
+//     filter: blur(14px);
+// }
 
-@mixin gradient-text($color1, $color2, $color3) {
-    background-image: linear-gradient(85deg,$color1, $color2, $color3);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    font-weight: 700;
-    float: left;
-    -webkit-box-decoration-break: clone;
-    overflow: visible;
-}
+// @mixin gradient-text($color1, $color2, $color3) {
+//     background-image: linear-gradient(85deg,$color1, $color2, $color3);
+//     -webkit-text-fill-color: transparent;
+//     -webkit-background-clip: text;
+//     font-weight: 700;
+//     float: left;
+//     -webkit-box-decoration-break: clone;
+//     overflow: visible;
+// }
 
-@mixin boton {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    transition: 0.3s;
-    background-color: $accent-color-dark;
-    box-shadow: -62px -14px 65px -51px rgba(0,0,0,0.72) inset;
-    padding: 12px 35px;
-    border-radius: 10px;
-    transition: 0.3s;
+// @mixin boton {
+//     text-decoration: none;
+//     color: white;
+//     font-size: 1.2rem;
+//     transition: 0.3s;
+//     background-color: $accent-color-dark;
+//     box-shadow: -62px -14px 65px -51px rgba(0,0,0,0.72) inset;
+//     padding: 12px 35px;
+//     border-radius: 10px;
+//     transition: 0.3s;
 
 
-    &:hover {
-        background-color: $hover-color-dark;
-    }
-}
+//     &:hover {
+//         background-color: $hover-color-dark;
+//     }
+// }
 
-// Link
+// // Link
 
-@mixin nav-btn {
-    position: relative;
+// @mixin nav-btn {
+//     position: relative;
     
 
-    // &::before {
-    //     content: '';
-    //     position: absolute;
-    //     top: 100%;
-    //     width: 80%;
-    //     height: 3px;
-    //     background-color: $accent-color-dark;
-    //     transform: scaleX(0);
-    //     transition: transform 0.3s ease-in-out;
-    // }
+//     // &::before {
+//     //     content: '';
+//     //     position: absolute;
+//     //     top: 100%;
+//     //     width: 80%;
+//     //     height: 3px;
+//     //     background-color: $accent-color-dark;
+//     //     transform: scaleX(0);
+//     //     transition: transform 0.3s ease-in-out;
+//     // }
 
-    // &:hover {
-    //     color: $accent-color-dark;
-    //     background-color: rgb(127, 61, 61);
-    // }
+//     // &:hover {
+//     //     color: $accent-color-dark;
+//     //     background-color: rgb(127, 61, 61);
+//     // }
 
-    // &:hover::before {
-    //     transform: scaleX(1);
-    // }
-    // &:active {
-    //     background-color: blue;
-    // }
-}
+//     // &:hover::before {
+//     //     transform: scaleX(1);
+//     // }
+//     // &:active {
+//     //     background-color: blue;
+//     // }
+// }
 
-@mixin link-basic-style {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-right: 20px;
-    padding: 10px;
-}
+// @mixin link-basic-style {
+//     text-decoration: none;
+//     color: white;
+//     font-size: 1.2rem;
+//     font-weight: 400;
+//     margin-right: 20px;
+//     padding: 10px;
+// }
 
 
 
