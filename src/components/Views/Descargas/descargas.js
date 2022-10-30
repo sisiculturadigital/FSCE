@@ -9,6 +9,8 @@ import archivos from './Archivos-Downloand/archivos.js';
 
 //icons extension files
 import iconPDF from '../../../imgs/View/descargas/icon-archivos-extension/pdf.png';
+import imgPreview from '../../../imgs/View/descargas/Archivos_Imagen-Preview/img-preview.png';
+
 
 
 
@@ -39,26 +41,24 @@ const Descargas = () => {
                 </center>
             </div>            
             <div className='descargas-wrapper'>
-                <div className='descargas-card'>
-                    <img src={data[0].ImagenPreview}alt=""  className="preview-img-pdf"/>
+                {
+                    data.map((doc) =>
+                    <div className='descargas-card'>
+                        <img src={imgPreview} alt=""  className="preview-img-pdf"/>
                         <div className='title-preview'>
-                            {
-                                data.map((doc) =>
-                                    <div>
-                                        <img src={doc.Extension} alt="icon PDF" className='icon-extension' ref={count} data-extension={doc.Extension}/>
-                                        <a download target="_blank" rel="noreferrer" href={doc.urlArchivo}>
-                                            {doc.NombreArchivo}
-                                        </a>
-                                    </div>
-                                ) 
-                            }
+                                <img src={iconPDF} alt="icon PDF" className='icon-extension' ref={count} data-extension={doc.Extension}/>
+                                    <a download target="_blank" rel="noreferrer" href={doc.urlArchivo}>
+                                        {doc.NombreArchivo}
+                                    </a>
+                            </div>
                         </div>
 
+                    ) 
+                }
                     {/* <img src={pdfImg} alt=""  className="preview-img-pdf"/>
                     <a download target="_blank" rel="noreferrer" href={pdf}>
                         AUTORIZACION
                     </a> */}
-                </div>
             </div>
         </div>
 
