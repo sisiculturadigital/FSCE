@@ -1,21 +1,21 @@
 import React from 'react';
 import { useRef, useEffect,useState } from "react";
 
-import data from './Descargas/Json/archivos.json';
-import archivos from '../components/accesos-comunes/archivos.js';
+import data from './Json/archivos.json';
+import archivos from './Archivos-Downloand/archivos.js';
 
-import img from '../imgs/View/descargas/Archivos_Imagen-Preview/img-preview.png';
-import pdf from "./Descargas/Archivos-Downloand/SOLICITUD_FSRyC_VARIOS.pdf"
+// import img from '../imgs/View/descargas/Archivos_Imagen-Preview/img-preview.png';
+// import pdf from "./Descargas/Archivos-Downloand/SOLICITUD_FSRyC_VARIOS.pdf"
 
 //icons extension files
-import iconPDF from '../imgs/View/descargas/icon-archivos-extension/pdf.png';
+import iconPDF from '../../../imgs/View/descargas/icon-archivos-extension/pdf.png';
 
 
 
 
 
 const Descargas = () => {
-    console.log(pdf)
+    // console.log(pdf)
     const count = useRef();
 
     useEffect(() => {

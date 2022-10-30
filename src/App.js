@@ -10,16 +10,16 @@ import WhattsApp from "./imgs/whatsapp.png"
 import { BsFillMoonStarsFill, BsFillBrightnessHighFill } from "react-icons/bs";
 
 
-import Header from './components/accesos-comunes/header';
-import Footer from './components/accesos-comunes/footer';
-import Home from './components/accesos-comunes/home';
+import Navbar from './components/Layout/navbar';
+import Footer from './components/Layout/footer';
+import Home from './components/Views/Home/home';
 import Contacto from './components/forms/contacto'; 
 import Usuarios from './components/forms/usuarios';
 import NuevoUsuario from './components/forms/nuevoUsuario';
 import Institucional from './components/institucional';
 import NotFound from './components/accesos-comunes/notFound';
 import Beneficios from './components/beneficios';
-import Descargas from './components/descargas';
+import Descargas from './components/Views/Descargas/descargas';
 
 function App() {
 
@@ -48,7 +48,7 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path='/institucional' element={<Institucional />} />
@@ -59,7 +59,7 @@ function App() {
 
         { estadoUsuarioVerificado === false ? null : <Route path='/registro' element={<NuevoUsuario />} />}
 
-        <Route path='*' element={<NotFound /> } />
+        <Route path='*' element={<Home /> } />
       </Routes>
       <Footer />
 

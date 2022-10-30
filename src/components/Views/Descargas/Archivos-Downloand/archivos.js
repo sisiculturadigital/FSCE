@@ -1,0 +1,12 @@
+import pdf from "./AUT_DSCTO_DESCUENTO_COPERE.pdf";
+import pdf1 from "./AUT_DSCTO_DESCUENTO_CPMP.pdf";
+import pdf2 from "./AUTORIZACION_DE_DESCUENTO_SUB_CAFAE_EP.pdf";
+import pdf3 from "./CARTA_DECLARATORIA_FSCEC.pdf";
+import pdf4 from "./COMPROMISO_PAGO_OBLIGATORIO.pdf";
+import pdf5 from "./CONTRATO FIANZA.pdf";
+import pdf6 from "./DOC_NO_REVOCATORIA_CPMP.pdf";
+import pdf7 from "./FOLLETO_FSCEC.pdf";
+import pdf8 from "./SOLICITUD_FSCEC.pdf";
+import pdf9 from "./SOLICITUD_FSRyC_VARIOS.pdf";
+import pdf10 from "./SOLICITUD_PRESTAMO.pdf";
+import pdf11 from "./SOLICITUD_VARIOS.pdf";

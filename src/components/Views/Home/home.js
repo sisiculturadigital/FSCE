@@ -1,8 +1,8 @@
 import React from 'react';
 
 //componentes
-import MainHeader from "../home-components/mainHeader";
-import Mision from "../home-components/mision";
+import MainHeader from "./home-components/mainHeader";
+import Mision from "./home-components/mision";
 
 //img
 

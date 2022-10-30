@@ -1,9 +1,9 @@
 import React from 'react';
 
 //img
-import img1 from '../../imgs/peru-header-1.jpg'
-import img2 from '../../imgs/peru-header-2.jpg'
-import img3 from '../../imgs/peru-header-3.jpg'
+import img1 from '../../../../imgs/View/Home/Main-header/peru-header-1.jpg'
+import img2 from '../../../../imgs/View/Home/Main-header/peru-header-2.jpg'
+import img3 from '../../../../imgs/View/Home/Main-header/peru-header-3.jpg'
 
 const MainHeader = () => {
   return (

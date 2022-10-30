@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import escudo from "../../imgs/escudo.png"
+import escudo from "../../imgs/Layout/NavBar/escudo.png"
 import { Link } from 'react-router-dom';
-import arrow from "../../imgs/arrow.svg"
+import arrow from "../../imgs/Layout/NavBar/arrow.svg"
 
 const Header = () => {
 

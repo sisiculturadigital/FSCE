@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FaFacebookSquare, FaInstagram,FaTwitterSquare, FaLinkedin } from "react-icons/fa";
 
-import peruFlag from "../../imgs/peru.png"
+import peruFlag from "../../imgs/Layout/Footer/peru.png"
  
 const Footer = () => {
   return (

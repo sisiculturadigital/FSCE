@@ -1,7 +1,7 @@
 import React from 'react';
 
 //imgs
-import misionImg from '../../imgs/img-mision.jpg'
+import misionImg from '../../../../imgs/View/Home/Mision//img-mision.jpg'
  
 const Mision = () => {
   return (
