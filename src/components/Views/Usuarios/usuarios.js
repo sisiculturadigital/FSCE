@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { openModal } from '../../redux/modal/modalSlice';
-import AccesModal from './accesModal';
+import { openModal } from '../../../redux/modal/modalSlice';
+import AccesModal from '../../forms/accesModal';
 import { useDispatch } from 'react-redux';
 
 

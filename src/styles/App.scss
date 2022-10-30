@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "./Layout/variables.scss";
 
 body {
   margin: 0px;
@@ -31,14 +31,14 @@ body {
   @include min-height;
 }
 
-@import "./header.scss";
-@import "./home.scss";
-@import "./mision.scss";
-@import "./footer.scss";
-@import "./contacto.scss";
-@import "./usuarios.scss";
+@import "./Components/header.scss";
+@import "./Components/home.scss";
+@import "./Components/mision.scss";
+@import "./Components/footer.scss";
+@import "./Components/contacto.scss";
+@import "./Components/usuarios.scss";
 @import "./nuevo-usuario.scss";
-@import "./institucional.scss";
-@import "./modal.scss";
-@import "./beneficios.scss";
-@import "./descargas.scss";
+@import "./Components/institucional.scss";
+@import "./Layout/modal.scss";
+@import "./Components/beneficios.scss";
+@import "./Components/descargas.scss";
