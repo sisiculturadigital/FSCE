@@ -1,88 +1,44 @@
-@import "../Layout/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
-.main-header {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-}
-
-.main-content{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    
-    width: 100%;
-    height: 400px;
-    
-    h1 {
-        // @include gradient-text(rgb(223, 19, 19), rgba(239, 232, 232, 0.963), rgb(223, 19, 19));
-        font-weight: 900;
-        font-size: 3.5rem;
-        width: 200px;
-    }
+.container-home {
+    background: url('../../imgs/View/Home/bg-home.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: calc(100vh - 140px);
+    padding: 0 30px;
 
     h2 {
-        // @include gradient-text(rgb(223, 19, 19), rgba(248, 233, 233, 0.963), rgb(223, 19, 19));
-        font-weight: 700;
-        font-size: 2.5rem;
-        width: 60%;
+        text-transform: uppercase;
+        max-width: 428px;
+        margin: 0;
+        padding-top: 50px;
     }
-
-    h3 {
-        // @include gradient-text(rgb(223, 19, 19), rgba(248, 233, 233, 0.963), rgb(223, 19, 19));
-        font-weight: 700;
-        font-size: 1.6rem;
-        width: 60%;
+    .mision {
+        padding-top: 10px;
+        h2 {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 22px;
+        }
+        p {
+            max-width: 375px;
+        }
     }
-}
-
-.main-imgs {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .img1 {
-        margin-left: -120px;
+    .button-to-contact {
+        background-color: #F50C10;
+        text-transform: uppercase;
+        padding: 20px 10px;
         margin-top: 40px;
-        box-shadow: 10px 18px 124px 27px rgba(0,0,0,0.93);
-    }
+        max-width: 206px;
+        border-radius: 15px;
+        font-size: 15px;
+        font-weight: 700;
+        .contact {
+            text-decoration: none;
+            color: #FFF;
+        }
 
-    .img2 {
-        margin-left: 40px;
-        margin-bottom: 40px;
-        width: 120px;
-        height: 120px;
-        box-shadow: 10px 18px 124px 27px rgba(0,0,0,0.93);
-    }
-
-    .img3 {
-        margin-left: 80px;
-        width: 100px;
-        height: 100px;
-        box-shadow: 10px 18px 124px 27px rgba(0,0,0,0.93);
-    }
-
-    img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
     }
 }
-
-.WSimg {
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    bottom: 20px;
-    right: 15px;
-    z-index: 100;
-
-    cursor: pointer;
-
-    &:hover {
-        transform: scale(1.1);
-    }
-}
-
