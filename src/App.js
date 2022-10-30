@@ -20,6 +20,7 @@ import Institucional from './components/Views/Institucional/institucional';
 // import NotFound from './components/accesos-comunes/notFound';
 import Beneficios from './components/Views/Beneficios/beneficios';
 import Descargas from './components/Views/Descargas/descargas';
+import Registrate from './components/Views/Usuarios/registrate';
 
 function App() {
 
@@ -56,20 +57,12 @@ function App() {
         <Route path="/contacto" element={<Contacto />} />
         <Route path='/usuarios' element={<Usuarios />} />
         <Route path='/descargas' element={<Descargas />} />
-
+        <Route path='/registrate' element={<Registrate/>} />
         { estadoUsuarioVerificado === false ? null : <Route path='/registro' element={<NuevoUsuario />} />}
 
         <Route path='*' element={<Home /> } />
       </Routes>
       <Footer />
-
-      {/* { theme === 'light' 
-      ? 
-      <div className='them-icon' onClick={setTheme} ><BsFillMoonStarsFill /></div> 
-      : 
-      <div className='them-icon' onClick={setTheme}><BsFillBrightnessHighFill /></div> }
-      
-      <img className='WSimg' src={WhattsApp} alt="WhatsAppLogo" /> */}
 
   </Router>
 

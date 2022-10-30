@@ -7,13 +7,21 @@ import { useDispatch } from 'react-redux';
 
 const Usuarios = () => {
   
-  const [dni, setDni] = useState('');
-  const [contraseña, setContraseña] = useState('');
+  const [form, setForm] = useState({});
 
-  const handleChangeDni = (event) => {
-    setDni(event.target.value);
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]:e.target.value,
+    })
   };
+  
 
+  const handleSubmit =(e) =>{
+    e.preventDefault()
+    console.log(form)
+  }
 
   const dispatch = useDispatch();
 
@@ -30,15 +38,15 @@ const Usuarios = () => {
         <div className='form-usuario-container'>
             <form className='form-user'>
               <label>DNI</label>
-              <input type='text' id='dni' name='dni' value={dni} onChange={handleChangeDni} />
+              <input type='text'  name='dni' autoComplete='off' onChange={handleChange} />
                     
               <label>Contraseña</label>
-              <input type='password' id='contraseña' name='contraseña' />
+              <input type='password' name='contraseña'autoComplete='off'  onChange={handleChange} />
               
-              <input type='submit'  value='Ingresar' />
+              <input type='submit' value='Ingresar' onClick={handleSubmit}/>
             </form>
             
-            <button><Link>Regístrate</Link></button> 
+            <button><Link to='/Registrate'>Regístrate</Link></button> 
             
             <h3 className='links'>Actualizar contraseña</h3>
             <h3 className='links'>Recuperar contraseña</h3>
