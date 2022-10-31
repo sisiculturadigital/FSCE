@@ -1,0 +1,110 @@
+.modal{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.733);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    .modal-container{
+        position: relative;
+        padding: 3rem;
+        min-width: 320px;
+        max-width: 480px;
+        min-height: 200px;
+        max-height: 600px;  
+        overflow-y: auto;
+        background-color: #fff;
+        border-radius: 20px;
+
+        .modal-close{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        input[type='submit']{
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                width: 100%;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 0 10px 0;
+                font-family: inherit;
+                background-color: hsl(278, 68%, 11%);
+                color: #dedddf;
+                font-size: 18px;
+                margin-top: 40px;
+        }
+
+    }
+
+    .form-user {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        input{
+            box-sizing: border-box;
+            padding: 11px;
+            width: 194px;
+            height: 40px;          
+            background-color: rgb(200, 196, 196);
+            &::placeholder{
+                color: rgba(0, 0, 0, 0.765);
+            }
+        }
+
+        .name_lastName{
+            display: flex;
+            gap: 10px;
+
+            input{
+                &:focus{
+                    outline: 2px solid blue;
+                }
+            }
+        }
+
+  
+        input[type='text'], input[type='email'], input[type='password'], input[type='date']{
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            width: 100%;
+            &:focus{
+                outline: 2px solid blue;
+            }
+        }
+        input[type='submit']{
+            width: 100%;
+            border-radius: 8px;
+            padding: 10px 0;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+    }
+
+
+
+}
+
+
+.is-open{
+    display:flex ;
+}
+
+
+

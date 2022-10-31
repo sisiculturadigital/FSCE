@@ -1,57 +1,84 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { openModal } from '../../../redux/modal/modalSlice';
-import AccesModal from '../../forms/accesModal';
 import { useDispatch } from 'react-redux';
+import RecoverPassword from '../../accesos-comunes/modals/RecoverPassword';
+import { useModal } from '../../accesos-comunes/modals/useModal';
+import { useForm } from '../../accesos-comunes/form/useForm';
+import data from './UserList';
+
+const users = []
+
+const initialForm = {
+  dni:'',
+  password:''
+}
+
+
+const ValidationsForm = (form) =>{
+  let errors = {}
+  let regexDni=/^[0-9]+$/
+  let user = data.filter(user=>user.dni === form.dni)
+ 
+  if(!form.dni.trim())errors.dni = "Can't be blank"
+  else if(!regexDni.test(form.dni.trim()))errors.dni = "Accepts only letters and spaces and blanks"
+  else if(user.length === 0) errors.dni = 'usuario no coincide'
+  
+  if(!form.password)errors.password = "Can't be blank"
+  else if( user[0].password !== form.password ) errors.dni = 'contraseña no coincide'
+
+  return errors
+}
 
 
 const Usuarios = () => {
   
-  const [form, setForm] = useState({});
+  const [isOpen, openModal, closeModal] = useModal(false)
 
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]:e.target.value,
-    })
-  };
+  const {
+    form,
+    errors,
+    handleBlur,
+    handleChange,
+    handleSubmit
+} = useForm(initialForm, ValidationsForm, openModal)
   
 
-  const handleSubmit =(e) =>{
-    e.preventDefault()
-    console.log(form)
-  }
 
-  const dispatch = useDispatch();
+// function gaa(){
+//   let resultado = data.filter(user=>user.dni.includes(form.dni.trim))
+//   // console.log(resultado)
+// }
 
-  const startModal = () => {
-    dispatch(openModal());
-  };
+
+// useEffect(() => {
+//   gaa()
+// }, [])
 
 
 
   return (
+
     <div className='usuarios-wrapper'>
         
+        <RecoverPassword isOpen={isOpen} closeModal={closeModal}/>
+
         <h1>Ingresa</h1>
+
         <div className='form-usuario-container'>
             <form className='form-user'>
               <label>DNI</label>
-              <input type='text'  name='dni' autoComplete='off' onChange={handleChange} />
+              <input type='text'  name='dni' autoComplete='off' onChange={handleChange} value={form.dni}  onBlur={handleBlur} />
                     
               <label>Contraseña</label>
-              <input type='password' name='contraseña'autoComplete='off'  onChange={handleChange} />
+              <input type='password' name='password'autoComplete='off'  onChange={handleChange}  value={form.password} onBlur={handleBlur}  />
               
               <input type='submit' value='Ingresar' onClick={handleSubmit}/>
             </form>
             
-            <button><Link to='/Registrate'>Regístrate</Link></button> 
+            <Link to='/Registrate'><button>Regístrate</button></Link>
             
-            <h3 className='links'>Actualizar contraseña</h3>
-            <h3 className='links'>Recuperar contraseña</h3>
+            <button className='links' onClick={openModal} >Recuperar contraseña</button>
         </div>
-        <AccesModal />
     </div>
   );
 };

@@ -17,8 +17,6 @@
         padding: 20px 30px;
         background-color: rgb(104, 102, 101);
     
-
-
         .form-user {
             display: flex;
             flex-direction: column;
@@ -65,15 +63,8 @@
                 margin-top: 15px;
                 margin-bottom: 15px;
                 cursor: pointer;
-                &:focus{
-                    outline: 2px solid blue;
-                }
-
             }
         }
-
-            
-
     }
 
 }

@@ -15,9 +15,7 @@ import Footer from './components/Layout/footer';
 import Home from './components/Views/Home/home';
 import Contacto from './components/Views/Contacto/contacto'; 
 import Usuarios from './components/Views/Usuarios//usuarios';
-import NuevoUsuario from './components/forms/nuevoUsuario';
 import Institucional from './components/Views/Institucional/institucional';
-// import NotFound from './components/accesos-comunes/notFound';
 import Beneficios from './components/Views/Beneficios/beneficios';
 import Descargas from './components/Views/Descargas/descargas';
 import Registrate from './components/Views/Usuarios/registrate';
@@ -58,7 +56,7 @@ function App() {
         <Route path='/usuarios' element={<Usuarios />} />
         <Route path='/descargas' element={<Descargas />} />
         <Route path='/registrate' element={<Registrate/>} />
-        { estadoUsuarioVerificado === false ? null : <Route path='/registro' element={<NuevoUsuario />} />}
+        {/* { estadoUsuarioVerificado === false ? null : <Route path='/registro' element={<NuevoUsuario />} />} */}
 
         <Route path='*' element={<Home /> } />
       </Routes>

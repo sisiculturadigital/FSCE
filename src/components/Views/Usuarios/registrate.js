@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Registrate = () => {
 
     const [register, setForm] = useState({});
@@ -13,12 +14,11 @@ const Registrate = () => {
       })
     };
     
-  
+
     const handleSubmit =(e) =>{
       e.preventDefault()
       console.log(register)
     }
-
 
 
     return (
@@ -26,7 +26,7 @@ const Registrate = () => {
           
         <h1>Regístrate</h1>
         <div className='form-usuario-container'>
-            <form className='form-user'>
+              <form className='form-user'>
                 <div className='name_lastName'>
                     <input type='text'  name='name' placeholder='Nombre' autoComplete='off' onChange={handleChange} />
 
@@ -40,7 +40,7 @@ const Registrate = () => {
                 <input type='text' name='dni' placeholder='DNI' autoComplete='off' onChange={handleChange} />
                 <input type='text' name='codAdm' placeholder='Cod Adm' autoComplete='off' onChange={handleChange} />
                 <input type='submit' value='Registrate' onClick={handleSubmit} />
-            </form>
+              </form>
         </div>
       </div>
     );
