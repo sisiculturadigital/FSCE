@@ -46,4 +46,45 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    let navegador = navigator.userAgent;
+    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+        console.log("Estás usando un dispositivo móvil!!");
+    } else {
+        console.log("No estás usando un móvil");
+    }
+
+  //   window.addEventListener("deviceorientation",function(event) {
+  //   alpha = Math.round(event.alpha);
+  //   beta = Math.round(event.beta);
+  //   gamma = Math.round(event.gamma);
+  //   alert('alpha', event.alpha)
+  //   alert('beta', event.beta)
+  //   alert('gamma', event.gamma)
+
+  //   console.log(alpha,beta,gamma)
+  // }, true);
+
+  // window.addEventListener("orientationchange", function() {
+  //     // Hacer algo cuando cambia la orientación
+  //   //   alpha = Math.round(event.alpha);
+  //   // beta = Math.round(event.beta);
+  //   // gamma = Math.round(event.gamma);
+  //   // alert('alpha', event.alpha)
+  //   // alert('beta', event.beta)
+  //   // alert('gamma', event.gamma)
+    
+  //     alert(window.orientation);
+  //   }, false)
+
+  window.addEventListener("orientationchange", function() {
+    console.log(`${event.alpha} : ${event.beta} : ${event.gamma}`);
+    alert(`orientationchange, ${event.alpha} : ${event.beta} : ${event.gamma}`)
+    }, false)
+    window.addEventListener('deviceorientation', (event) => {
+    console.log(`${event.alpha} : ${event.beta} : ${event.gamma}`);
+    alert(`deviceorientation, ${event.alpha} : ${event.beta} : ${event.gamma}`)
+  }, true);
+
+  </script>
 </html>

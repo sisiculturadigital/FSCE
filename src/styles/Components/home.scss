@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+$small: 420px;
+$medium: 1280px;
 
 .container-home {
     background: url('../../imgs/View/Home/bg-home.png') no-repeat center center fixed;
@@ -8,6 +10,10 @@
     background-size: cover;
     height: calc(100vh - 140px);
     padding: 0 30px;
+    @media screen and (max-width: $small) {
+        background: url('../../imgs/View/Home/background-imagen/1125x2436.png') no-repeat center center fixed;
+        background-size: cover;
+    }
 
     h2 {
         text-transform: uppercase;

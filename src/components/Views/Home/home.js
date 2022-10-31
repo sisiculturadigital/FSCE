@@ -8,6 +8,9 @@ import Mision from "./home-components/mision";
 //img
 
 const Home = () => {
+  console.log("window.height", window.innerHeight)
+  console.log("window.width", window.innerWidth)
+
   return (
     <div className='container-home'>
       <h2>
