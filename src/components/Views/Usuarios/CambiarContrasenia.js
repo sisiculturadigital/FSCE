@@ -1,32 +1,34 @@
 import React from 'react'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 
-const Registrate = () => {
+const CambiarContrasenia = () => {
 
-    const [register, setForm] = useState({});
-
-    const handleChange = (e) => {
-      setForm({
-        ...register,
-        [e.target.name]:e.target.value,
-      })
-    };
+    const [recoveryForm, setRecoveryForm] = useState({});
     
-
+    
+    const handleModalContainerClick = (e) =>  e.stopPropagation()
+    
+    const handleChange = (e) => {
+        setRecoveryForm({
+        ...recoveryForm,
+        [e.target.name]:e.target.value,
+    })};
+  
     const handleSubmit =(e) =>{
       e.preventDefault()
-      console.log(register)
+      console.log('validando formulario')
+      console.log(recoveryForm)
     }
-
+  
 
     return (
-      <div className='registrate-wrapper'>
-          
-        <h1>Regístrate</h1>
-        <div className='form-usuario-container'>
-              <form className='form-user'>
+     
+        <div>
+
+
+            <form className='form-user'>
+
                 <div className='name_lastName'>
                     <input type='text'  name='name' placeholder='Nombre' autoComplete='off' onChange={handleChange} />
                     <input type='text'  name='lastName'  placeholder='Apellido' autoComplete='off' onChange={handleChange}/>
@@ -38,14 +40,12 @@ const Registrate = () => {
                 <input type='date' name='DateOfBirth' placeholder='Fecha de nacimiento' autoComplete='off' onChange={handleChange} />
                 <input type='text' name='dni' placeholder='DNI' autoComplete='off' onChange={handleChange} />
                 <input type='text' name='codAdm' placeholder='Cod Adm' autoComplete='off' onChange={handleChange} />
-                <input type='submit' value='Registrate' onClick={handleSubmit} />
-              </form>
+                <input type='submit' value='Cambiar contraseña' onClick={handleSubmit}/>
+                
+            </form>
+
         </div>
-      </div>
-    );
-  };
-  
+    )
+}
 
-
-
-export default Registrate
+export default CambiarContrasenia

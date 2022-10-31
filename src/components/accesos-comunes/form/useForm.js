@@ -5,7 +5,6 @@ export const useForm = (initialForm, ValidationsForm, openModal) => {
     const [form, setForm] = useState(initialForm)
     const [errors, setError] = useState({ validado: false })
     
-
     // ok
 
     const handleChange = (e) =>{ 
