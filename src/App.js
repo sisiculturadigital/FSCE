@@ -21,6 +21,28 @@ import Descargas from './components/Views/Descargas/descargas';
 import Registrate from './components/Views/Usuarios/registrate';
 
 function App() {
+  let navegador = navigator.userAgent;
+  let isMobile;
+  let isOrientationVertical = window.orientation === 0 ? false : true;
+
+  const isOrientationVerticalFx = () => {
+    isOrientationVertical = window.orientation === 0 ? false : true
+  }
+  
+  // eslint-disable-next-line no-unused-expressions
+  (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i))?
+    ( isMobile = true,
+      isOrientationVerticalFx()
+    )
+    :
+    (isMobile = false);
+    console.log(window.orientation , "si es 0 entonces False, si es 90 entonces True");
+
+  window.addEventListener("orientationchange", function() {
+    isOrientationVertical = window.orientation === 0 ? false : true;
+  }, false)
+
+  console.log('isOrientationVertical', isOrientationVertical);
 
   useEffect(() => {
     if (!localStorage.getItem('theme')) {
@@ -28,9 +50,7 @@ function App() {
     }
   }, []);
 
-  
   const theme = localStorage.getItem('theme');
-
   const [currentTheme, setCurrentTheme] = useState(theme);
 
   const estadoUsuarioVerificado = useSelector(usuarioPermitidoState)
@@ -49,7 +69,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home data={{isMobile, isOrientationVertical}}/>} />
         <Route path='/institucional' element={<Institucional />} />
         <Route path='/beneficios' element={<Beneficios />} />
         <Route path="/contacto" element={<Contacto />} />
