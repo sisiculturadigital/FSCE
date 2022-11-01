@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import RecoverPassword from '../../accesos-comunes/modals/RecoverPassword';
 import { useModal } from '../../accesos-comunes/modals/useModal';
 import { useForm } from '../../accesos-comunes/form/useForm';
@@ -13,18 +12,17 @@ const initialForm = {
   password:''
 }
 
-
 const ValidationsForm = (form) =>{
   let errors = {}
   let regexDni=/^[0-9]+$/
   let user = data.filter(user=>user.dni === form.dni)
  
-  if(!form.dni.trim())errors.dni = "Can't be blank"
-  else if(!regexDni.test(form.dni.trim()))errors.dni = "Accepts only letters and spaces and blanks"
-  else if(user.length === 0) errors.dni = 'usuario no coincide'
+  if(!form.dni.trim())errors.dni = "No puede estar vacío"
+  else if(!regexDni.test(form.dni.trim()))errors.dni = "Se acepta solo números"
+  else if(user.length === 0) errors.dni = 'usuario no registrado'
   
-  if(!form.password)errors.password = "Can't be blank"
-  else if( user[0].password !== form.password ) errors.dni = 'contraseña no coincide'
+  else if(!form.password)errors.password = "No puede estar vacío"
+  else if( user[0].password !== form.password ) errors.password = 'contraseña no coincide'
 
   return errors
 }
@@ -42,19 +40,6 @@ const Usuarios = () => {
     handleSubmit
 } = useForm(initialForm, ValidationsForm, openModal)
   
-
-
-// function gaa(){
-//   let resultado = data.filter(user=>user.dni.includes(form.dni.trim))
-//   // console.log(resultado)
-// }
-
-
-// useEffect(() => {
-//   gaa()
-// }, [])
-
-
 
   return (
 

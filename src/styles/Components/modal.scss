@@ -26,68 +26,39 @@
             top: 1rem;
             right: 1rem;
         }
-
-        input[type='submit']{
-                display: block;
-                margin: 0 auto;
-                text-align: center;
-                width: 100%;
-                border: none;
-                border-radius: 5px;
-                padding: 10px 0 10px 0;
-                font-family: inherit;
-                background-color: hsl(278, 68%, 11%);
-                color: #dedddf;
-                font-size: 18px;
-                margin-top: 40px;
+        h2{
+            color: black;
+            margin: 0;
+        }
+        p{
+            color: black;
         }
 
-    }
-
-    .form-user {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        input{
-            box-sizing: border-box;
-            padding: 11px;
-            width: 194px;
-            height: 40px;          
-            background-color: rgb(200, 196, 196);
-            &::placeholder{
-                color: rgba(0, 0, 0, 0.765);
-            }
-        }
-
-        .name_lastName{
-            display: flex;
-            gap: 10px;
-
-            input{
-                &:focus{
-                    outline: 2px solid blue;
-                }
-            }
-        }
-
-  
-        input[type='text'], input[type='email'], input[type='password'], input[type='date']{
+        input[type='email']{
             border-radius: 5px;
             border: none;
             outline: none;
+            box-sizing: border-box;
             width: 100%;
+            height: 30px;
+            border-radius: 8px;
+            padding-left: 20px;
+            background-color: blue;
+            background-color: rgb(200, 196, 196);
+
+
             &:focus{
-                outline: 2px solid blue;
+                outline: 1px solid rgb(117, 117, 212);
             }
         }
+
         input[type='submit']{
             width: 100%;
             border-radius: 8px;
             padding: 10px 0;
             border: none;
             outline: none;
-            background-color: red;
+            background-color: crimson;
             color: white;
             font-weight: 700;
             font-size: 20px;
@@ -96,11 +67,7 @@
             cursor: pointer;
         }
     }
-
-
-
 }
-
 
 .is-open{
     display:flex ;
