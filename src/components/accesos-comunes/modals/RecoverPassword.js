@@ -1,48 +1,45 @@
 import React from 'react'
 import { useState } from 'react';
+import { useForm } from '../form/useForm';
+import data from '../../Views/Usuarios/UserList';
+
+
+const initialForm = {
+password:''
+}
+
+
+const ValidationsForm = (form) =>{
+
+let errors = {}
+let regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/
+// let user = data.filter(user=>user.dni === form.dni)
+
+if(!form.email.trim()) errors.email = "No puede estar vacío"
+else if(!regexEmail.test(form.email.trim())) errors.email = "No es un formato email válido"
+
+
+return errors
+}
+
 
 const RecoverPassword = ({ isOpen, closeModal}) => {
-      
-    const [recoveryForm, setRecoveryForm] = useState({});
-    
-    
+
     const handleModalContainerClick = (e) =>  e.stopPropagation()
     
-    const handleChange = (e) => {
-        setRecoveryForm({
-        ...recoveryForm,
-        [e.target.name]:e.target.value,
-    })};
-  
-    const handleSubmit =(e) =>{
-      e.preventDefault()
-      console.log('validando formulario')
-      console.log(recoveryForm)
-    }
-  
+    const {form, errors, handleSubmit, handleBlur, handleChange} = useForm(initialForm, ValidationsForm )
 
     return (
         <article className = {`modal ${isOpen && 'is-open'}`} onClick={closeModal}>
-            <div className="modal-container" onClick={handleModalContainerClick}>
+            <form className="modal-container" onClick={handleModalContainerClick}>
+
                 <button className='modal-close' onClick={closeModal}>X</button>
+                <h2>Recupera tu contraseña</h2>
+                <p>Ingresa tu correo electrónico para cambiar contraseña</p>
+                <input type="email" name='email'  placeholder='Correo electrónico' onChange={handleChange} onBlur={handleBlur}/>
+                <input type="submit" value='Buscar' onClick={handleSubmit} />
 
-                <form className='form-user'>
-
-                    <div className='name_lastName'>
-                        <input type='text'  name='name' placeholder='Nombre' autoComplete='off' onChange={handleChange} />
-                        <input type='text'  name='lastName'  placeholder='Apellido' autoComplete='off' onChange={handleChange}/>
-                    </div>
-
-                    <input type='email'  name='email'  placeholder='Email' autoComplete='off' onChange={handleChange}/>
-                    <input type='password' name='password' placeholder='Contraseña' autoComplete='off' onChange={handleChange} />
-                    <input type='password' name='repeat_password' placeholder='Confirmar contraseña' autoComplete='off' onChange={handleChange} />
-                    <input type='date' name='DateOfBirth' placeholder='Fecha de nacimiento' autoComplete='off' onChange={handleChange} />
-                    <input type='text' name='dni' placeholder='DNI' autoComplete='off' onChange={handleChange} />
-                    <input type='text' name='codAdm' placeholder='Cod Adm' autoComplete='off' onChange={handleChange} />
-                    <input type='submit' value='Cambiar contraseña' onClick={handleSubmit}/>
-                    
-                </form>
-            </div>
+            </form>
         </article>
     )
   }

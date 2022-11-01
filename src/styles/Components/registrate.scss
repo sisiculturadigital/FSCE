@@ -16,6 +16,7 @@
         border-radius: 10px;
         padding: 20px 30px;
         background-color: rgb(104, 102, 101);
+        background-color: white;
     
         .form-user {
             display: flex;
@@ -26,7 +27,11 @@
                 box-sizing: border-box;
                 padding: 11px;
                 width: 194px;
-                height: 40px;          
+                height: 40px;     
+                
+                &::placeholder{
+                    color: rgba(0, 0, 0, 0.74);
+                }     
             }
 
             .name_lastName{
@@ -46,6 +51,7 @@
                 border: none;
                 outline: none;
                 width: 100%;
+                background-color: rgb(200, 196, 196);
                 &:focus{
                     outline: 2px solid blue;
                 }

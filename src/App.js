@@ -19,6 +19,7 @@ import Institucional from './components/Views/Institucional/institucional';
 import Beneficios from './components/Views/Beneficios/beneficios';
 import Descargas from './components/Views/Descargas/descargas';
 import Registrate from './components/Views/Usuarios/registrate';
+import CambiarContrasenia from './components/Views/Usuarios/CambiarContrasenia';
 
 function App() {
   let navegador = navigator.userAgent;
@@ -76,6 +77,7 @@ function App() {
         <Route path='/usuarios' element={<Usuarios />} />
         <Route path='/descargas' element={<Descargas />} />
         <Route path='/registrate' element={<Registrate/>} />
+        <Route path='/cambiar-contrasenia' element={ <CambiarContrasenia /> } />
         {/* { estadoUsuarioVerificado === false ? null : <Route path='/registro' element={<NuevoUsuario />} />} */}
 
         <Route path='*' element={<Home /> } />
