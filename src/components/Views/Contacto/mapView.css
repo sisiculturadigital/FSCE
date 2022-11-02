@@ -1,0 +1,18 @@
+.leaflet-container{
+
+    flex: 1;
+    margin: 40px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+
+@media screen and (max-width: 1100px){
+    .leaflet-container{
+        display: block;
+        margin: auto;
+        min-width: 510px;
+        min-height: 330px;
+    
+    }
+}
