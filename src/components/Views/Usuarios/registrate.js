@@ -48,12 +48,8 @@ const initialForm = {
     if(!form.repeat_password)errors.repeat_password = "No puede estar vacío"
     else if(form.password !== form.repeat_password ) errors.repeat_password = 'La contraseña no coincide'
 
-
-    
     return errors
-    }
-
-
+  }
 
 
 const Registrate = () => {

@@ -17,11 +17,11 @@ const ValidationsForm = (form) =>{
   let regexDni=/^[0-9]+$/
   let user = data.filter(user=>user.dni === form.dni)
  
-  if(!form.dni.trim())errors.dni = "No puede estar vacío"
+  if(!form.dni.trim())errors.dni = "DNI No puede estar vacío"
   else if(!regexDni.test(form.dni.trim()))errors.dni = "Se acepta solo números"
   else if(user.length === 0) errors.dni = 'usuario no registrado'
   
-  else if(!form.password)errors.password = "No puede estar vacío"
+  else if(!form.password)errors.password = "Contraseña no puede estar vacía"
   else if( user[0].password !== form.password ) errors.password = 'contraseña no coincide'
 
   return errors
@@ -50,14 +50,19 @@ const Usuarios = () => {
         <h1>Ingresa</h1>
 
         <div className='form-usuario-container'>
-            <form className='form-user'>
+            <form className='form-user' >
               <label>DNI</label>
-              <input type='text'  name='dni' autoComplete='off' onChange={handleChange} value={form.dni}  onBlur={handleBlur} />
+              <input type='text'  name='dni' autoComplete='off' onChange={handleChange} value={form.dni}  onBlur={handleBlur}/>
                     
               <label>Contraseña</label>
               <input type='password' name='password'autoComplete='off'  onChange={handleChange}  value={form.password} onBlur={handleBlur}  />
               
               <input type='submit' value='Ingresar' onClick={handleSubmit}/>
+              {errors.dni && <p>{errors.dni}</p>  }
+              {errors.password && <p>{errors.password}</p>  }
+              {/* {errors.password === 'Contraseña no puede estar vacía' && <p>{errors.password}</p>} */}
+              {Object.keys(errors).length === 0 && <p style={{color:'green', fontWeight:'700'}}>Ingreso satisfactorio</p> }
+            
             </form>
             
             <Link to='/Registrate'><button>Regístrate</button></Link>

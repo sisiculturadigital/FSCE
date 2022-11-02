@@ -1,5 +1,6 @@
 // @import "variables";
 
+
 .header{
 
     .active{
@@ -13,7 +14,7 @@
         align-items: center;
         box-shadow: -1px 10px 5px 3px rgba(0,0,0,0.72);
         background-color: #fff;
-
+        
         .escudo{
             position: absolute;
             padding: 0;
@@ -25,7 +26,6 @@
 
             figure{
                 margin: auto;
-                // background-color: gray;
                 width: 100%;
                 height: 80px;
  
@@ -40,7 +40,6 @@
                 }
             }
         }
-            
     
         span{
             display: flex;
@@ -52,7 +51,7 @@
             font-size: 30px;
             min-width: 260px;
             max-width: 260px;
-
+            // z-index: 19;
 
             @media screen and (max-width: 1100px){
                 padding-right: 0;
@@ -71,13 +70,16 @@
             @media screen and (max-width: 1100px){
                 background-color: #fff;
                 width: 400px;
+                // z-index: 19;
+
             }
         }
         .triangulo{
             width: 0;
             height: 0;
             border-right: 50px solid white;
-            border-bottom: 80px solid crimson;  
+            border-bottom: 80px solid crimson;
+            // z-index: 19;
             
             @media screen and (max-width: 1100px){
                 border-right: 50px solid white;
@@ -85,26 +87,6 @@
                 // width: 400px;
             }
         }
-        // a {
-        //     // @include link-basic-style;
-        //     text-decoration: none;
-        //     color: white;
-        //     font-size: 1.2rem;
-        //     font-weight: 400;
-        //     // margin-right: 20px;
-        //     // padding: 0px 10px 0px 10px;
-        //     padding-left: 10px ;
-        //     // margin: 0 10px;
-        //     border-radius: 8px;
-        //     text-align: center;
-        //     height: 30px;
-        //     line-height: 30px;
-        //     transition: .1s;
-
-        //     // &:hover{
-        //     //     background-color: blue;
-        //     // }
-        // }
     
         .header-navbar {
             display: flex;
@@ -116,27 +98,27 @@
             padding-right: 10px;
             z-index: 2;
 
-    
-            .nav {
-                // @include link-basic-style;
-                // @include nav-btn;
-                // @include nav-btn;
-
-
-                // @media screen and (max-width: 1100px){
-                //     align-items: start;
-                // }
-
+            .line{
+                display: none;
+                
+                @media screen and (max-width: 1100px){
+                    display: block;
+                    position: absolute;
+                    background-color: rgb(125, 122, 122);
+                    width: 90%;
+                    height: 3px;
+                    margin: auto;
+                    left: 10px;
+                    z-index: 999;
+                    top: 100px;
+                }
             }
             a{
                 text-decoration: none;
                 color: black;
                 font-size: 1.2rem;
                 font-weight: 400;
-                // margin-right: 20px;
-                // padding: 0px 10px 0px 10px;
                 padding-left: 10px ;
-                // margin: 0 10px;
                 border-radius: 8px;
                 text-align: center;
                 height: 30px;
@@ -155,20 +137,19 @@
                 flex-direction: column;
                 justify-content: space-evenly;
                 align-items: start;
-                left: 0;
-                height: calc(100% - 80px);
-                top: 80px;
+                // height: calc(100% - 80px);
+                // top: 80px;
                 width: 100%;
                 background-color: rgb(230, 226, 226);
                 overflow-y: auto;
+                overflow-x: hidden;
                 padding: 10px 0 10px 10px;
                 left: -100%;
                 transition: left .3s;
-                // background: white;
+                height: 100%;
+                top: 0px;
+                padding-top: 80px;
             }
-            
-         
-
         }
 
         .nav-usuario{
@@ -202,9 +183,15 @@
             border: 0px;
             display: none;
             margin-right: 20px;
+            cursor: pointer;
+            z-index: 10;
+            top: 25px;
+
 
             @media screen and (max-width: 1100px){
                 display: block;
+                position: absolute;
+                // position: fixed;
                 // flex-grow: 1;
                 // width: 40px;
             }
@@ -224,17 +211,24 @@
             position: relative;
             top: 4px;
             right: 5px;
+            display: none;
+            visibility: hidden;
         }
-
 
         .open{
             display: flex;
             left: 0;
+
         }
-
-
+  
     }
 
+    @media screen and (max-width: 1100px){
+        overflow: hidden;
+    }
 
+}
 
+.hide{
+    overflow-y: hidden;
 }

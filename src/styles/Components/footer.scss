@@ -34,6 +34,7 @@
     .icons-container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         width: 100px;
         flex-grow: 1;
         justify-content:flex-end;
@@ -44,13 +45,39 @@
 
         svg {
             width: 25px;
+            min-width: 20px;
             height: 25px;
+            min-height: 20px;
             fill: #fff;
             cursor: pointer;
             transition: 0.3s;
 
             &:hover {
                 fill: #ff0000;
+            }
+        }
+        a{
+            position: relative;
+            width: 0px;
+            min-width: 0;
+            bottom: 100px;
+            right   : 50px;
+            cursor: pointer;
+            .wpp{
+                box-sizing: border-box;
+                width: 55px;
+                height: 55px;
+                padding: 13px;
+                background-color: green;
+                fill: white;
+                border-radius: 50%;
+                background-color:none;
+                transition: 0.3s;
+    
+                &:hover {
+                    fill: white;
+                    padding: 11px;
+                }
             }
         }
 

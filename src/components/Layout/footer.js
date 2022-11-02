@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { FaFacebookSquare, FaInstagram,FaTwitterSquare, FaLinkedin } from "react-icons/fa";
+import { FaFacebookSquare, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 import peruFlag from "../../imgs/Layout/Footer/peru.png"
  
@@ -13,9 +12,10 @@ const Footer = () => {
         </h4>
         <div className='icons-container'>
             <FaFacebookSquare />
-            {/* <FaTwitterSquare />
-            <FaLinkedin /> */}
             <FaInstagram />
+            <a target='_blank' href ='https://wa.me/+51962845123'>
+              <FaWhatsapp className='wpp'/>
+            </a> 
         </div>
     </div>
   );
