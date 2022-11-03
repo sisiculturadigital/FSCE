@@ -21,6 +21,8 @@ import Descargas from './components/Views/Descargas/descargas';
 import Registrate from './components/Views/Usuarios/registrate';
 import CambiarContrasenia from './components/Views/Usuarios/CambiarContrasenia';
 import SubBeneficio from './components/Views/Beneficios/vistas/SubBeneficio.js'
+import SubMision from './components/Views/Institucional/vistas/SubMision.js'
+
 
 function App() {
   let navegador = navigator.userAgent;
@@ -65,8 +67,9 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Home data={{isMobile, isOrientationVertical}}/>} />
-        <Route path='/institucional' element={<Institucional />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path='/institucional/*' element={<Institucional />} />
+        <Route path='submision' element={<SubMision />} />
         <Route path='/beneficios/*' element={<Beneficios />}>
           <Route path='welcome' element={<SubBeneficio />} />
         </Route>

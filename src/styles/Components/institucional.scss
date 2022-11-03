@@ -1,6 +1,70 @@
 @import "../Layout/variables.scss";
 
 .institucional-wrapper {
+    padding: 50px;
+    background: url('../../imgs/View/descargas/bg-descargas.png') no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__navbar{
+        max-width: 900px;
+        color: red;
+        display: flex;
+        // flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        h2 {
+            cursor: pointer;
+        }
+        .linea {
+            border-color: red;
+            background-color: red;
+            width: 20%;        
+        }
+
+        @media only screen and (max-width: 800px) {
+            margin-top: 20px;
+            max-width: 600px;
+            h2 {
+                font-size: 20px;
+            }
+            .linea {
+                width: 15%;        
+            }
+        }
+        @media only screen and (max-width: 650px) {
+            max-width: 500px;
+            h2 {
+                font-size: 16px;
+            }
+            .linea {
+                width: 12%;        
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            max-width: 400px;
+            margin-top: 60px;
+            h2 {
+                font-size: 14px;
+            }
+            .linea {
+                width: 8%;        
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            max-width: 400px;
+            h2 {
+                font-size: 12px;
+            }
+            .linea {
+                width: 5%;        
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        padding: 20px;
+    }
 }
 
 .organigrama {
