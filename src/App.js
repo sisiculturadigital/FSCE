@@ -23,6 +23,22 @@ import CambiarContrasenia from './components/Views/Usuarios/CambiarContrasenia';
 import SubBeneficio from './components/Views/Beneficios/vistas/SubBeneficio.js'
 
 function App() {
+  let navegador = navigator.userAgent;
+  let isMobile;
+  let isOrientationVertical;
+  
+  // eslint-disable-next-line no-unused-expressions
+  (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i))?
+    ( isMobile = true,
+      window.orientation ===  0 ? isOrientationVertical = true : isOrientationVertical = false
+    )
+    :
+    ( isMobile = false,
+      window.orientation ===  0 ? isOrientationVertical = false : isOrientationVertical = true
+    );
+    // console.log(window.orientation , "si es 0 entonces False, si es 90 entonces True");
+
+  // console.log('isOrientationVertical', isOrientationVertical);
 
   useEffect(() => {
     if (!localStorage.getItem('theme')) {
@@ -30,9 +46,7 @@ function App() {
     }
   }, []);
 
-  
   const theme = localStorage.getItem('theme');
-
   const [currentTheme, setCurrentTheme] = useState(theme);
 
   const estadoUsuarioVerificado = useSelector(usuarioPermitidoState)
@@ -51,7 +65,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home data={{isMobile, isOrientationVertical}}/>} />
         <Route path='/institucional' element={<Institucional />} />
         <Route path='/beneficios/*' element={<Beneficios />}>
           <Route path='welcome' element={<SubBeneficio />} />

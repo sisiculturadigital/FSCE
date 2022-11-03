@@ -8,12 +8,8 @@ $medium: 1280px;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 165px);
     padding: 0 30px;
-    @media screen and (max-width: $small) {
-        background: url('../../imgs/View/Home/background-imagen/1125x2436.png') no-repeat center center fixed;
-        background-size: cover;
-    }
 
     h2 {
         text-transform: uppercase;
@@ -45,6 +41,116 @@ $medium: 1280px;
             text-decoration: none;
             color: #FFF;
         }
-
     }
+
+    @media only screen and (min-width: 0px) {
+        background: url('../../imgs/View/Home/background-imagen/min-width_700.png') no-repeat center center fixed;
+        background-size: cover;
+        h2 {
+            padding-top: 70px;
+            font-size: 18px;
+            max-width: 200px;
+        }
+        .mision {
+            padding-top: 10px;
+            h2 {
+                font-size: 20px;
+                padding-top: 10px;
+            }
+            p {
+                max-width: 175px;
+                font-size: 12px;
+            }
+        }
+        .button-to-contact {
+            padding: 10px 5px;
+            margin-top: 30px;
+            max-width: 140px;
+            font-size: 13px;
+            border-radius: 10px;
+        }
+    }
+    @media only screen and (min-width: 360px) {
+        background: url('../../imgs/View/Home/background-imagen/min-width_700.png') no-repeat center center fixed;
+        background-size: cover;
+    }
+    @media only screen and (min-width: 480px) {
+        background: url('../../imgs/View/Home/background-imagen/min-width_700.png') no-repeat center center fixed;
+        background-size: cover;
+        h2 {
+            font-size: 22px;
+            max-width: 280px;
+        }
+        .mision {
+            padding-top: 15px;
+            h2 {
+                font-size: 25px;
+                padding-top: 10px;
+            }
+            p {
+                max-width: 225px;
+                font-size: 15px;
+            }
+        }
+    }
+    @media only screen and (min-width: 700px) {
+        background: url('../../imgs/View/Home/background-imagen/min-width_700.png') no-repeat center center fixed;
+        background-size: cover;
+        h2 {
+            font-size: 30px;
+            max-width: 420px;
+        }
+        .mision {
+            padding-top: 50px;
+            h2 {
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-size: 25px;
+                padding-top: 10px;
+            }
+            p {
+                max-width: 325px;
+                font-size: 15px;
+            }
+        }
+    }
+    @media only screen and (min-width: 900px) {
+        background: url('../../imgs/View/Home/background-imagen/min-width_800.png') no-repeat center center fixed;
+        background-size: cover;
+        .mision {
+            padding-top: 15px;
+        }
+        .button-to-contact {
+            background-color: #F50C10;
+            text-transform: uppercase;
+            padding: 20px 10px;
+            margin-top: 40px;
+            max-width: 206px;
+            border-radius: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            .contact {
+                text-decoration: none;
+                color: #FFF;
+            }
+        }
+    }
+    @media only screen and (min-width: 1060px) {
+        background: url('../../imgs/View/Home/bg-home.png') no-repeat center center fixed;
+        background-size: cover;
+    }
+    @media only screen and (min-width: 1260px) {
+        background: url('../../imgs/View/Home/bg-home.png') no-repeat center center fixed;
+        background-size: cover;
+    }
+    @media only screen and (min-width: 1440px) {
+        background: url('../../imgs/View/Home/bg-home.png') no-repeat center center fixed;
+        background-size: cover;
+    }
+    @media only screen and (min-width: 1920px) {
+        background: url('../../imgs/View/Home/bg-home.png') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+
 }
