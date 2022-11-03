@@ -56,7 +56,7 @@ const Contacto = () => {
             </section>
             <section className='horas'>
                 <GrFormClock />
-                <h2>Lun - Vie: 8:00 am - 12:00 pm</h2>
+                <h2>Lun - Vie: <br></br>8:00 am - 12:00 pm</h2>
                 <p>
                     Sab 9:00 am - 12:00 pm
                 </p>

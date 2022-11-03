@@ -150,6 +150,15 @@
         border-radius: 10px;
         text-align: center;
     }
+
+    @media screen and (max-width: 1000px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 580px){
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
 
 
