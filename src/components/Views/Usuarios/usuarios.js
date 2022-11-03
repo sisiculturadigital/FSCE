@@ -37,7 +37,9 @@ const Usuarios = () => {
     errors,
     handleBlur,
     handleChange,
-    handleSubmit
+    handleSubmit,
+    handleClick,
+    mostrar
 } = useForm(initialForm, ValidationsForm, openModal)
   
 
@@ -55,14 +57,12 @@ const Usuarios = () => {
               <input type='text'  name='dni' autoComplete='off' onChange={handleChange} value={form.dni}  onBlur={handleBlur}/>
                     
               <label>Contraseña</label>
-              <input type='password' name='password'autoComplete='off'  onChange={handleChange}  value={form.password} onBlur={handleBlur}  />
+              <input type='password' name='password'autoComplete='off'  onChange={handleChange}  value={form.password} onBlur={handleBlur}/>
               
-              <input type='submit' value='Ingresar' onClick={handleSubmit}/>
-              {errors.dni && <p>{errors.dni}</p>  }
-              {errors.password && <p>{errors.password}</p>  }
-              {/* {errors.password === 'Contraseña no puede estar vacía' && <p>{errors.password}</p>} */}
-              {Object.keys(errors).length === 0 && <p style={{color:'green', fontWeight:'700'}}>Ingreso satisfactorio</p> }
-            
+              <input type='submit' value='Ingresar' onClick={handleSubmit}  />
+
+              { mostrar === true && <p>Contraseña inválida</p> }
+                  
             </form>
             
             <Link to='/Registrate'><button>Regístrate</button></Link>

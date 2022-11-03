@@ -1,10 +1,14 @@
 import { useState } from 'react'
 import {helpHttp} from './helpHttp.js'
-
+import { useNavigate } from 'react-router-dom'
+ 
 export const useForm = (initialForm, ValidationsForm, openModal) => {
+
+    const navigate = useNavigate()
 
     const [form, setForm] = useState(initialForm)
     const [errors, setError] = useState({ validado: false })
+    const [mostrar, setMostrar] = useState(false)
     const [response, setResponse] = useState(false)
 
 
@@ -17,22 +21,30 @@ export const useForm = (initialForm, ValidationsForm, openModal) => {
     }
     
     const handleBlur = (e) =>{ 
-        handleChange(e)
-        // setError(ValidationsForm(form))
+        setError(ValidationsForm(form))
         // console.log(form)
     }  
 
+    const handleClick = (e) =>{ 
+        // handleChange(e)
+        setError(ValidationsForm(form))
+        console.log('click')
+    }  
+
     
-    const  handleSubmit = (e) =>{ 
+    const handleSubmit = (e) =>{ 
         e.preventDefault();
         setError(ValidationsForm(form))
         console.log(errors)
+        setMostrar(true)
         
         if(Object.keys(errors).length === 0 ){
             // openModal()
             setForm(initialForm)
             setError({ validado: false })
             console.log('conforme')
+            navigate('/')
+
 
             // helpHttp()  
             // .post("https://formsubmit.co/ajax/erick.sanchezcorrea@gmail.com",{
@@ -53,6 +65,6 @@ export const useForm = (initialForm, ValidationsForm, openModal) => {
 
 
     return{
-        form, errors, handleSubmit, handleBlur, handleChange
+        form, errors, handleSubmit, handleBlur, handleChange, handleClick, mostrar
     }
 }

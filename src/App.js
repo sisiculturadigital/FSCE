@@ -20,6 +20,7 @@ import Beneficios from './components/Views/Beneficios/beneficios';
 import Descargas from './components/Views/Descargas/descargas';
 import Registrate from './components/Views/Usuarios/registrate';
 import CambiarContrasenia from './components/Views/Usuarios/CambiarContrasenia';
+import SubBeneficio from './components/Views/Beneficios/vistas/SubBeneficio.js'
 
 function App() {
 
@@ -52,7 +53,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path='/institucional' element={<Institucional />} />
-        <Route path='/beneficios' element={<Beneficios />} />
+        <Route path='/beneficios/*' element={<Beneficios />}>
+          <Route path='welcome' element={<SubBeneficio />} />
+        </Route>
         <Route path="/contacto" element={<Contacto />} />
         <Route path='/usuarios' element={<Usuarios />} />
         <Route path='/descargas' element={<Descargas />} />

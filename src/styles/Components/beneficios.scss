@@ -2,4 +2,41 @@
 
 .beneficios-wrapper {
     
+    display: flex;
+    padding: 30px;
+
+    .nav-desktop{
+        display: flex;
+        justify-content:space-between;
+        height: max-content;
+        background-color: rgb(229, 229, 236);
+        padding: 20px;
+        border-radius: 8px;
+        gap: 20px;
+        flex-direction: column;
+        
+
+        a{
+            background-color: gray;
+            padding: 0;
+            color: aliceblue;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        
+    }
+    
+    
+    
+    .container{
+        flex: 1;        
+        height: 400px;
+        background-color: deeppink;
+    }
+
+
+
+
+
 }
