@@ -16,3 +16,13 @@
     
     }
 }
+
+@media screen and (max-width: 550px){
+    .leaflet-container{
+        display: block;
+        margin: auto;
+        min-width: 92%;
+        min-height: 330px;
+    
+    }
+}
