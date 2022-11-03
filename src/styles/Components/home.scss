@@ -69,6 +69,24 @@ $medium: 1280px;
             font-size: 13px;
             border-radius: 10px;
         }
+        @media only screen and (max-height: 600px) {
+            h2 {
+                padding-top: 40px;
+                font-size: 15px;
+                max-width: 170px;
+            }
+            .mision {
+                padding-top: 4px;
+                h2 {
+                    font-size: 17px;
+                    padding-top: 10px;
+                }
+                p {
+                    max-width: 155px;
+                    font-size: 10px;
+                }
+            }
+        }
     }
     @media only screen and (min-width: 360px) {
         background: url('../../imgs/View/Home/background-imagen/min-width_700.png') no-repeat center center fixed;
@@ -90,6 +108,23 @@ $medium: 1280px;
             p {
                 max-width: 225px;
                 font-size: 15px;
+            }
+        }
+        @media only screen and (max-height: 600px) {
+            h2 {
+                padding-top: 10px;
+                font-size: 18px;
+            }
+            .mision {
+                padding-top: 8px;
+                h2 {
+                    font-size: 20px;
+                    padding-top: 10px;
+                }
+                p {
+                    max-width: 225px;
+                    font-size: 12px;
+                }
             }
         }
     }
