@@ -23,6 +23,13 @@ import CambiarContrasenia from './components/Views/Usuarios/CambiarContrasenia';
 import SubBeneficio from './components/Views/Beneficios/vistas/SubBeneficio.js'
 import SubMision from './components/Views/Institucional/vistas/SubMision.js'
 
+import SegurosDeCesacion from './components/Views/Beneficios/vistas/SegurosDeCesacion.js'
+import CartaDeclaratoria from './components/Views/Beneficios/vistas/CartaDeclaratoria.js'
+import EjemploCalculo from './components/Views/Beneficios/vistas/EjemploCalculo.js'
+import TramiteAdelanto from './components/Views/Beneficios/vistas/TramiteAdelanto.js'
+import AdelantoBeneficios from './components/Views/Beneficios/vistas/AdelantoBeneficios.js'
+import Actualizacion from './components/Views/Beneficios/vistas/Actualizacion.js'
+import EjemploActualizacion from './components/Views/Beneficios/vistas/EjemploActualizacion.js'
 
 function App() {
   let navegador = navigator.userAgent;
@@ -71,13 +78,24 @@ function App() {
         <Route path='/institucional/*' element={<Institucional />} />
         <Route path='submision' element={<SubMision />} />
         <Route path='/beneficios/*' element={<Beneficios />}>
-          <Route path='welcome' element={<SubBeneficio />} />
+          <Route path='beneficios' element={<SubBeneficio />} />
+          <Route path='SegurosDeCesacion' element={<SegurosDeCesacion />} />
+          <Route path='CartaDeclaratoria' element={<CartaDeclaratoria />} />
+          <Route path='EjemploCalculo' element={<EjemploCalculo />} />
+          <Route path='TramiteAdelanto' element={<TramiteAdelanto />} />
+          <Route path='AdelantoBeneficios' element={<AdelantoBeneficios />} />
+          <Route path='Actualizacion' element={<Actualizacion />} />
+          <Route path='EjemploActualizacion' element={<EjemploActualizacion />} />
         </Route>
         <Route path="/contacto" element={<Contacto />} />
         <Route path='/usuarios' element={<Usuarios />} />
         <Route path='/descargas' element={<Descargas />} />
         <Route path='/registrate' element={<Registrate/>} />
         <Route path='/cambiar-contrasenia' element={ <CambiarContrasenia /> } />
+
+
+
+
         {/* { estadoUsuarioVerificado === false ? null : <Route path='/registro' element={<NuevoUsuario />} />} */}
 
         <Route path='*' element={<Home /> } />
