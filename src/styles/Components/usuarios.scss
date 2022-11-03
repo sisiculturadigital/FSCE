@@ -2,6 +2,11 @@
 // @import './variables.scss';
 
 .usuarios-wrapper {
+    padding-top: 50px;
+    background: url('../../imgs/View/descargas/bg-descargas.png') no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    
     display: flex;
     width: 100%;
     height: calc( 100vh - 140px);
