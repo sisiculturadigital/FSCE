@@ -1,5 +1,7 @@
 @import "../Layout/variables.scss";
 
+
+
 .beneficios-wrapper {
     
     display: flex;
@@ -12,10 +14,10 @@
         background-color: rgb(229, 229, 236);
         padding: 20px;
         border-radius: 8px;
-        gap: 20px;
+        gap: 10px;
         flex-direction: column;
+        width: 350px;
         
-
         a{
             background-color: gray;
             padding: 0;
@@ -23,20 +25,159 @@
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 8px;
+            display: flex;
+
+        }
+
+        .list__show{
+            margin: 0;
+            transition: height .4s;
+            height: 0;
+            position: absolute;
+            overflow-y: hidden;
+
+            a{
+                padding-left: 10px 0 10px 40px;
+                color: black;
+                background-color: rgb(229, 229, 236);
+                border-radius: 0;
+
+                &:first-child{
+                    border-bottom: 1px solid black;
+                    
+                }
+
+            }
+
+        }
+        img{
+            transform: rotate(90deg);
+        }
+
+        
+        .open{
+            display: block;
+            position:static;
+            height: auto;
         }
         
     }
-    
-    
-    
+
     .container{
         flex: 1;        
-        height: 400px;
-        background-color: deeppink;
+        height: max-content;
+        background-color: transparent;
+        box-sizing: border-box;
+        padding: 20px 50px;
+
+        h3{
+            font-size: 30px;
+        }
+        h2{
+            font-size: 40px;
+            margin: 0;
+        }
+        p{
+            text-align:justify;
+        }
+        li{
+            list-style-type: none;
+        }
+  
+    }
+
+    .CartaDeclaratoria{
+        color: white;
+        span{
+            color: yellow;
+        }
+        ol{
+            li{
+                list-style-type:upper-alpha;
+            }
+        }
+        .important{
+            color: red;
+            border: 1px solid red;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            p{
+                margin: 0;
+            }
+
+
+            .fa-circle-exclamation{
+                color: crimson  ;
+            }
+
+        }
+    }
+
+    .EjemploCalculo{
+        p{
+            margin: 0;
+        }
+        .undeLine{
+            width: max-content;
+            border-bottom: 1px solid red;
+            padding-right:10px ;
+        }
+        .space-bottom{
+            margin-bottom: 20px;
+        }
     }
 
 
+    .TramiteAdelanto{
+        h3{
+            text-transform: uppercase;
+        }
+        ol > li{
+            list-style:upper-alpha;
+        }
+        ul{
+            padding-left: 20px;
 
+            li{
+                padding: 5px;
+            }
+        }
+    }
+
+    .AdelantoBeneficios{
+        .important{
+            color: red;
+            border: 1px solid red;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            p{
+                margin: 0;
+            }
+
+            .fa-circle-exclamation{
+                color: crimson  ;
+            }
+
+        }
+    }
+
+    .EjemploActualizacion{
+        table{
+            width: 350px;
+            text-align: left;
+        }
+    }
 
 
 }
+
