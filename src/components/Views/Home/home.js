@@ -24,11 +24,8 @@ const Home = (props) => {
         Departamento de Fondos de Seguro de Cesación del Ejercito
       </h2>
       <div className='mision'>
-        <h2>
-          Misión
-        </h2>
         <p>
-          Contribuir al Bienestar del Personal del Ejército, mediante el otorgamiento de los veneficios del Fondo de Seguro de Cesación, asi como la prestación de servicios financieros de calidad y en las mejores condiciones del mercado promedio.
+        Administrar el Fondo de Seguro de Cesación del Personal Civil del Ejército y el Fondo de Prestamos al Personal, asegurando el pago de los beneficios que otorga de acuerdo a la normatividad vigente
         </p>
       </div>
       <div className='button-to-contact'>

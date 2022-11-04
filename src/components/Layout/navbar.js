@@ -53,7 +53,7 @@ const Header = () => {
                     Inicio
                 </Link>
                 
-                <Link to='/institucional' className='nav'  onClick={cerrarMenu} >
+                <Link to='/institucional/mision' className='nav'  onClick={cerrarMenu} >
                     Institucional <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>
                 

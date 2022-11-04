@@ -15,14 +15,18 @@ import Footer from './components/Layout/footer';
 import Home from './components/Views/Home/home';
 import Contacto from './components/Views/Contacto/contacto'; 
 import Usuarios from './components/Views/Usuarios//usuarios';
-import Institucional from './components/Views/Institucional/institucional';
-import Beneficios from './components/Views/Beneficios/beneficios';
 import Descargas from './components/Views/Descargas/descargas';
 import Registrate from './components/Views/Usuarios/registrate';
 import CambiarContrasenia from './components/Views/Usuarios/CambiarContrasenia';
-import SubBeneficio from './components/Views/Beneficios/vistas/SubBeneficio.js'
-import SubMision from './components/Views/Institucional/vistas/SubMision.js'
 
+import Institucional from './components/Views/Institucional/institucional';
+import Mision from './components/Views/Institucional/vistas/Mision.js'
+import Organizacion from './components/Views/Institucional/vistas/Organizacion.js'
+import Noticias from './components/Views/Institucional/vistas/Noticias.js'
+
+
+import Beneficios from './components/Views/Beneficios/beneficios';
+import SubBeneficio from './components/Views/Beneficios/vistas/SubBeneficio.js'
 import SegurosDeCesacion from './components/Views/Beneficios/vistas/SegurosDeCesacion.js'
 import CartaDeclaratoria from './components/Views/Beneficios/vistas/CartaDeclaratoria.js'
 import EjemploCalculo from './components/Views/Beneficios/vistas/EjemploCalculo.js'
@@ -75,8 +79,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path='/institucional/*' element={<Institucional />} />
-        <Route path='submision' element={<SubMision />} />
+        <Route path='/institucional/*' element={<Institucional />}>
+          <Route path='mision' element={<Mision />} />
+          <Route path='organizacion' element={<Organizacion />} />
+          <Route path='noticias' element={<Noticias />} />
+        </Route>
+
         <Route path='/beneficios/*' element={<Beneficios />}>
           <Route path='beneficios' element={<SubBeneficio />} />
           <Route path='SegurosDeCesacion' element={<SegurosDeCesacion />} />
