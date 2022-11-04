@@ -61,7 +61,7 @@ const Header = () => {
                     Beneficios <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>
                 
-                <Link className='nav' onClick={cerrarMenu}>
+                <Link to='/transparencia' onClick={cerrarMenu}>
                     Transparencia <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>
                 

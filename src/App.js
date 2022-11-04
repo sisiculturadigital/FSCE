@@ -18,6 +18,7 @@ import Usuarios from './components/Views/Usuarios//usuarios';
 import Descargas from './components/Views/Descargas/descargas';
 import Registrate from './components/Views/Usuarios/registrate';
 import CambiarContrasenia from './components/Views/Usuarios/CambiarContrasenia';
+import Transparencia from './components/Views/Transparencia/transparencia';
 
 import Institucional from './components/Views/Institucional/institucional';
 import Mision from './components/Views/Institucional/vistas/Mision.js'
@@ -103,6 +104,7 @@ function App() {
           <Route path='EjemploDevolucion' element={<EjemploDevolucion />} />
           <Route path='TramiteDevolucion' element={<TramiteDevolucion />} />
         </Route>
+        <Route path="/transparencia" element={<Transparencia />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path='/usuarios' element={<Usuarios />} />
         <Route path='/descargas' element={<Descargas />} />

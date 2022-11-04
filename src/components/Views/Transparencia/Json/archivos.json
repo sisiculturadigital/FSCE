@@ -1,0 +1,19 @@
+
+[
+    {
+        "Position": 1,
+        "NombreArchivo": "D.S.041.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/D.S.041.27de6cd8a04a2ff90c8c.pdf",
+        "urlImgPreview": "/static/media/D.S.041.1a48e0dd4e15bc4df367.png"
+    },
+    {
+        "Position": 2,
+        "NombreArchivo": "D.S.048.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/D.S.048.d792a6a2c90b602586e9.pdf",
+        "urlImgPreview": "/static/media/D.S.048.8e6e1d08a87a08543471.png"
+    }
+]
