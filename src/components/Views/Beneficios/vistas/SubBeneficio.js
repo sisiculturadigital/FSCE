@@ -11,7 +11,7 @@ const beneficios = () => {
           <li>- Devolución de aportes</li>
         </ul>
 
-        <h2>BENEFICIOS QUE OTORGA EL FSCPC</h2>
+        <h2>BASE LEGAL</h2>
         <p>
         Su base legal está determinada por los Decretos Supremos N° 041 del 
         25 de junio de 1997 y el 048 del 18 de setiembre de 1998, los cuales 

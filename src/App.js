@@ -28,6 +28,10 @@ import TramiteAdelanto from './components/Views/Beneficios/vistas/TramiteAdelant
 import AdelantoBeneficios from './components/Views/Beneficios/vistas/AdelantoBeneficios.js'
 import Actualizacion from './components/Views/Beneficios/vistas/Actualizacion.js'
 import EjemploActualizacion from './components/Views/Beneficios/vistas/EjemploActualizacion.js'
+import TramiteActualizacion from './components/Views/Beneficios/vistas/TramiteActualizacion.js'
+import DevolucionAportes from './components/Views/Beneficios/vistas/DevolucionAportes.js'
+import EjemploDevolucion from './components/Views/Beneficios/vistas/EjemploDevolucion.js'
+import TramiteDevolucion from './components/Views/Beneficios/vistas/TramiteDevolucion.js'
 
 function App() {
   let navegador = navigator.userAgent;
@@ -83,6 +87,10 @@ function App() {
           <Route path='AdelantoBeneficios' element={<AdelantoBeneficios />} />
           <Route path='Actualizacion' element={<Actualizacion />} />
           <Route path='EjemploActualizacion' element={<EjemploActualizacion />} />
+          <Route path='TramiteActualizacion' element={<TramiteActualizacion />} />
+          <Route path='DevolucionAportes' element={<DevolucionAportes />} />
+          <Route path='EjemploDevolucion' element={<EjemploDevolucion />} />
+          <Route path='TramiteDevolucion' element={<TramiteDevolucion />} />
         </Route>
         <Route path="/contacto" element={<Contacto />} />
         <Route path='/usuarios' element={<Usuarios />} />

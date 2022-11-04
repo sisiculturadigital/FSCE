@@ -8,8 +8,8 @@ const EjemploActualizacion = () => {
         <table>
             <tr>
                 <th>Datos:</th>
-                <th>Anterior</th>
-                <th>Actual</th>
+                <th className='color'>Anterior </th>
+                <th className='color'>Actual </th>
             </tr>
 
             <tr>
@@ -38,7 +38,7 @@ const EjemploActualizacion = () => {
             </tr>
             <tr>
                 <td></td>
-                <td>S/ 19,500.00 x 28%= S/ 5,460.00</td>
+                <td>S/ 19,500.00 x 28%=  <span>S/ 5,460.00</span> </td>
             </tr>
             <tr>
                 <td>Damas:</td>
@@ -46,10 +46,9 @@ const EjemploActualizacion = () => {
             </tr>
             <tr>
                 <td></td>
-                <td>S/ 16,250.00 x 28%= S/ 4,550.00</td>
+                <td>S/ 16,250.00 x 28%= <span>S/ 4,550.00</span> </td>
             </tr>
             
-            {/* Nuevo */}
 
             <tr>
                 <th>Nuevo</th>
@@ -62,7 +61,7 @@ const EjemploActualizacion = () => {
             </tr>
             <tr>
                 <td></td>
-                <td>S/ 21,600.00x 28%= S/ 6,048.00</td>
+                <td>S/ 21,600.00x 28%= <span>S/ 6,048.00</span> </td>
             </tr>
 
             <tr>
@@ -71,7 +70,7 @@ const EjemploActualizacion = () => {
             </tr>
             <tr>
                 <td></td>
-                <td>S/ 18,000.00 x 28%= S/ 5,040.00</td>
+                <td>S/ 18,000.00 x 28%= <span>S/ 5,040.00</span> </td>
             </tr>
 
         </table>
@@ -81,11 +80,11 @@ const EjemploActualizacion = () => {
         <table>
             <tr>
                 <td>Varones:</td>
-                <td>S/ 720.00 x 25 = S/ 18,000.00</td>
+                <td>S/ 6,048.00 - S/ 5,460.00 = <span>S/ 588.00</span> </td>
             </tr>
             <tr>
-                <td></td>
-                <td>S/ 18,000.00 x 28%= S/ 5,040.00</td>
+                <td>Damas:</td>
+                <td>S/ 5,040.00 - S/ 4,550.00 = <span>S/ 490.00</span> </td>
             </tr>
         </table>
 
