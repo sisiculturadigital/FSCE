@@ -10,7 +10,6 @@ const Institucional = () => {
   const [background, setBackground] = useState('')
   const elementDomBg = useRef();
   var x = window.matchMedia("(max-width: 700px)")
-  console.log(x.matches)
 
   const response = () => {
     elementDomBg.current.style.background = `url(${backgroundOrganizacionResponse}) no-repeat center center fixed`;
@@ -113,7 +112,7 @@ const Institucional = () => {
       </center>
 
       <div className='container'>
-            <Outlet />
+            <Outlet/>
         </div>
     </div>
   );

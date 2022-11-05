@@ -1,8 +1,8 @@
-@import "../Layout/variables.scss";
+@import "../../Layout/variables.scss";
 
 .institucional-wrapper {
     padding: 10px 50px;
-    background: url('../../imgs/View/descargas/bg-descargas.png') no-repeat center center fixed;
+    background: url('../../../imgs/View/descargas/bg-descargas.png') no-repeat center center fixed;
     background-repeat: no-repeat;
     background-size: cover;
     height: calc( 100vh - 185px);

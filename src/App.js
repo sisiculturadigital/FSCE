@@ -41,6 +41,7 @@ import EjemploDevolucion from './components/Views/Beneficios/vistas/EjemploDevol
 import TramiteDevolucion from './components/Views/Beneficios/vistas/TramiteDevolucion.js'
 
 function App() {
+  var x = window.matchMedia("(max-width: 700px)")
   let navegador = navigator.userAgent;
   let isMobile;
   let isOrientationVertical;
@@ -85,9 +86,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path='/institucional/*' element={<Institucional />}>
-          <Route path='mision' element={<Mision />} />
-          <Route path='organizacion' element={<Organizacion />} />
-          <Route path='noticias' element={<Noticias />} />
+          <Route path='mision' element={<Mision context={x.matches}/>} />
+          <Route path='organizacion' element={<Organizacion context={x.matches}/>} />
+          <Route path='noticias' element={<Noticias context={x.matches}/>} />
         </Route>
 
         <Route path='/beneficios/*' element={<Beneficios />}>

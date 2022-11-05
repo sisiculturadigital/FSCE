@@ -37,10 +37,12 @@ body {
 @import "./Components/contacto.scss";
 @import "./Components/usuarios.scss";
 @import "./nuevo-usuario.scss";
-@import "./Components/institucional.scss";
 @import "./Components/transparencia.scss";
 @import "./Layout/modal.scss";
 @import "./Components/beneficios.scss";
 @import "./Components/descargas.scss";
 @import "./Components/registrate.scss";
 @import "./Components/modal.scss";
+
+@import "./Components/institucional/institucional.scss";
+@import "./Components/institucional/mision.scss";
