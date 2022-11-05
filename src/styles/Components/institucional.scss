@@ -2,7 +2,9 @@
 
 .institucional-wrapper {
     padding: 10px 50px;
-    
+    background: url('../../imgs/View/descargas/bg-descargas.png') no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: calc( 100vh - 185px);
         .mision {
             padding-top: 50px;
@@ -276,5 +278,51 @@
 
     @media only screen and (max-width: 520px) {
         padding: 20px;
+    }
+
+    .noticias {
+        h2 {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 30px;
+        }
+        &__flex {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            div {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                max-width: 250px;
+                color: #000000;
+                img {
+                    width: 250px;
+                    height: 160px;
+                }
+                .noticias-info {
+                    background-color: rgba(239,241,241, 0.6);
+                    padding: 20px 10px;
+                    h3 {
+                        text-align: left;
+                        margin: 0;
+                        padding: 5px auto;
+                    }
+                    p {
+                        text-align: left;
+      
+                    }
+                    .read-more {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: flex-end;
+                        p {
+                            border: 3px solid #FFFFFF;
+                            padding: 5px 10px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
