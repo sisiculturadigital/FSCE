@@ -53,8 +53,16 @@ const Header = () => {
                     Inicio
                 </Link>
                 
-                <Link to='/institucional/mision' className='nav'  onClick={cerrarMenu} >
+                <Link to='/institucional/mision' className='nav' id='nav_institucional' onClick={cerrarMenu} >
                     Institucional <img src={arrow} className='img_arrow' alt="flecha" />
+                    <div style={{height: '15px'}}></div>
+                    <div className='nav-institucional'>
+                        <div>
+                            <Link to='/institucional/mision'>Misión</Link>
+                            <Link to='/institucional/organizacion'>Organización</Link>
+                            <Link to='/institucional/noticias'>Noticias</Link>
+                        </div>
+                    </div>
                 </Link>
                 
                 <Link to='/beneficios/beneficios' className='nav' onClick={cerrarMenu}>
@@ -70,14 +78,14 @@ const Header = () => {
                 </Link>
                 
                 <Link to="/contacto" className='nav' onClick={cerrarMenu}>
-                    Contacto <img src={arrow} className='img_arrow' alt="flecha" />
+                    Contácto <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>
             </div>
                 
      
 
             <Link to='/usuarios' className='nav-usuario' onClick={cerrarMenu}>
-                Usuarios
+                Usuario
             </Link>
 
 
