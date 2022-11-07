@@ -28,7 +28,7 @@ const ValidationsForm = (form) =>{
 }
 
 
-const Usuarios = () => {
+const Usuarios = () => {    
   
   const [isOpen, openModal, closeModal] = useModal(false)
 
@@ -40,7 +40,7 @@ const Usuarios = () => {
     handleSubmit,
     handleClick,
     mostrar
-} = useForm(initialForm, ValidationsForm, openModal)
+  } = useForm(initialForm, ValidationsForm, openModal)
   
 
   return (
@@ -52,16 +52,19 @@ const Usuarios = () => {
         <h1>Ingresa</h1>
 
         <div className='form-usuario-container'>
-            <form className='form-user' >
+
+            <form className='form-user'  onSubmit={handleSubmit}>
               <label>DNI</label>
-              <input type='text'  name='dni' autoComplete='off' onChange={handleChange} value={form.dni}  onBlur={handleBlur}/>
+              <input type='text'  name='dni' autoComplete='off' onChange={handleChange} value={form.dni} 
+              onKeyUp={handleBlur} />
                     
               <label>Contraseña</label>
-              <input type='password' name='password'autoComplete='off'  onChange={handleChange}  value={form.password} onBlur={handleBlur}/>
+              <input type='password' name='password'autoComplete='off'  onChange={handleChange}  value={form.password}
+              onKeyUp={handleBlur} />
               
-              <input type='submit' value='Ingresar' onClick={handleSubmit}  />
+              <input type='submit' value='Ingresar'  />
 
-              { mostrar === true && <p>Contraseña inválida</p> }
+              {/* <p>{ errors.dni || errors.password}</p>  */}
                   
             </form>
             

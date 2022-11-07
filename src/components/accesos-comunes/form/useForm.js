@@ -35,7 +35,7 @@ export const useForm = (initialForm, ValidationsForm, openModal) => {
     const handleSubmit = (e) =>{ 
         e.preventDefault();
         setError(ValidationsForm(form))
-        console.log(errors)
+        // console.log(errors)
         setMostrar(true)
         
         if(Object.keys(errors).length === 0 ){
@@ -43,7 +43,7 @@ export const useForm = (initialForm, ValidationsForm, openModal) => {
             setForm(initialForm)
             setError({ validado: false })
             console.log('conforme')
-            navigate('/')
+            navigate('/inicio')
 
 
             // helpHttp()  

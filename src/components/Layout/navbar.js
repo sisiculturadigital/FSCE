@@ -33,7 +33,9 @@ const Header = () => {
             </Link>
 
             <span>
-                FSCE
+                <Link to='/'>
+                    FSCE
+                </Link>
             </span>
 
             <div className='triangulo'></div>
@@ -49,7 +51,7 @@ const Header = () => {
             <div className= {`header-navbar ${open ? 'open': ''}`}> 
         
                 <div className='line'></div>
-                <Link to='/' className='nav' id='nav_inicio' onClick={cerrarMenu}>
+                <Link to='/inicio' className='nav' id='nav_inicio' onClick={cerrarMenu}>
                     Inicio
                 </Link>
                 
