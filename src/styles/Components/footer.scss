@@ -28,6 +28,10 @@
         margin: 0;
         text-align: left;
         text-transform:uppercase;
+
+        @media screen and (max-width: 700px){
+            font-size: 13px;
+        }
     }
 
     .icons-container {
@@ -56,11 +60,11 @@
             }
         }
         a{
-            position: relative;
+            position: fixed;
             width: 0px;
             min-width: 0;
-            bottom: 100px;
-            right   : 50px;
+            bottom: 60px;
+            right: 150px;
             cursor: pointer;
             .wpp{
                 box-sizing: border-box;
@@ -78,7 +82,14 @@
                     padding: 11px;
                 }
             }
+
+            @media screen and (max-width: 700px){
+                right: 90px;
+                bottom: 70px;
+            }
         }
+
+       
 
     }
 

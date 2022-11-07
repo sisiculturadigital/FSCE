@@ -54,7 +54,7 @@ const Header = () => {
                 </Link>
                 
                 <Link to='/institucional/mision' className='nav' id='nav_institucional' onClick={cerrarMenu} >
-                    Institucional <img src={arrow} className='img_arrow' alt="flecha" />
+                    Institucional <img src={arrow} className='img_arrow img_arrow_institucional' alt="flecha" />
                     <div style={{height: '15px'}}></div>
                     <div className='nav-institucional'>
                         <div>

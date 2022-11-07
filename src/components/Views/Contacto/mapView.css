@@ -4,6 +4,8 @@
     margin: 40px;
     box-sizing: border-box;
     z-index: 1;
+    border-radius: 5px;
+    width: 408px;
 }
 
 
@@ -13,6 +15,7 @@
         margin: auto;
         min-width: 510px;
         min-height: 330px;
+        /* margin: 40px 20px 40px 20px; */
     
     }
 }
@@ -23,6 +26,15 @@
         margin: auto;
         min-width: 92%;
         min-height: 330px;
+    
+    }
+}
+@media screen and (max-width: 450px){
+    .leaflet-container{
+        display: block;
+        margin: auto;
+        max-width: 92%;
+        /* min-height: 330px; */
     
     }
 }

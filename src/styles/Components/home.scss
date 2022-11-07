@@ -8,7 +8,7 @@ $medium: 1280px;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: calc(100vh - 165px);
+    min-height: calc(100vh - 140px);
     padding: 0 30px;
 
     h2 {
@@ -59,7 +59,8 @@ $medium: 1280px;
             }
             p {
                 max-width: 175px;
-                font-size: 12px;
+                // font-size: 12px;
+                font-size: 14px;
             }
         }
         .button-to-contact {
@@ -111,6 +112,7 @@ $medium: 1280px;
             }
         }
         @media only screen and (max-height: 600px) {
+
             h2 {
                 padding-top: 10px;
                 font-size: 18px;
@@ -131,6 +133,8 @@ $medium: 1280px;
     @media only screen and (min-width: 700px) {
         background: url('../../imgs/View/Home/background-imagen/min-width_700.png') no-repeat center center fixed;
         background-size: cover;
+        // min-height: calc(100vh - 140px);
+
         h2 {
             font-size: 30px;
             max-width: 420px;

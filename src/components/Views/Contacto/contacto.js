@@ -6,17 +6,13 @@ import MapView from './MapView';
 const Contacto = () => {
 
 
-
-
-
   return (
     <div className='contacto-wrapper'> 
 
         <div className='sup_section'>
             
             <MapView/>
-     
-     
+
             <div className='formulario_container'>
                 <h2>Contáctanos</h2>
                 <div className='linea'> <span></span> </div>

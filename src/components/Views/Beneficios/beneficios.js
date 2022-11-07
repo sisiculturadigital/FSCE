@@ -60,7 +60,7 @@ const Beneficios = () => {
                 </div>
 
             <NavLink to='Actualizacion' style={NavLinkStyles} className='list__button--click' onClick={OpenNav2}>
-                <div>Actualización del adelanto</div> 
+                <div>Actualización del adelanto (Reintegro)</div> 
                 <img src={Arrow} alt="arrow" />
             </NavLink>
                 <div className={`list__show ${open2 && 'open'}`} >
