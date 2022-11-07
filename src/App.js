@@ -59,6 +59,8 @@ function App() {
 
   // console.log('isOrientationVertical', isOrientationVertical);
 
+  // alert(`window.innerWidth :: ${window.innerWidth} ; window.innerHeight :: ${window.innerHeight}`);
+
   useEffect(() => {
     if (!localStorage.getItem('theme')) {
       localStorage.setItem('theme', 'light');
