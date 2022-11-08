@@ -11,7 +11,8 @@ const Contacto = () => {
 
         <div className='sup_section'>
             
-            <MapView/>
+            {/* <MapView/> */}
+            <iframe src="https://www.google.com/maps/d/embed?mid=1UF4Nb_yzmq7dyuBi9Q3NUYV38e9sU9Fc&ehbc=2E312F" width="640" height="480"></iframe>
 
             <div className='formulario_container'>
                 <h2>Contáctanos</h2>
