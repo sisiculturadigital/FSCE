@@ -1,0 +1,165 @@
+
+.Inicio-wrapper{
+    padding:60px 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    color: black;
+    font-weight: bold;
+
+    .user{
+        display: flex;
+        padding-left: 50px;
+        
+        p{
+            font-size: 20px;
+
+            @media screen and (max-width: 600px){
+                font-size: 18px;
+            }
+        }
+
+        figure{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(0, 0, 0, 0.579);
+
+
+            svg{
+                font-size: 80px;
+
+                @media screen and (max-width: 600px){
+                    font-size: 60px;
+                }
+                @media screen and (max-width: 430px){
+                    font-size: 50px;
+                }
+            }
+          
+            @media screen and (max-width: 600px){
+                width: 100px;
+                height: 100px;
+            }
+            @media screen and (max-width: 430px){
+                width: 80px;
+                height: 80px;
+                margin: 16px 20px 16px 10px;
+            }
+
+        }
+
+        @media screen and (max-width: 600px){
+            padding-left: 0px;
+            // width: 200px;
+        }
+
+    }
+
+
+    .menu-container{
+        padding: 0 10px 0 10px;
+        h2{
+            background-color: #F50C10;
+            padding: 5px;
+            border-radius: 12px 12px 0 0;
+            color: white;
+            margin-bottom: 0;
+            @media screen and (max-width: 430px){
+                box-sizing: border-box;
+                width: 100%;
+                font-size: 18px;
+            }
+        }
+
+        section{
+            display: flex;
+            border: 1px solid #93A8BC;
+            justify-content: center;
+            gap:20px;
+            padding: 10px 0 20px 0;
+            
+            div{
+                background-color: #427BB2;
+                width: 150px;
+                box-sizing: border-box;
+                width: 151px;
+                // height: 130px;
+                height: max-content;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+
+                @media screen and (max-width: 600px){
+                    flex-direction: row;
+                    width: 90%;
+                    margin: auto;
+                }
+
+                figure{
+                    margin: 0;
+                    padding: 10px;
+                    text-align: center;
+                    
+                    .fasearch{
+                        color: white;
+                        font-size: 40px;
+                        @media screen and (max-width: 600px){
+                            font-size: 30px;
+                        }
+                    }
+                    
+                    @media screen and (max-width: 600px){
+                        font-size: 14px;
+                    }
+                }
+                p{
+                    text-align: center;
+                    color: white;
+                    margin: 0 20px 0 28px;
+                    text-transform: uppercase;
+                    padding-bottom: 10px;
+                    @media screen and (max-width: 600px){
+                        font-size: 14px;
+                        display: flex;
+                        align-items: center;
+                    }
+                    @media screen and (max-width: 520px){
+                        margin: 0;
+                        padding: 0;
+                    }
+                    @media screen and (max-width: 372px){
+                        font-size: 13px;
+                    }
+                }
+        
+            }
+            .green{
+                background-color: #75B567;
+            }
+
+            
+            @media screen and (max-width: 600px){
+                flex-direction: column;
+                padding-top: 20px;
+            }
+        }
+
+        @media screen and (max-width: 430px){
+            padding: 0;
+        }
+
+    }
+
+
+    @media screen and (max-width: 430px){
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+
+}

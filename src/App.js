@@ -39,6 +39,9 @@ import TramiteActualizacion from './components/Views/Beneficios/vistas/TramiteAc
 import DevolucionAportes from './components/Views/Beneficios/vistas/DevolucionAportes.js'
 import EjemploDevolucion from './components/Views/Beneficios/vistas/EjemploDevolucion.js'
 import TramiteDevolucion from './components/Views/Beneficios/vistas/TramiteDevolucion.js'
+import Inicio from './components/Views/Inicio/Inicio';
+
+
 
 function App() {
   var x = window.matchMedia("(max-width: 700px)")
@@ -108,6 +111,7 @@ function App() {
           <Route path='TramiteDevolucion' element={<TramiteDevolucion />} />
         </Route>
         <Route path="/transparencia" element={<Transparencia />} />
+        <Route path="/inicio" element={<Inicio />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path='/usuarios' element={<Usuarios />} />
         <Route path='/descargas' element={<Descargas />} />

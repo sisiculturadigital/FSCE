@@ -1,21 +1,12 @@
 const UserList = [
 {
-    name:'Erick',
-    lastName:'Sánchez',
-    email:'erick.sanchezcorrea@gmail.com',
-    password:'Fabiane3000',
-    DateOfBirth:'14-08-1994',
-    dni:'75457142',
+    name:'FSCE11',
+    lastName:'FSCE12',
+    email:'sisi@gmail.com',
+    password:'FSCE11',
+    DateOfBirth:'01-01-2022',
+    dni:'12230528',
     codAdm:'admin',
-},
-{
-    name:'Patty',
-    lastName:'Correa',
-    email:'patty.correa20@gmail.com',
-    password:'Patty20',
-    DateOfBirth:'15-01-1971',
-    dni:'10590528',
-    codAdm:'support',
 }
 
 ]

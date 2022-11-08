@@ -26,7 +26,6 @@ const CambiarContrasenia = () => {
      
         <div>
 
-
             <form className='form-user'>
 
                 <div className='name_lastName'>
