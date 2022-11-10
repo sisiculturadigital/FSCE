@@ -2,7 +2,19 @@ import React from 'react'
 import {FaUser} from 'react-icons/fa'
 import {FiSearch} from 'react-icons/fi'
 
+import { useUserContext } from '../../../context/UserProvider';
+
+
+
+
+
 const Inicio = () => {
+
+const {user, setUser, numero} = useUserContext()
+
+console.log(user)
+
+
   return (
     <div className='Inicio-wrapper'>
 
@@ -11,9 +23,9 @@ const Inicio = () => {
                 <FaUser className='fa' />
             </figure>
             <div>
-                <p>Alexandra Martinez</p>
+                <p> { user.name || 'Alexandra Martinez' } </p>
                 <p>Teniente</p>
-                <p>DNI 232453445</p>
+                <p>DNI {user.dni || '232453445'}</p>
             </div>
         </div>
 

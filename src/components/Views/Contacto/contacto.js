@@ -5,14 +5,16 @@ import MapView from './MapView';
 
 const Contacto = () => {
 
-
+//  width="640" height="480"
   return (
     <div className='contacto-wrapper'> 
 
         <div className='sup_section'>
             
             {/* <MapView/> */}
-            <iframe src="https://www.google.com/maps/d/embed?mid=1UF4Nb_yzmq7dyuBi9Q3NUYV38e9sU9Fc&ehbc=2E312F" width="640" height="480"></iframe>
+            <div className='iframe-container'>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1UF4Nb_yzmq7dyuBi9Q3NUYV38e9sU9Fc&ehbc=2E312F"></iframe>
+            </div>
 
             <div className='formulario_container'>
                 <h2>Contáctanos</h2>

@@ -1,13 +1,10 @@
 import './styles/App.scss';
 
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { usuarioPermitidoState } from "./redux/usuarios/verificacionUsuarioSlice";
 
-import WhattsApp from "./imgs/whatsapp.png"
-import { BsFillMoonStarsFill, BsFillBrightnessHighFill } from "react-icons/bs";
+// import WhattsApp from "./imgs/whatsapp.png"
+// import { BsFillMoonStarsFill, BsFillBrightnessHighFill } from "react-icons/bs";
 
 
 import Navbar from './components/Layout/navbar';
@@ -40,6 +37,8 @@ import DevolucionAportes from './components/Views/Beneficios/vistas/DevolucionAp
 import EjemploDevolucion from './components/Views/Beneficios/vistas/EjemploDevolucion.js'
 import TramiteDevolucion from './components/Views/Beneficios/vistas/TramiteDevolucion.js'
 import Inicio from './components/Views/Inicio/Inicio';
+import ApoyoEconomico from './components/Views/Beneficios/vistas/ApoyoEconomico';
+import { UserProvider } from './context/UserProvider';
 
 
 
@@ -64,70 +63,69 @@ function App() {
 
   // alert(`window.innerWidth :: ${window.innerWidth} ; window.innerHeight :: ${window.innerHeight}`);
 
-  useEffect(() => {
-    if (!localStorage.getItem('theme')) {
-      localStorage.setItem('theme', 'light');
-    }
-  }, []);
 
-  const theme = localStorage.getItem('theme');
-  const [currentTheme, setCurrentTheme] = useState(theme);
+  //*******************Theme *******************
 
-  const estadoUsuarioVerificado = useSelector(usuarioPermitidoState)
+  // useEffect(() => {
+  //   if (!localStorage.getItem('theme')) {
+  //     localStorage.setItem('theme', 'light');
+  //   }
+  // }, []);
 
-  const setTheme = () => {
-    if (currentTheme === 'light') {
-      setCurrentTheme('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      setCurrentTheme('light');
-      localStorage.setItem('theme', 'light');
-    };
-  };
+  // const theme = localStorage.getItem('theme');
+  // const [currentTheme, setCurrentTheme] = useState(theme);
+
+  // const setTheme = () => {
+  //   if (currentTheme === 'light') {
+  //     setCurrentTheme('dark');
+  //     localStorage.setItem('theme', 'dark');
+  //   } else {
+  //     setCurrentTheme('light');
+  //     localStorage.setItem('theme', 'light');
+  //   };
+  // };
 
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path='/institucional/*' element={<Institucional />}>
-          <Route path='mision' element={<Mision context={x.matches}/>} />
-          <Route path='organizacion' element={<Organizacion context={x.matches}/>} />
-          <Route path='noticias' element={<Noticias context={x.matches}/>} />
-        </Route>
 
-        <Route path='/beneficios/*' element={<Beneficios />}>
-          <Route path='beneficios' element={<SubBeneficio />} />
-          <Route path='SegurosDeCesacion' element={<SegurosDeCesacion />} />
-          <Route path='CartaDeclaratoria' element={<CartaDeclaratoria />} />
-          <Route path='EjemploCalculo' element={<EjemploCalculo />} />
-          <Route path='TramiteAdelanto' element={<TramiteAdelanto />} />
-          <Route path='AdelantoBeneficios' element={<AdelantoBeneficios />} />
-          <Route path='Actualizacion' element={<Actualizacion />} />
-          <Route path='EjemploActualizacion' element={<EjemploActualizacion />} />
-          <Route path='TramiteActualizacion' element={<TramiteActualizacion />} />
-          <Route path='DevolucionAportes' element={<DevolucionAportes />} />
-          <Route path='EjemploDevolucion' element={<EjemploDevolucion />} />
-          <Route path='TramiteDevolucion' element={<TramiteDevolucion />} />
-        </Route>
-        <Route path="/transparencia" element={<Transparencia />} />
-        <Route path="/inicio" element={<Inicio />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path='/usuarios' element={<Usuarios />} />
-        <Route path='/descargas' element={<Descargas />} />
-        <Route path='/registrate' element={<Registrate/>} />
-        <Route path='/cambiar-contrasenia' element={ <CambiarContrasenia /> } />
+    <UserProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path='/institucional/*' element={<Institucional />}>
+            <Route path='mision' element={<Mision context={x.matches}/>} />
+            <Route path='organizacion' element={<Organizacion context={x.matches}/>} />
+            <Route path='noticias' element={<Noticias context={x.matches}/>} />
+          </Route>
 
+          <Route path='/beneficios/*' element={<Beneficios />}>
+            <Route path='beneficios' element={<SubBeneficio />} />
+            <Route path='SegurosDeCesacion' element={<SegurosDeCesacion />} />
+            <Route path='CartaDeclaratoria' element={<CartaDeclaratoria />} />
+            <Route path='EjemploCalculo' element={<EjemploCalculo />} />
+            <Route path='TramiteAdelanto' element={<TramiteAdelanto />} />
+            <Route path='AdelantoBeneficios' element={<AdelantoBeneficios />} />
+            <Route path='Actualizacion' element={<Actualizacion />} />
+            <Route path='EjemploActualizacion' element={<EjemploActualizacion />} />
+            <Route path='TramiteActualizacion' element={<TramiteActualizacion />} />
+            <Route path='DevolucionAportes' element={<DevolucionAportes />} />
+            <Route path='EjemploDevolucion' element={<EjemploDevolucion />} />
+            <Route path='TramiteDevolucion' element={<TramiteDevolucion />} />
+            <Route path='ApoyoEconomico' element={<ApoyoEconomico /> } />
+          </Route>
+          <Route path="/transparencia" element={<Transparencia />} />
+          <Route path="/inicio" element={<Inicio />} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path='/usuarios' element={<Usuarios />} />
+          <Route path='/descargas' element={<Descargas />} />
+          <Route path='/registrate' element={<Registrate/>} />
+          <Route path='/cambiar-contrasenia' element={ <CambiarContrasenia /> } />
 
-
-
-        {/* { estadoUsuarioVerificado === false ? null : <Route path='/registro' element={<NuevoUsuario />} />} */}
-
-        <Route path='*' element={<Home /> } />
-      </Routes>
-      <Footer />
-
-  </Router>
+          <Route path='*' element={<Home /> } />
+        </Routes>
+        <Footer />
+      </Router>
+    </UserProvider>
 
   );
 }

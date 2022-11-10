@@ -1,47 +1,67 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import RecoverPassword from '../../accesos-comunes/modals/RecoverPassword';
 import { useModal } from '../../accesos-comunes/modals/useModal';
-import { useForm } from '../../accesos-comunes/form/useForm';
+// import { useForm } from '../../accesos-comunes/form/useForm';
 import data from './UserList';
-
-const users = []
+import { useUserContext } from '../../../context/UserProvider';
+  
 
 const initialForm = {
   dni:'',
   password:''
 }
 
-const ValidationsForm = (form) =>{
-  let errors = {}
-  let regexDni=/^[0-9]+$/
-  let user = data.filter(user=>user.dni === form.dni)
- 
-  if(!form.dni.trim())errors.dni = "DNI No puede estar vacío"
-  else if(!regexDni.test(form.dni.trim()))errors.dni = "Se acepta solo números"
-  else if(user.length === 0) errors.dni = 'usuario no registrado'
-  
-  else if(!form.password)errors.password = "Contraseña no puede estar vacía"
-  else if( user[0].password !== form.password ) errors.password = 'contraseña no coincide'
-
-  return errors
-}
-
-
 const Usuarios = () => {    
   
   const [isOpen, openModal, closeModal] = useModal(false)
-
-  const {
-    form,
-    errors,
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    handleClick,
-    mostrar
-  } = useForm(initialForm, ValidationsForm, openModal)
+  const [form, setForm] = useState(initialForm)
+  const [errors, setErrors] = useState({})
+  const [ingresoValido, setIngresoValido] = useState(false)
   
+  const navigate = useNavigate()
+  const {user, setUser, numero} = useUserContext();
+
+  // setNumero(30)
+  console.log(numero)
+
+  
+  const Validacion = () =>{
+    
+    setUser(data.filter(user=>user.dni === form.dni)[0])
+    let errors = {}
+
+    if(form.dni === '') errors.dni='Usuario no puede estar vacío'
+    else if(!user) errors.dni='Usuario no registrado'
+
+    if(form.password === undefined || form.password === '') errors.password='Contraseña vacía'
+    else if(form.password !== user.password )  errors.password ='Contraseña incorrecta'
+
+    setErrors(errors)
+
+    if(Object.keys(errors).length === 0) {
+        setIngresoValido(true)
+        setForm(initialForm)
+        setTimeout(() => {
+          navigate('/inicio')
+        }, 2000);
+    }
+  }
+
+  const HandleChange = (e) =>{
+    setForm({
+        ...form,
+        [e.target.name ]:e.target.value
+    })
+  }
+
+  const HandleSubmit = (e) =>{
+    e.preventDefault()
+    Validacion()
+    
+    console.log(user)
+
+  }
 
   return (
 
@@ -53,18 +73,18 @@ const Usuarios = () => {
 
         <div className='form-usuario-container'>
 
-            <form className='form-user'  onSubmit={handleSubmit}>
+            <form className='form-user'  onSubmit={HandleSubmit}>
               <label>DNI</label>
-              <input type='text'  name='dni' autoComplete='off' onChange={handleChange} value={form.dni} 
-              onKeyUp={handleBlur} />
+              <input type='text'  name='dni' autoComplete='off' onChange={HandleChange} value={form.dni} 
+              />
                     
               <label>Contraseña</label>
-              <input type='password' name='password'autoComplete='off'  onChange={handleChange}  value={form.password}
-              onKeyUp={handleBlur} />
+              <input type='password' name='password'autoComplete='off'  onChange={HandleChange}  value={form.password}
+               />
               
               <input type='submit' value='Ingresar'  />
 
-              {/* <p>{ errors.dni || errors.password}</p>  */}
+              {ingresoValido ? <h2 style={{color:'green'}}>Bienvenido</h2>: <p>{ errors.dni || errors.password}</p> }
                   
             </form>
             

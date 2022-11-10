@@ -36,7 +36,7 @@
         background-color: rgb(229, 229, 236);
         padding: 20px;
         border-radius: 8px;
-        gap: 10px;
+        gap: 0px;
         flex-direction: column;
 
         box-sizing: border-box;
@@ -44,6 +44,7 @@
         width: 350px;
         // width: 500px;
         align-self:flex-start;
+
 
 
 
@@ -55,15 +56,15 @@
 
         a{
             background-color: gray;
-            padding: 0;
             color: aliceblue;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 5px 20px;
             border-radius: 8px;
             display: flex;
             justify-content: space-between;
 
             font-size: 20px;
+            margin: 5px;
 
             @media screen and (max-width: 450px){
                 font-size: 18px;
@@ -74,11 +75,10 @@
 
         .list__show{
             margin: 0;
-            transition: height 2s;
-            height: 0;
-            position: absolute;
             overflow-y: hidden;
             padding-left: 30px;
+            transition: height .4s;
+            height: 0px;
 
             @media screen and (max-width: 450px){
                 padding-left: 10px;
@@ -108,14 +108,7 @@
         img{
             transform: rotate(90deg);
         }
-
-        
-        .open{
-            display: block;
-            position:static;
-            height: auto;
-        }
-        
+       
     }
 
     .container{
@@ -345,6 +338,119 @@
         ol > li{
             list-style:upper-alpha;
         }
+    }
+
+    .ApoyoEconomico{
+ 
+        .requisitos{
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+            margin-bottom:20px ;
+            max-width: max-content;
+
+            p{
+                cursor: pointer;
+                margin: 10px 0 10px 0;
+            }
+            .list__show{
+                margin: 0;
+                padding: 0 0 0 30px;
+                overflow-y: hidden;
+                transition: height .4s;
+                height: 0px;
+            }
+            h2{
+                text-transform: uppercase;
+            }
+            ul > li{
+                list-style-type: disc;
+            }
+            svg{
+                font-size: 16px;
+                display: inline-flex;
+                align-items: center;
+                line-height: 22px;
+                background-color: rgb(255, 0, 0);
+                margin-right: 5px;
+            }
+  
+        }
+
+        .simulador{
+            background-color: #fff;
+            box-sizing: border-box;
+            width: 350px;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: left;
+            
+            label{
+                display: inline-block;
+                width: 120px;
+            }
+            h4{
+                text-align: center;
+                margin: 0;
+            }
+
+            p{
+                margin: 0;
+            }
+
+            input[type='text']{
+                box-sizing: border-box;
+                display: inline-block;
+                width: 150px;
+                outline: none;
+                border: black 1px solid ;
+                border-radius: 8px;
+                margin-left: 10px;
+                padding: 5px;
+                padding-left: 20px;
+
+                &:focus{
+                    border: 1px solid red;
+                }
+                @media screen and (max-width: 450px){
+                    padding: 5px 10px;
+                    margin-left: 0px;
+                }
+            }
+            
+            input[type='button']{
+                box-sizing: border-box;
+                background-color: red;
+                border-radius: 8px;
+                padding: 10px 20px;
+                font-size: 20px;
+                color: white;
+                display: inline-block; 
+                width: max-content;
+                margin: auto;
+                cursor: pointer;
+                @media screen and (max-width: 450px){
+                    padding: 5px 10px;
+                    font-size: 16px;
+                }
+            }
+            span{
+                color: red;
+            }
+
+
+            @media screen and (max-width: 450px){
+                margin: auto;
+                width: 300px;
+                padding: 10px;
+            }
+
+        }
+
     }
 
     /* scroll to top button */
