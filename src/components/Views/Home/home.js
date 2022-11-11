@@ -8,8 +8,8 @@ import Mision from "./home-components/mision";
 //img
 
 const Home = (props) => {
-  console.log("window.height", window.innerHeight)
-  console.log("window.width", window.innerWidth)
+  // console.log("window.height", window.innerHeight)
+  // console.log("window.width", window.innerWidth)
 
   // let {isMobile, isOrientationVertical} = props.data
   // console.log(props.data);

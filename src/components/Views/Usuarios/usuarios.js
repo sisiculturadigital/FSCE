@@ -69,7 +69,7 @@ const Usuarios = () => {
         <div className='form-usuario-container'>
 
             <form className='form-user'  onSubmit={HandleSubmit}>
-              <label>DNI</label>
+              <label>Correo</label>
               <input type='text'  name='dni' autoComplete='off' onChange={HandleChange} value={form.dni} onBlur={HandleChange}
               />
                     

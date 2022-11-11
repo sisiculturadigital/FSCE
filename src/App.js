@@ -6,6 +6,46 @@ import Router from './Router/Router';
 
 
 function App() {
+  // var urlApi ="https://backend-app-v1.herokuapp.com"
+  // fetch('https://backend-app-v1.herokuapp.com/publico/noticias')
+  // .then((response) => response.json())
+  // .then((data) => console.log(data));
+
+  // datos mandados con la solicutud POST
+
+let registro = {
+  dni: "80467508",
+  fechaNac: "19/10/1979",
+  codAdm: "583704900",
+  email: "randy.vdiaz@gmail.com",
+  password: "randy",
+  nombres: "Joseph Randy",
+  apellidos: "Vega Diaz",
+  codRole: "2"
+}
+let authenticate = {
+  email: "randy.vdiaz@gmail.com",
+  pwd: "randy" //se cambió porque en el JSON Postman tenía otra password
+}
+fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {  
+  method: 'POST', body: JSON.stringify(authenticate), 
+  headers: { "Content-type": "application/json", "Access-Control-Allow-Origin": "*" } 
+})
+.then(res => res.json())
+.then(data => console.log(data))
+
+
+// fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {
+//   method: 'POST',
+//   body: JSON.stringify(datos),
+//   headers: {
+//     "Content-type": "application/json",
+//     "Access-Control-Allow-Origin": "*"
+//   }
+// })
+// .then(res => res.json())
+// .then(data => console.log(data))
+
   var x = window.matchMedia("(max-width: 700px)")
   let navegador = navigator.userAgent;
   let isMobile;
