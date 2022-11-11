@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import RecoverPassword from '../../accesos-comunes/modals/RecoverPassword';
 import { useModal } from '../../accesos-comunes/modals/useModal';
-// import { useForm } from '../../accesos-comunes/form/useForm';
 import data from './UserList';
 import { useUserContext } from '../../../context/UserProvider';
   
@@ -19,16 +18,13 @@ const Usuarios = () => {
   const [errors, setErrors] = useState({})
   const [ingresoValido, setIngresoValido] = useState(false)
   
+
   const navigate = useNavigate()
-  const {user, setUser, numero} = useUserContext();
+  const {user, setUser} = useUserContext();
 
-  // setNumero(30)
-  console.log(numero)
 
-  
   const Validacion = () =>{
-    
-    setUser(data.filter(user=>user.dni === form.dni)[0])
+
     let errors = {}
 
     if(form.dni === '') errors.dni='Usuario no puede estar vacío'
@@ -48,19 +44,20 @@ const Usuarios = () => {
     }
   }
 
+
   const HandleChange = (e) =>{
     setForm({
         ...form,
         [e.target.name ]:e.target.value
     })
+    setUser(data.filter(user=>user.dni === form.dni)[0])
   }
+
 
   const HandleSubmit = (e) =>{
     e.preventDefault()
     Validacion()
-    
     console.log(user)
-
   }
 
   return (
@@ -75,16 +72,16 @@ const Usuarios = () => {
 
             <form className='form-user'  onSubmit={HandleSubmit}>
               <label>DNI</label>
-              <input type='text'  name='dni' autoComplete='off' onChange={HandleChange} value={form.dni} 
+              <input type='text'  name='dni' autoComplete='off' onChange={HandleChange} value={form.dni} onBlur={HandleChange}
               />
                     
               <label>Contraseña</label>
-              <input type='password' name='password'autoComplete='off'  onChange={HandleChange}  value={form.password}
+              <input type='password' name='password'autoComplete='off'  onChange={HandleChange}  value={form.password} onBlur={HandleChange}
                />
               
               <input type='submit' value='Ingresar'  />
 
-              {ingresoValido ? <h2 style={{color:'green'}}>Bienvenido</h2>: <p>{ errors.dni || errors.password}</p> }
+              {ingresoValido ? <h2 style={{color:'green'}}>Bienvenido</h2>: <p>{ errors.dni ?? errors.password}</p> }
                   
             </form>
             

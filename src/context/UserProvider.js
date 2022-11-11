@@ -10,10 +10,13 @@ export function useUserContext() {
 
 export function UserProvider(props) {
 
-    const [user, setUser] = useState(18);
-    let numero = 18
+    const [user, setUser] = useState(null);
 
-    const valor={user, setUser, numero}
+    const logOut =()=>{
+        setUser(null)
+    }
+    
+    const valor={user, setUser, logOut}
 
     return (
         <userContext.Provider value={valor}>
