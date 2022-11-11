@@ -3,11 +3,15 @@ import { useState, useEffect } from 'react';
 import escudo from "../../imgs/Layout/NavBar/escudo.png"
 import { Link } from 'react-router-dom';
 import arrow from "../../imgs/Layout/NavBar/arrow.svg"
+import { useUserContext } from '../../context/UserProvider';
 
 const Header = () => {
 
+    const {user, setUser}=useUserContext()
+
     const [open, setOpen] = useState(false)
 
+    const numero = 18
 
     function openMenu(){
         setOpen(!open)
@@ -21,7 +25,7 @@ const Header = () => {
 
     open ? document.body.classList.add('hide') : document.body.classList.remove('hide')
 
-
+    console.log(user)
   return (
     <div className='header'>
         <div className='header-wrapper'>
@@ -47,7 +51,7 @@ const Header = () => {
                 </button>
             </div>
       
-
+                
             <div className= {`header-navbar ${open ? 'open': ''}`}> 
         
                 <div className='line'></div>
@@ -83,9 +87,8 @@ const Header = () => {
                     Contácto <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>
             </div>
-                
-     
 
+        
             <Link to='/usuarios' className='nav-usuario' onClick={cerrarMenu}>
                 Usuario
             </Link>

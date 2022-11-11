@@ -40,15 +40,15 @@ import { useUserContext } from '../context/UserProvider';
 
 const Router = ({x}) => {
     
-    const {user, setUser}=useUserContext()
+    const {user, setUser, isAuth}=useUserContext()
 
   return (
     <BrowserRouter>
         <Navbar />
         <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path='/registrate' element={<Registrate/>} />
-            <Route path='/usuarios' element={<Usuarios />} />
+            <Route path='/registrate' element={!isAuth ? <Registrate/>: <Inicio />} />
+            <Route path='/usuarios' element={!isAuth ? <Usuarios/> : <Inicio />} />
             <Route path='/cambiar-contrasenia' element={ <CambiarContrasenia /> } />
 
             <Route element={<ProtectedRoute isAllowed={!!user} />}>

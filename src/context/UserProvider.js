@@ -11,12 +11,14 @@ export function useUserContext() {
 export function UserProvider(props) {
 
     const [user, setUser] = useState(null);
+    const [isAuth, setIsAuth] = useState(false);
 
     const logOut =()=>{
         setUser(null)
+        setIsAuth(false)
     }
     
-    const valor={user, setUser, logOut}
+    const valor={user, setUser, logOut, isAuth, setIsAuth}
 
     return (
         <userContext.Provider value={valor}>

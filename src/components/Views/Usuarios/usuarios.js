@@ -16,11 +16,9 @@ const Usuarios = () => {
   const [isOpen, openModal, closeModal] = useModal(false)
   const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState({})
-  const [ingresoValido, setIngresoValido] = useState(false)
-  
 
   const navigate = useNavigate()
-  const {user, setUser} = useUserContext();
+  const {user, setUser, isAuth, setIsAuth} = useUserContext();
 
 
   const Validacion = () =>{
@@ -36,7 +34,7 @@ const Usuarios = () => {
     setErrors(errors)
 
     if(Object.keys(errors).length === 0) {
-        setIngresoValido(true)
+        setIsAuth(true)
         setForm(initialForm)
         setTimeout(() => {
           navigate('/inicio')
@@ -81,7 +79,7 @@ const Usuarios = () => {
               
               <input type='submit' value='Ingresar'  />
 
-              {ingresoValido ? <h2 style={{color:'green'}}>Bienvenido</h2>: <p>{ errors.dni ?? errors.password}</p> }
+              {isAuth ? <h2 style={{color:'green'}}>Bienvenido</h2>: <p>{ errors.dni ?? errors.password}</p> }
                   
             </form>
             
