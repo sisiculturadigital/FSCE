@@ -1,7 +1,7 @@
 import './styles/App.scss';
 import { UserProvider } from './context/UserProvider';
 import Router from './Router/Router';
-import { useFetch } from './components/helper/useFetch';
+import { usePostLogin } from './components/API/POST-Login';
 
 // import { BsFillMoonStarsFill, BsFillBrightnessHighFill } from "react-icons/bs";
 
@@ -15,7 +15,7 @@ function App() {
   // datos mandados con la solicutud POST
 
 
-  const { data, error } = useFetch()
+  const { data, error } = usePostLogin()
   
   console.log(data || error &&  `${error.status}- ${error.statusText}` )
 
@@ -33,10 +33,18 @@ let registro = {
 
 
 
+// const datos = {
+//   email : "randy.vdiaz@gmail.com",
+//   pwd : "randy"
+// }
 
-// fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {  
-//   method: 'POST', body: JSON.stringify(authenticate), 
-//   headers: { "Content-type": "application/json", "Access-Control-Allow-Origin": "*" } 
+// fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {
+//   method: 'POST',
+//   body: JSON.stringify(datos),
+//   headers: {
+//     "Content-type": "application/json",
+//     "Access-Control-Allow-Origin": "*"
+//   }
 // })
 // .then(res => res.json())
 // .then(data => console.log(data))

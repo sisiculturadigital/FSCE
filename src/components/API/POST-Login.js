@@ -1,16 +1,19 @@
+/* eslint-disable no-throw-literal */
 import { useState, useEffect } from "react";
+import { urlFSCE } from "./url-API";
+
 
 let authenticate = {
     email: "randy.vdiaz@gmail.com",
     pwd: "randy" //se cambió porque en el JSON Postman tenía otra password
 }
 
-export const useFetch = () =>{
+export const usePostLogin = ( email , pdw ) =>{
     const [data, setdata]=useState(null)
     const [isPending, setIsPending]=useState(true)
     const [error, setError]=useState(null)
 
-    let url = 'https://backend-app-v1.herokuapp.com/publico/u/authenticate'
+    let url = `${urlFSCE}/publico/u/authenticate`
 
     useEffect(()=>{
         
@@ -18,7 +21,12 @@ export const useFetch = () =>{
 
             try{
                 let res = await fetch( url, {  
-                    method: 'POST', body: JSON.stringify(authenticate), 
+                    method: 'POST', body: JSON.stringify(
+                        {
+                            email,
+                            pdw
+                        }
+                    ), 
                     headers: { "Content-type": "application/json", "Access-Control-Allow-Origin": "*" } 
                     })
                 if(!res.ok){
