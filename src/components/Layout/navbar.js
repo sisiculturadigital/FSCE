@@ -7,7 +7,7 @@ import { useUserContext } from '../../context/UserProvider';
 
 const Header = () => {
 
-    const {user, setUser}=useUserContext()
+    const {user, setUser, isAuth}=useUserContext()
 
     const [open, setOpen] = useState(false)
 
@@ -75,13 +75,13 @@ const Header = () => {
                     Beneficios <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>
                 
-                {  user && 
+                {  isAuth && 
                 <Link to='/transparencia' onClick={cerrarMenu}>
                     Transparencia <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>
                 } 
 
-               { user && 
+               { isAuth && 
                 <Link to='/descargas' className='nav'onClick={cerrarMenu}>
                     Descargas <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>}
