@@ -60,20 +60,21 @@ const Router = ({x}) => {
                 </Route>
 
                 <Route path='/beneficios/*' element={<Beneficios />}>
-                <Route path='beneficios' element={<SubBeneficio />} />
-                <Route path='SegurosDeCesacion' element={<SegurosDeCesacion />} />
-                <Route path='CartaDeclaratoria' element={<CartaDeclaratoria />} />
-                <Route path='EjemploCalculo' element={<EjemploCalculo />} />
-                <Route path='TramiteAdelanto' element={<TramiteAdelanto />} />
-                <Route path='AdelantoBeneficios' element={<AdelantoBeneficios />} />
-                <Route path='Actualizacion' element={<Actualizacion />} />
-                <Route path='EjemploActualizacion' element={<EjemploActualizacion />} />
-                <Route path='TramiteActualizacion' element={<TramiteActualizacion />} />
-                <Route path='DevolucionAportes' element={<DevolucionAportes />} />
-                <Route path='EjemploDevolucion' element={<EjemploDevolucion />} />
-                <Route path='TramiteDevolucion' element={<TramiteDevolucion />} />
-                <Route path='ApoyoEconomico' element={<ApoyoEconomico /> } />
+                    <Route path='beneficios' element={<SubBeneficio />} />
+                    <Route path='SegurosDeCesacion' element={<SegurosDeCesacion />} />
+                    <Route path='CartaDeclaratoria' element={<CartaDeclaratoria />} />
+                    <Route path='EjemploCalculo' element={<EjemploCalculo />} />
+                    <Route path='TramiteAdelanto' element={<TramiteAdelanto />} />
+                    <Route path='AdelantoBeneficios' element={<AdelantoBeneficios />} />
+                    <Route path='Actualizacion' element={<Actualizacion />} />
+                    <Route path='EjemploActualizacion' element={<EjemploActualizacion />} />
+                    <Route path='TramiteActualizacion' element={<TramiteActualizacion />} />
+                    <Route path='DevolucionAportes' element={<DevolucionAportes />} />
+                    <Route path='EjemploDevolucion' element={<EjemploDevolucion />} />
+                    <Route path='TramiteDevolucion' element={<TramiteDevolucion />} />
+                    <Route path='ApoyoEconomico' element={<ApoyoEconomico /> } />
                 </Route>
+                
                 <Route path="/transparencia" element={<Transparencia />} />
                 <Route path="/inicio" element={<Inicio />} />
                 <Route path="/contacto" element={<Contacto />} />

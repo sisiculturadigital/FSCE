@@ -25,7 +25,7 @@ const Header = () => {
 
     open ? document.body.classList.add('hide') : document.body.classList.remove('hide')
 
-    console.log(user)
+    // console.log(user)
   return (
     <div className='header'>
         <div className='header-wrapper'>
@@ -75,14 +75,18 @@ const Header = () => {
                     Beneficios <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>
                 
+                {  user && 
                 <Link to='/transparencia' onClick={cerrarMenu}>
                     Transparencia <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>
-                
+                } 
+
+               { user && 
                 <Link to='/descargas' className='nav'onClick={cerrarMenu}>
                     Descargas <img src={arrow} className='img_arrow' alt="flecha" />
-                </Link>
+                </Link>}
                 
+              
                 <Link to="/contacto" className='nav' onClick={cerrarMenu}>
                     Contácto <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>

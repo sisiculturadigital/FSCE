@@ -36,9 +36,9 @@ const Usuarios = () => {
     if(Object.keys(errors).length === 0) {
         setIsAuth(true)
         setForm(initialForm)
-        setTimeout(() => {
-          navigate('/inicio')
-        }, 2000);
+        // setTimeout(() => {
+        //   navigate('/inicio')
+        // }, 2000);
     }
   }
 

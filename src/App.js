@@ -1,6 +1,7 @@
 import './styles/App.scss';
 import { UserProvider } from './context/UserProvider';
 import Router from './Router/Router';
+import { useFetch } from './components/helper/useFetch';
 
 // import { BsFillMoonStarsFill, BsFillBrightnessHighFill } from "react-icons/bs";
 
@@ -13,6 +14,12 @@ function App() {
 
   // datos mandados con la solicutud POST
 
+
+  const { data, error } = useFetch()
+  
+  console.log(data || error &&  `${error.status}- ${error.statusText}` )
+
+
 let registro = {
   dni: "80467508",
   fechaNac: "19/10/1979",
@@ -23,16 +30,18 @@ let registro = {
   apellidos: "Vega Diaz",
   codRole: "2"
 }
-let authenticate = {
-  email: "randy.vdiaz@gmail.com",
-  pwd: "randy" //se cambió porque en el JSON Postman tenía otra password
-}
-fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {  
-  method: 'POST', body: JSON.stringify(authenticate), 
-  headers: { "Content-type": "application/json", "Access-Control-Allow-Origin": "*" } 
-})
-.then(res => res.json())
-.then(data => console.log(data))
+
+
+
+
+// fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {  
+//   method: 'POST', body: JSON.stringify(authenticate), 
+//   headers: { "Content-type": "application/json", "Access-Control-Allow-Origin": "*" } 
+// })
+// .then(res => res.json())
+// .then(data => console.log(data))
+
+
 
 
 // fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {
@@ -65,7 +74,6 @@ fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {
   // console.log('isOrientationVertical', isOrientationVertical);
 
   // alert(`window.innerWidth :: ${window.innerWidth} ; window.innerHeight :: ${window.innerHeight}`);
-
 
   //*******************Theme *******************
 
