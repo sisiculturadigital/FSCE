@@ -1,7 +1,7 @@
 import './styles/App.scss';
 import { UserProvider } from './context/UserProvider';
 import Router from './Router/Router';
-import { usePostLogin } from './components/API/POST-Login';
+// import { usePostLogin } from './components/API/POST-Login';
 
 // import { BsFillMoonStarsFill, BsFillBrightnessHighFill } from "react-icons/bs";
 
@@ -15,9 +15,9 @@ function App() {
   // datos mandados con la solicutud POST
 
 
-  const { data, error } = usePostLogin()
+  // const { data, error } = usePostLogin()
   
-  console.log(data || error &&  `${error.status}- ${error.statusText}` )
+  // console.log(data || error &&  `${error.status}- ${error.statusText}` )
 
 
 let registro = {

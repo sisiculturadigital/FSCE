@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import RecoverPassword from '../../accesos-comunes/modals/RecoverPassword';
 import { useModal } from '../../accesos-comunes/modals/useModal';
-import data from './UserList';
 import { useUserContext } from '../../../context/UserProvider';
+import { usePostLogin } from '../../API/POST-Login';
   
 
 const initialForm = {
@@ -16,9 +16,31 @@ const Usuarios = () => {
   const [isOpen, openModal, closeModal] = useModal(false)
   const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState({})
+  const [data, setData] = useState(null)
 
   const navigate = useNavigate()
   const {user, setUser, isAuth, setIsAuth} = useUserContext();
+
+
+  function MostraApi(email, pwd){
+    
+    const gaa = fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {
+      method: 'POST',
+      body: JSON.stringify({
+        email : email,
+        pwd : pwd
+      }),
+      headers: {
+        "Content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    })
+    .then(res => res.json())
+    .then(data => setData(data))
+
+    // console.log(data)
+
+  }
 
 
   const Validacion = () =>{
@@ -36,9 +58,6 @@ const Usuarios = () => {
     if(Object.keys(errors).length === 0) {
         setIsAuth(true)
         setForm(initialForm)
-        // setTimeout(() => {
-        //   navigate('/inicio')
-        // }, 2000);
     }
   }
 
@@ -48,16 +67,27 @@ const Usuarios = () => {
         ...form,
         [e.target.name ]:e.target.value
     })
-    setUser(data.filter(user=>user.dni === form.dni)[0])
+
+    // setUser(data.filter(user=>user.dni === form.dni)[0])
   }
 
 
   const HandleSubmit = (e) =>{
     e.preventDefault()
-    Validacion()
-    console.log(user)
-  }
+    // Validacion()
+    // console.log(user)
+    // getData(form.dni, form.password)
+    // console.log(data || error)
 
+    MostraApi(form.dni, form.password)
+    // MostraApi("randy.vdiaz@gmail.com","randy")
+
+    console.log(data)
+    console.log(data.message)
+
+  }
+  //   email : "randy.vdiaz@gmail.com",
+  //   pwd : "randy"
   return (
 
     <div className='usuarios-wrapper'>

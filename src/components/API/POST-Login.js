@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { urlFSCE } from "./url-API";
 
 
-let authenticate = {
-    email: "randy.vdiaz@gmail.com",
-    pwd: "randy" //se cambió porque en el JSON Postman tenía otra password
-}
+// let authenticate = {
+//     email: "randy.vdiaz@gmail.com",
+//     pwd: "randy" //se cambió porque en el JSON Postman tenía otra password
+// }
 
-export const usePostLogin = ( email , pdw ) =>{
+export const usePostLogin = async (mail, password ) =>{
     const [data, setdata]=useState(null)
     const [isPending, setIsPending]=useState(true)
     const [error, setError]=useState(null)
@@ -17,14 +17,14 @@ export const usePostLogin = ( email , pdw ) =>{
 
     useEffect(()=>{
         
-        const getData = async () =>{
+        const getData = async ( ) =>{
 
             try{
                 let res = await fetch( url, {  
                     method: 'POST', body: JSON.stringify(
                         {
-                            email,
-                            pdw
+                            email: 'randy.vdiaz@gmail.com',
+                            pdw: "randy"
                         }
                     ), 
                     headers: { "Content-type": "application/json", "Access-Control-Allow-Origin": "*" } 
@@ -50,6 +50,6 @@ export const usePostLogin = ( email , pdw ) =>{
             
         }
         getData()
-    },[])
+    },[url])
     return {data,isPending,error} 
 }

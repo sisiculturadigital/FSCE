@@ -9,7 +9,7 @@ export function useUserContext() {
 
 
 export function UserProvider(props) {
-console.log(props)
+    
     const [user, setUser] = useState(null);
     const [isAuth, setIsAuth] = useState(false);
 
