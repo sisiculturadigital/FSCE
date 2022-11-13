@@ -17,9 +17,11 @@ const {user, setUser, logOut} = useUserContext()
                 <FaUser className='fa' />
             </figure>
             <div>
-                <p> { user.name ?? 'Alexandra Martinez' } </p>
+                {/* <p> { user.name ?? 'Alexandra Martinez' } </p> */}
+                <p> Alexandra Martinez </p>
                 <p>Teniente</p>
-                <p>DNI {user.dni ?? '232453445'}</p>
+                {/* <p>DNI {user.dni ?? '232453445'}</p> */}
+                <p>DNI 232453445</p>
             </div>
             <input type='button' onClick={logOut} value='Salir' />
         </div>

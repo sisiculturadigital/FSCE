@@ -1,4 +1,4 @@
-import { urlFSCE } from "../url";
+import { urlFSCE } from "./url-API";
 
 export const postLogin = async (email, pwd) => {
     const response = fetch(`${urlFSCE}/publico/u/authenticate`, {  

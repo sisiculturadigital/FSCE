@@ -3,8 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import RecoverPassword from '../../accesos-comunes/modals/RecoverPassword';
 import { useModal } from '../../accesos-comunes/modals/useModal';
 import { useUserContext } from '../../../context/UserProvider';
-import { usePostLogin } from '../../API/POST-Login';
-  
+import { postLogin } from '../../../components/API/POST-Login2';
+import decode from "jwt-decode";
 
 const initialForm = {
   dni:'',
@@ -22,72 +22,58 @@ const Usuarios = () => {
   const {user, setUser, isAuth, setIsAuth} = useUserContext();
 
 
-  function MostraApi(email, pwd){
-    
-    const gaa = fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {
-      method: 'POST',
-      body: JSON.stringify({
-        email : email,
-        pwd : pwd
-      }),
-      headers: {
-        "Content-type": "application/json",
-        "Access-Control-Allow-Origin": "*"
-      }
-    })
-    .then(res => res.json())
-    .then(data => setData(data))
-
-    // console.log(data)
-
-  }
-
-
   const Validacion = () =>{
 
     let errors = {}
 
     if(form.dni === '') errors.dni='Usuario no puede estar vacío'
-    else if(!user) errors.dni='Usuario no registrado'
+    // else if(data.code !== '200') errors.dni = 'Usuario no puede estar vacíodsfsdfsf'
 
     if(form.password === undefined || form.password === '') errors.password='Contraseña vacía'
-    else if(form.password !== user.password )  errors.password ='Contraseña incorrecta'
+    // else if(form.password !== user.password )  errors.password ='Contraseña incorrecta'
+
+    if(form.dni === '' && (form.password === undefined || form.password === '')) errors.dni='Los campos no pueden estar vacíos'
 
     setErrors(errors)
 
-    if(Object.keys(errors).length === 0) {
-        setIsAuth(true)
-        setForm(initialForm)
-    }
-  }
+    // if(Object.keys(errors).length === 0) {
+    //     setIsAuth(true)
+    //     setForm(initialForm)
+    // }
 
+    postLogin(form.dni, form.password)
+    .then(res => res.json())
+    .then(res => {
+      if(res.token) {
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('key', form.dni);
+  
+        const decoded = decode(res.token);
+  
+        if (decoded) {
+          console.log(decoded)
+            setIsAuth(true)
+            setForm(initialForm)
+          
+        }
+      }
+
+
+    })
+  }
 
   const HandleChange = (e) =>{
     setForm({
         ...form,
         [e.target.name ]:e.target.value
     })
-
-    // setUser(data.filter(user=>user.dni === form.dni)[0])
   }
 
 
   const HandleSubmit = (e) =>{
     e.preventDefault()
-    // Validacion()
-    // console.log(user)
-    // getData(form.dni, form.password)
-    // console.log(data || error)
-
-    MostraApi(form.dni, form.password)
-    // MostraApi("randy.vdiaz@gmail.com","randy")
-
-    console.log(data)
-    console.log(data.message)
-
+    Validacion()
   }
-  //   email : "randy.vdiaz@gmail.com",
-  //   pwd : "randy"
   return (
 
     <div className='usuarios-wrapper'>
@@ -109,7 +95,7 @@ const Usuarios = () => {
               
               <input type='submit' value='Ingresar'  />
 
-              {isAuth ? <h2 style={{color:'green'}}>Bienvenido</h2>: <p>{ errors.dni ?? errors.password}</p> }
+              {isAuth ? <h2 style={{color:'green'}}>Bienvenido</h2>: <p>{ errors.dni ?? errors.password }</p> }
                   
             </form>
             
