@@ -54,7 +54,7 @@ const ApoyoEconomico = () => {
 
       <div className='sup'>
         <h2>Apoyo Económico al personal del Ejercito</h2>  
-
+        <h3>Requisitos</h3>
         <div className='requisitos'>
           <p onClick={()=>{DesplegarMenu(nav1)}} ref={nav1}> <FaAngleDown /> Personal Militar - Actividad</p>
           <ul className='list__show'>

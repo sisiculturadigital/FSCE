@@ -24,18 +24,6 @@ const Usuarios = () => {
 
   const Validacion = () =>{
 
-    let errors = {}
-
-    if(form.dni === '') errors.dni='Usuario no puede estar vacío'
-    // else if(data.code !== '200') errors.dni = 'Usuario no puede estar vacíodsfsdfsf'
-
-    if(form.password === undefined || form.password === '') errors.password='Contraseña vacía'
-    // else if(form.password !== user.password )  errors.password ='Contraseña incorrecta'
-
-    if(form.dni === '' && (form.password === undefined || form.password === '')) errors.dni='Los campos no pueden estar vacíos'
-
-    setErrors(errors)
-
     // if(Object.keys(errors).length === 0) {
     //     setIsAuth(true)
     //     setForm(initialForm)
@@ -49,17 +37,32 @@ const Usuarios = () => {
         localStorage.setItem('key', form.dni);
   
         const decoded = decode(res.token);
-  
+
         if (decoded) {
           console.log(decoded)
-            setIsAuth(true)
-            setForm(initialForm)
-          
+          setUser(decode(res.token))
+          setIsAuth(true)
+          setForm(initialForm)   
         }
+      }else{
+        console.log(res)
+        console.log(res.code)
       }
-
-
     })
+
+    let errors = {}
+
+    if(form.dni === '') errors.dni='Usuario no puede estar vacío'
+
+    if(form.password === undefined || form.password === '') errors.password='Contraseña vacía'
+
+    if(form.dni == '' && (form.password === undefined || form.password === '') ) errors.dni = 'Los campos no pueden estar vacíos'
+
+    if(form.dni !== '' && form.password !== '' && !isAuth ) errors.password = 'Usuario o contraseña inválidos'
+
+    setErrors(errors)
+
+
   }
 
   const HandleChange = (e) =>{
