@@ -71,8 +71,15 @@ const Header = () => {
                     </div>
                 </Link>
                 
-                <Link to='/beneficios/beneficios' className='nav' onClick={cerrarMenu}>
-                    Beneficios <img src={arrow} className='img_arrow' alt="flecha" />
+                <Link to='/beneficios/beneficios' className='nav' id='nav_beneficios' onClick={cerrarMenu}>
+                    Beneficios <img src={arrow} className='img_arrow img_arrow_institucional' alt="flecha" />
+                    <div style={{height: '15px'}}></div>
+                    <div className='nav-institucional'>
+                        <div>
+                            <Link to='/beneficios/beneficios'>Beneficios</Link>
+                            <Link to='/ApoyoEconomico'>Apoyo económico</Link>
+                        </div>
+                    </div>
                 </Link>
                 
                 {  isAuth && 

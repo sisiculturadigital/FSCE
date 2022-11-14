@@ -175,7 +175,8 @@
                     margin: 0;
                     padding: 10px 15px;
                     border-radius: 0px;
-                    width: 100px;   
+                    width: 100px;
+                    height: auto;
                     color: #FFF;
                     &:hover {
                         background-color: transparent;
@@ -206,7 +207,7 @@
                 padding-top: 80px;
             }
         }
-        #nav_institucional {
+        #nav_institucional, #nav_beneficios {
             // padding-right: 20px;
             &:hover{
                 .nav-institucional {

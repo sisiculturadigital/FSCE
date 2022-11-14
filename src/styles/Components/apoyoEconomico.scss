@@ -130,4 +130,48 @@
 
     }
 
+
+    @media screen and (max-width: 900px){
+        margin-bottom: 50px;
+    }
+
+    /* scroll to top button */
+
+    .top-btn-position {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        position: fixed;
+        // bottom: 120px;
+        // right: 100px;
+        right: 20% ;
+        bottom: 70px;
+
+
+        &:hover{
+            animation: none;
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        @media screen and (max-width: 900px){
+            bottom: 50px;
+            right: 50%;
+            right: 20%;
+        }
+        @media screen and (max-width: 450px){
+            bottom: 80px;
+            right: 50%;
+        }
+        @media screen and (max-width: 330px){
+            bottom: 90px;
+            right: 50%;
+        }
+
+    }
 }

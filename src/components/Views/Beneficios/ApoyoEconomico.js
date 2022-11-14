@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { FaAngleDown } from 'react-icons/fa'
+import ScrollToTop from './ScrollToTop'
+
 
 const initialForm = {
   importe:'',
@@ -51,7 +53,7 @@ const ApoyoEconomico = () => {
 
   return (
     <div className='ApoyoEconomico'>
-
+       <ScrollToTop />
       <div className='sup'>
         <h2>Apoyo Económico al personal del Ejercito</h2>  
         <h3>Requisitos</h3>

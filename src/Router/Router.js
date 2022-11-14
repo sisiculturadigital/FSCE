@@ -75,8 +75,8 @@ const Router = ({x}) => {
                 <Route path="/transparencia" element={<Transparencia />} />
                 <Route path="/inicio" element={<Inicio />} />
                 <Route path='/descargas' element={<Descargas />} />
-
             </Route>
+            
             <Route path="/contacto" element={<Contacto />} />
             <Route path='*' element={<Home /> } />
         </Routes>

@@ -41,7 +41,6 @@ const Beneficios = () => {
         }
     }
 
-
   return (
     <div className='beneficios-wrapper'>
         <ScrollToTop />

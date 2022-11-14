@@ -8,11 +8,6 @@ const noticias = (props) => {
   return (
     <div>
       <div className='noticias'>
-        <center>
-          <h2>
-            Noticias
-          </h2>
-        </center>
 
         <center>
           <div className='noticias__flex'>

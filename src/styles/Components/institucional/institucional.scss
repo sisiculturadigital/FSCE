@@ -5,8 +5,8 @@
     background: url('../../../imgs/View/descargas/bg-descargas.png') no-repeat center center fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    height: calc( 100vh - 185px);
-        .mision {
+    min-height: calc( 100vh - 160px);
+    .mision {
             padding-top: 50px;
             h2 {
                 text-transform: uppercase;
@@ -187,6 +187,8 @@
                 }
             }
             @media only screen and (min-width: 0px) {
+                padding: 0px;
+                padding-top: 10px;
                 .OneImg{
                     img {
                         width: 120px;
@@ -272,12 +274,14 @@
         @media only screen and (max-width: 600px) {
             div {
                 margin: auto 7px;
+                // padding-left: 10px;
+                // padding-right: 10px;
             }
         }
     }
 
     @media only screen and (max-width: 520px) {
-        padding: 20px;
+        padding: 10px;
     }
 
     .noticias {
@@ -290,6 +294,8 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
             div {
                 display: flex;
                 flex-direction: column;
