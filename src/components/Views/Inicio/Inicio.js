@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 import {FaUser} from 'react-icons/fa'
-import {FiSearch} from 'react-icons/fi'
+import {FiPaperclip} from 'react-icons/fi'
+import {IoMdCheckboxOutline} from 'react-icons/io'
+import {FaDollarSign} from 'react-icons/fa'
 
 import { useUserContext } from '../../../context/UserProvider';
-
 
 const Inicio = () => {
 
@@ -30,16 +33,21 @@ const {user, setUser, logOut} = useUserContext()
             <h2>Opciones de Menú</h2>
             <section>
                 <div>
-                    <figure> <FiSearch className='fasearch'/> </figure>
-                    <p>Consulta saldo de préstamos</p>
+                    <center>
+                    <figure> <IoMdCheckboxOutline className='fasearch'/> </figure>
+                    <p>SALDO</p>
+                    </center>
+
                 </div>
-                <div className='green'>
-                    <figure><FiSearch className='fasearch'/></figure>
-                    <p>Consulta aportes al FSCPC</p>
+                <div className='gray'>
+                    <figure><FiPaperclip className='fasearch'/></figure>
+                    <p>APORTES</p>
                 </div>
                 <div>
-                    <figure><FiSearch className='fasearch'/></figure>
-                    <p>Consulta pagos realizados</p>
+                    <Link to={"/pago"}>
+                    <figure><FaDollarSign className='fasearch'/></figure>
+                        <p>PAGO</p>
+                    </Link>
                 </div>
             </section>
         </div>

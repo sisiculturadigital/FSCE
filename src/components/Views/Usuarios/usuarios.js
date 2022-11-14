@@ -44,14 +44,15 @@ const Usuarios = () => {
     postLogin(form.dni, form.password)
     .then(res => res.json())
     .then(res => {
+      console.log(res)
       if(res.token) {
         localStorage.setItem('token', res.token);
         localStorage.setItem('key', form.dni);
   
         const decoded = decode(res.token);
-  
+        console.log(decoded)
         if (decoded) {
-          console.log(decoded)
+            setUser(decoded)
             setIsAuth(true)
             setForm(initialForm)
           

@@ -32,37 +32,6 @@ let registro = {
 }
 
 
-
-// const datos = {
-//   email : "randy.vdiaz@gmail.com",
-//   pwd : "randy"
-// }
-
-// fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {
-//   method: 'POST',
-//   body: JSON.stringify(datos),
-//   headers: {
-//     "Content-type": "application/json",
-//     "Access-Control-Allow-Origin": "*"
-//   }
-// })
-// .then(res => res.json())
-// .then(data => console.log(data))
-
-
-
-
-// fetch('https://backend-app-v1.herokuapp.com/publico/u/authenticate', {
-//   method: 'POST',
-//   body: JSON.stringify(datos),
-//   headers: {
-//     "Content-type": "application/json",
-//     "Access-Control-Allow-Origin": "*"
-//   }
-// })
-// .then(res => res.json())
-// .then(data => console.log(data))
-
   var x = window.matchMedia("(max-width: 700px)")
   let navegador = navigator.userAgent;
   let isMobile;

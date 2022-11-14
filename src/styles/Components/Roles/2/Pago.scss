@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+.Pago-wrapper {
+    background-color: #FFF;
+    min-height: calc(100vh - 140px);
+    padding: 50px 30px 30px 30px;
+
+    .button-back-perfil {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        text-align: end;
+        p{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            background-color: #F50C10;
+            color: #FFF;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 15px 10px;
+            border-radius: 15px;
+        }
+
+    }
+    .pago-container {
+
+        padding-top: 50px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: #464E5F;
+
+        &__info-perfil{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            &__bg{
+                background: rgba(217, 217, 217, 0.4);
+                border-radius: 10px;
+                padding: 5px 15px;
+            }
+        }
+
+        &__Concepto_Pago{
+            table {
+                border-collapse: collapse;
+                width: 100%;
+
+                .border_thead {
+                    border-top   : 2px solid #464E5F;
+                    border-bottom: 2px solid #464E5F; 
+                    
+                    th {
+                        padding: 10px;
+                        &:nth-child(1){
+                            width: 50%;
+                            text-align: left;
+                        } 
+                        &:nth-child(2){
+                            width: 25%;
+
+                        } 
+                        &:nth-child(3) {
+                            width: 25%;
+                        }
+                    }
+                }
+
+                .content-info {
+                    th {
+                        font-size: 16px;
+                        padding: 35px 0px 10px 0px;
+                        &:nth-child(1){
+                            text-align: left;
+                            padding-left: 10px;
+                        } 
+                    }
+                }
+
+                .content-pago-devolucion {
+                    font-size: 16px;
+                    border-top   : 2px solid #464E5F;
+
+                    th {
+                        padding: 10px;
+                        &:nth-child(1){
+                            text-align: left;
+                        } 
+
+                    }
+                }
+
+            }
+
+            .concepto-pago-sub-total{
+                display: flex;
+                gap: 30px;
+                align-items: center;
+                justify-content: flex-end;
+    
+                .sub-total {
+                    background-color: #D9D9D9;
+                    border-radius: 10px;
+                    color: #7d7d7e;
+                    padding: 7px 15px;
+                }
+            }
+    
+            .dashed{
+                border: 1px  dashed  #464E5F;
+                margin-top: 10px;
+            }
+
+        }
+
+
+    }
+}

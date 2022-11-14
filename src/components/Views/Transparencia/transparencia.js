@@ -8,7 +8,7 @@ import archivos from './Archivos-Downloand/archivos.js';
 import iconPDF from '../../../imgs/View/descargas/icon-archivos-extension/pdf.png';
 
 const Transparencia = () => {
-    // console.log(pdf)
+
     const count = useRef();
 
     useEffect(() => {
@@ -34,14 +34,14 @@ const Transparencia = () => {
             <div className='descargas-wrapper'>
             {
                 data.map((doc) =>
-                    <div className='descargas-card'>
+                    <div className='descargas-card' key={doc.Position}>
                         <img src={doc.urlImgPreview} alt=""  className="preview-img-pdf"/>
                         <div className='title-preview'>
                             <img src={iconPDF} alt="icon PDF" className='icon-extension' ref={count} data-extension={doc.Extension}/>
                             <a download target="_blank" rel="noreferrer" href={doc.urlArchivo}>
                                 {doc.NombreArchivo}
                             </a>
-                            <span class="tooltiptext">{doc.NombreArchivo}</span>
+                            <span className ="tooltiptext">{doc.NombreArchivo}</span>
                         </div>
                     </div>
                 ) 

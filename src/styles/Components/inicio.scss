@@ -6,6 +6,7 @@
     background-color: #FFFFFF;
     color: black;
     font-weight: bold;
+    min-height: calc(100vh - 260px);
 
     .user{
         display: flex;
@@ -83,7 +84,7 @@
             padding: 10px 0 20px 0;
             
             div{
-                background-color: #427BB2;
+                background-color: #383838;
                 width: 150px;
                 box-sizing: border-box;
                 width: 151px;
@@ -98,7 +99,9 @@
                     width: 90%;
                     margin: auto;
                 }
-
+                a {
+                    text-decoration: none;
+                }
                 figure{
                     margin: 0;
                     padding: 10px;
@@ -137,8 +140,11 @@
                 }
         
             }
-            .green{
-                background-color: #75B567;
+            .gray{
+                background-color: #D9D9D9;
+                p{
+                    color: #383838;
+                }
             }
 
             
