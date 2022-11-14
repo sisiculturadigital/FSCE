@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useForm } from '../form/useForm';
 import data from '../../Views/Usuarios/UserList';
+import { type } from '@testing-library/user-event/dist/type';
 
 
 const initialForm = {
@@ -33,7 +34,7 @@ const RecoverPassword = ({ isOpen, closeModal}) => {
         <article className = {`modal ${isOpen && 'is-open'}`} onClick={closeModal}>
             <form className="modal-container" onClick={handleModalContainerClick}>
 
-                <button className='modal-close' onClick={closeModal}>X</button>
+                <input type='button' className='modal-close' onClick={closeModal } value='x' />
                 <h2>Recupera tu contraseña</h2>
                 <p>Ingresa tu correo electrónico para cambiar contraseña</p>
                 <input type="email" name='email'  placeholder='Correo electrónico' onChange={handleChange} onBlur={handleBlur}/>

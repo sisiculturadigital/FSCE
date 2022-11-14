@@ -32,7 +32,7 @@ import DevolucionAportes from '../components/Views/Beneficios/vistas/DevolucionA
 import EjemploDevolucion from '../components/Views/Beneficios/vistas/EjemploDevolucion.js'
 import TramiteDevolucion from '../components/Views/Beneficios/vistas/TramiteDevolucion.js'
 import Inicio from '../components/Views/Inicio/Inicio';
-import ApoyoEconomico from '../components/Views/Beneficios/vistas/ApoyoEconomico';
+import ApoyoEconomico from '../components/Views/Beneficios/ApoyoEconomico';
 import { useUserContext } from '../context/UserProvider';
 
 // Consulta , codRole : usuario Normal
@@ -68,17 +68,18 @@ const Router = ({x}) => {
                 <Route path='DevolucionAportes' element={<DevolucionAportes />} />
                 <Route path='EjemploDevolucion' element={<EjemploDevolucion />} />
                 <Route path='TramiteDevolucion' element={<TramiteDevolucion />} />
-                <Route path='ApoyoEconomico' element={<ApoyoEconomico /> } />
             </Route>
+            <Route path='/ApoyoEconomico' element={<ApoyoEconomico /> } />
 
             <Route element={<ProtectedRoute isAllowed={!!user} />}>
                 <Route path="/transparencia" element={<Transparencia />} />
                 <Route path="/inicio" element={<Inicio />} />
-                <Route path="/contacto" element={<Contacto />} />
                 <Route path='/descargas' element={<Descargas />} />
                 <Route path='/pago' element={<Pago />} />
 
             </Route>
+            
+            <Route path="/contacto" element={<Contacto />} />
             <Route path='*' element={<Home /> } />
         </Routes>
         <Footer />

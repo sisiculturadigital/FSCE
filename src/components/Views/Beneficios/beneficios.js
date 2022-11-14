@@ -41,7 +41,6 @@ const Beneficios = () => {
         }
     }
 
-
   return (
     <div className='beneficios-wrapper'>
         <ScrollToTop />
@@ -77,7 +76,7 @@ const Beneficios = () => {
                 </div>
 
             <NavLink to='CartaDeclaratoria' style={NavLinkStyles} onClick={()=>scrollToSection(container)}>Carta Declaratoria</NavLink>
-            <NavLink to='ApoyoEconomico' style={NavLinkStyles} onClick={()=>scrollToSection(container)}>Apoyo Económico</NavLink>
+            {/* <NavLink to='ApoyoEconomico' style={NavLinkStyles} onClick={()=>scrollToSection(container)}>Apoyo Económico</NavLink> */}
 
         </div>
 
