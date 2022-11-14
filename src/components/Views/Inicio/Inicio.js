@@ -34,18 +34,22 @@ const {user, setUser, logOut} = useUserContext()
             <section>
                 <div>
                     <center>
-                    <figure> <IoMdCheckboxOutline className='fasearch'/> </figure>
-                    <p>SALDO</p>
+                    <Link to={"/saldo"}>
+                            <figure> <IoMdCheckboxOutline className='fasearch'/> </figure>
+                            <p>SALDO</p>
+                        </Link>
                     </center>
 
                 </div>
                 <div className='gray'>
-                    <figure><FiPaperclip className='fasearch'/></figure>
-                    <p>APORTES</p>
+                    <Link to={"/aportes"}>
+                        <figure><FiPaperclip className='fasearch'/></figure>
+                        <p>APORTES</p>
+                    </Link>
                 </div>
                 <div>
                     <Link to={"/pago"}>
-                    <figure><FaDollarSign className='fasearch'/></figure>
+                        <figure><FaDollarSign className='fasearch'/></figure>
                         <p>PAGO</p>
                     </Link>
                 </div>

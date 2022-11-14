@@ -37,6 +37,8 @@ import { useUserContext } from '../context/UserProvider';
 
 // Consulta , codRole : usuario Normal
 import Pago from '../components/Views/Rol/2/Pago.js';
+import Aportes from '../components/Views/Rol/2/Aportes.js';
+import Saldo from '../components/Views/Rol/2/Saldo.js';
 
 const Router = ({x}) => {
     
@@ -76,6 +78,8 @@ const Router = ({x}) => {
                 <Route path="/inicio" element={<Inicio />} />
                 <Route path='/descargas' element={<Descargas />} />
                 <Route path='/pago' element={<Pago />} />
+                <Route path='/aportes' element={<Aportes />} />
+                <Route path='/saldo' element={<Saldo />} />
 
             </Route>
             

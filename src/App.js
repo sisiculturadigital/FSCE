@@ -32,6 +32,7 @@ let registro = {
 }
 
 
+
   var x = window.matchMedia("(max-width: 700px)")
   let navegador = navigator.userAgent;
   let isMobile;

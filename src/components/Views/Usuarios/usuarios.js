@@ -38,16 +38,12 @@ const Usuarios = () => {
         localStorage.setItem('key', form.dni);
   
         const decoded = decode(res.token);
-
+        console.log(decoded)
         if (decoded) {
-          console.log(decoded)
           setUser(decode(res.token))
           setIsAuth(true)
           setForm(initialForm)   
         }
-      }else{
-        console.log(res)
-        console.log(res.code)
       }
     })
 
@@ -57,7 +53,7 @@ const Usuarios = () => {
 
     if(form.password === undefined || form.password === '') errors.password='Contraseña vacía'
 
-    if(form.dni == '' && (form.password === undefined || form.password === '') ) errors.dni = 'Los campos no pueden estar vacíos'
+    if(form.dni === '' && (form.password === undefined || form.password === '') ) errors.dni = 'Los campos no pueden estar vacíos'
 
     if(form.dni !== '' && form.password !== '' && !isAuth ) errors.password = 'Usuario o contraseña inválidos'
 

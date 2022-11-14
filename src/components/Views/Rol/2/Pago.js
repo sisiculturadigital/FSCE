@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { pago } from '../../../API/Roles/Commun/Pago.js';
 
@@ -17,23 +18,22 @@ const {user, setUser, logOut} = useUserContext()
         .then(res => {
                 console.log(res)
 
-                setServicios(res.pagos)
+                setServicios(res)
             })
     }, [])
 
-    console.log(servicios)
   return (
     <div className='Pago-wrapper'>
         <div className='button-back-perfil'>
-            <p>
-                REGRESAR
-            </p>
+            <Link to={"/inicio"}>
+                <p>REGRESAR</p>
+            </Link>
         </div>
         <div className='pago-container'>
             <div className='pago-container__info-perfil'>
                 <p>Ec Nombrado</p>
-                {/* <p className='pago-container__info-perfil__bg'>120507200</p> */}
-                <p className='pago-container__info-perfil__bg'>{codAdmin}</p>
+                { !servicios ? 'Cargando...' : <p className='pago-container__info-perfil__bg'>{servicios.codAdm}</p> }
+
                 <p className='pago-container__info-perfil__bg'>{user.nombre}</p>
             </div>
 
@@ -48,7 +48,7 @@ const {user, setUser, logOut} = useUserContext()
                     </thead>
                     <tbody>
                     {
-                       !servicios ? 'Cargando...' : servicios.map((pago) =>
+                       !servicios ? 'Cargando...' : (servicios.pagos).map((pago) =>
                             <tr className='content-info'>
                                 <th>{pago.concepto}</th>
                                 <th>{pago.fechChe}</th>
@@ -61,13 +61,13 @@ const {user, setUser, logOut} = useUserContext()
 
                 <div className='concepto-pago-sub-total'>
                     <p>Sub. Total Girado / Transferencia</p>
-                    <p className='sub-total'>S/ 2324.765</p>
+                    { !servicios ? 'Cargando...' : <p className='sub-total'>S/ {servicios.pagoTotal}</p> }
                 </div>
                 
                 <table>
                     <tbody>
                     {
-                       !servicios ? 'Cargando...' : servicios.map((pago) =>
+                       !servicios ? 'Cargando...' : (servicios.devoluciones).map((pago) =>
                             <tr className='content-pago-devolucion'>
                                 <th>{pago.concepto}</th>
                                 <th>{pago.fechChe}</th>
@@ -79,7 +79,11 @@ const {user, setUser, logOut} = useUserContext()
                 </table>
                 <div className='concepto-pago-sub-total'>
                     <p>Sub. Total Girado / Transferencia</p>
-                    <p className='sub-total'>S/ 2324.765</p>
+                    { !servicios ? 'Cargando...' : <p className='sub-total'>S/ {servicios.devolucionTotal}</p> }
+                </div>
+                <div className='concepto-pago-sub-total'>
+                    <p>Total Girado / Transferencia</p>
+                    { !servicios ? 'Cargando...' : <p className='sub-total'>S/ {servicios.totalTransferido}</p> }
                 </div>
 
                 <hr className='dashed'/>
