@@ -9,9 +9,12 @@ import {
 
 const Saldo = () => {
     
-    const {user, setUser, logOut} = useUserContext();
+    const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} = useUserContext()
     const [consultaPrestamo, SetConsultaPrestamo] = useState()
     const [detallePago, SetDetallePago] = useState()
+
+
+    console.log(datosPersona)
 
     const dni = 44234811;
     const codAdm = 622999900;

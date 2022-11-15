@@ -8,6 +8,8 @@ import { useUserContext } from '../../../../context/UserProvider';
 const Pago = () => {
 
 const {user, setUser, logOut} = useUserContext()
+
+console.log(user)
     const codAdmin = 120507200;
 
     const [servicios, setServicios] = useState()

@@ -42,6 +42,7 @@ const Usuarios = () => {
         if (decoded) {
           setUser(decode(res.token))
           setIsAuth(true)
+          sessionStorage.setItem('session_key', true);
           setForm(initialForm)   
         }
       }
