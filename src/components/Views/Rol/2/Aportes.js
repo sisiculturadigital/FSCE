@@ -9,15 +9,19 @@ const Pago = () => {
     
     const {user, setUser, logOut} = useUserContext();
 
-    const dni = 44234811;
+    const codAdm = 806964600;
 
     const [servicios, setServicios] = useState()
 
     useEffect(() => {
-        aportes(dni)
+        aportes(codAdm)
         .then(res => res.json())
         .then(res => {
             console.log(res)
+            let arr = res.aportes
+            console.log(arr)
+            let xx = arr.map((aporte) => parseFloat(aporte.impApa)).reduce((previousValue, currentValue) => previousValue + currentValue)
+            console.log(xx)
             setServicios(res)
         })
     }, [])
@@ -29,7 +33,7 @@ const Pago = () => {
             </Link>
         </div>
         <section className='situacion-financiera'>
-            <div className='situacion-financiera__title'>
+            <div className='situacion-financiera__title top'>
                 SITUACIÓN FINANCIERA
             </div>
             <table>
@@ -56,7 +60,7 @@ const Pago = () => {
             <div className='prestamo-saldo-pendiente__title'>
                 RELACIÓN DE PRESTAMOS OTORGADOS CON SALDO PENDIENTE
             </div>
-            {
+            {/* {
                 !servicios ? 'Cargando...' : servicios.map((element) =>
                     <div className='container-info-prestamo'>
                         <div className='prestamo-saldo-pendiente__flex'>
@@ -87,7 +91,7 @@ const Pago = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div style={{marginTop : "20px"}}>
+                        <div>
                             <table>
                                 <thead>
                                     <tr className='border_thead'>
@@ -102,9 +106,9 @@ const Pago = () => {
                                     </tr>
                                     <tr height="15" ></tr>
                                 </thead>
-                                <tbody>
-                                        {
-                                            (element.prestamos).map((elm) =>
+                                {
+                                    (element.prestamos).map((elm) =>
+                                        <tbody>
                                             <tr className='content-info'>
                                                 <th>{elm.nroChe}</th>
                                                 <th>{elm.impSol}</th>
@@ -114,12 +118,13 @@ const Pago = () => {
                                                 <th>8720.00</th>
                                                 <th>{elm.refinancia}</th>
                                                 <th className='button-detalle'>DETALLE</th>
-
                                             </tr>
-                                            )
-                                        }
-
-                                    <tr className='content-info'>
+                                            <tr height="15" ></tr>
+                                        </tbody>
+                                    )
+                                }
+                                <tbody>
+                                    <tr className='content-info-total'>
                                         <th></th>
                                         <th>8,000.00</th>
                                         <th></th>
@@ -127,7 +132,6 @@ const Pago = () => {
                                         <th>7,999.99</th>
                                         <th>8720.00</th>
                                         <th></th>
-
                                     </tr>
                                 </tbody>
                             </table>
@@ -138,9 +142,8 @@ const Pago = () => {
                         </div>
                     </div>
                 ) 
-            }
+            } */}
         </section>
-
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import { urlFSCE } from "../..//url-API";
 
-export const aportes = async (dni) => {
+export const aportes = async (codAdm) => {
 
-    const result =  await fetch(`${urlFSCE}/private/p/prestamo/${dni}`, {
+    const result =  await fetch(`${urlFSCE}/private/a/aportes/${codAdm}`, {
         method: 'GET',
         headers: { 
             Authorization: `Bearer ${localStorage.getItem('token')}`,

@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-.Aportes-wrapper {
+.Saldo-wrapper {
     background-color: #FFF;
     min-height: calc(100vh - 140px);
     padding: 50px 30px 30px 30px;
 
-    .button-back-perfil {
+    .button-back-perfil, .dowloand-saldo {
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -41,9 +41,6 @@
             font-size: 20px;
             font-weight: 500;
             margin-bottom: 15px;
-        }
-        .top {
-            padding: 15px 0px;
         }
         table {
             color: #464E5F;
@@ -118,5 +115,9 @@
     }
     .container-info-prestamo {
         border-bottom: 3px dashed #000000;;
+    }
+    .dowloand-saldo {
+        justify-content: center;
+        margin-top: 20px;
     }
 }

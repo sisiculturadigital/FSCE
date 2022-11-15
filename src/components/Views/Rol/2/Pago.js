@@ -48,8 +48,8 @@ const {user, setUser, logOut} = useUserContext()
                     </thead>
                     <tbody>
                     {
-                       !servicios ? 'Cargando...' : (servicios.pagos).map((pago) =>
-                            <tr className='content-info'>
+                       !servicios ? 'Cargando...' : (servicios.pagos).map((pago , index) =>
+                            <tr className='content-info' key={index}>
                                 <th>{pago.concepto}</th>
                                 <th>{pago.fechChe}</th>
                                 <th>{pago.importe}</th>
@@ -67,8 +67,8 @@ const {user, setUser, logOut} = useUserContext()
                 <table>
                     <tbody>
                     {
-                       !servicios ? 'Cargando...' : (servicios.devoluciones).map((pago) =>
-                            <tr className='content-pago-devolucion'>
+                       !servicios ? 'Cargando...' : (servicios.devoluciones).map((pago, index) =>
+                            <tr className='content-pago-devolucion' key={index}>
                                 <th>{pago.concepto}</th>
                                 <th>{pago.fechChe}</th>
                                 <th>{pago.importe}</th>
