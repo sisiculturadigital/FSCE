@@ -242,6 +242,91 @@
             }
         }
 
+
+        .figure-ingreso{
+            box-sizing: border-box;
+            background-color: #D9D9D9;
+            min-width: 60px;
+            width: 60px;
+            min-height: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(0, 0, 0, 0.579);
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+
+            .fa-arrow{
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                color: black;
+                z-index: 1;
+                font-size: 20px;
+                @media screen and (max-width: 1100px){
+                    top: 50px;
+                    right: 80px;
+                }
+                @media screen and (max-width: 450px){
+                    top: 50px;
+                    right: 80px;
+                }
+
+            }
+
+            svg{
+                font-size: 40px;
+                color: #F50C10;
+
+                @media screen and (max-width: 600px){
+                    font-size: 30px;
+                }
+                @media screen and (max-width: 430px){
+                    font-size: 30px;
+                }
+            }
+          
+            @media screen and (max-width: 1100px){
+               margin-right: 80px;
+               margin-left: 0;
+            }
+
+            @media screen and (max-width: 600px){
+                width: 50px;
+                min-width: 50px;
+                min-height: 50px;
+                height: 50px;
+            }
+            // @media screen and (max-width: 430px){
+            //     width: 50px;
+            //     height: 50px;
+            //     min-width: 50px;
+            //     min-height: 50px;
+            // }
+
+        }
+
+        .menu-login{
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 20px;
+            top: 80px;
+            color: #000000;
+            font-weight: 600;
+            font-size: 16px;
+            background-color: gray;
+        }
+        .desplegado{
+            display: block;
+        }
+
+
         .nav-toggle-container{
 
             @media screen and (max-width: 1100px){
@@ -265,6 +350,7 @@
             @media screen and (max-width: 1100px){
                 display: block;
                 position: absolute;
+                right: 10px;
                 // position: fixed;
                 // flex-grow: 1;
                 // width: 40px;
@@ -272,7 +358,8 @@
             @media screen and (max-width: 600px){
                 display: block;
                 position: absolute;
-                top:15px
+                top:15px;
+                margin-right: 10px;
             }
 
         }

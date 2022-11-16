@@ -38,8 +38,8 @@ const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} 
                     {/* <p>DNI {user.dni ?? '232453445'}</p> */}
                     <p>DNI {datosPersona && datosPersona.dni}</p>
                 </div>
-                <input type='button' onClick={logOut} value='Salir' />
-            </div>
+            {/* <input type='button' onClick={logOut} value='Salir' /> */}
+        </div>
 
             <div className='menu-container'>
                 <h2>Opciones de Menú</h2>

@@ -15,6 +15,7 @@ const Saldo = () => {
 
 
     console.log(datosPersona)
+    console.log(user)
 
     const dni = 44234811;
     const codAdm = 622999900;
@@ -61,9 +62,9 @@ const Saldo = () => {
                     <tbody>
                         <tr className='content-info'>
                             <th>#546786</th>
-                            <th>Teniente</th>
-                            <th>{user.nombre}</th>
-                            <th>25</th>
+                            <th>{datosPersona.grado}</th>
+                            <th>{datosPersona.nombreApe}</th>
+                            <th>{datosPersona.edad}</th>
                         </tr>
                     </tbody>
                 </table>
@@ -74,7 +75,7 @@ const Saldo = () => {
                     RELACIÓN DE PRESTAMOS OTORGADOS CON SALDO PENDIENTE
                 </div>
                 {
-                    !consultaPrestamo ? 'Cargando...' : consultaPrestamo.map((element, index) =>
+                    consultaPrestamo && consultaPrestamo.map((element, index) =>
                         <div className='container-info-prestamo' key={index}>
                             <div className='prestamo-saldo-pendiente__flex'>
                                 <table className='width-flex'>
