@@ -47,37 +47,6 @@
         }
         table {
             color: #464E5F;
-            border-collapse: collapse;
-            width: 100%;
-            .border_thead {
-                background: rgba(56, 56, 56, 0.3);
-                th {
-                    padding: 10px;
-
-                    &:nth-child(1){
-                        border-bottom-left-radius: 6px;
-                        border-top-left-radius: 6px;
-                    } 
-                    &:last-child {
-                        border-bottom-right-radius: 6px;
-                        border-top-right-radius: 6px;
-                        text-align: left;
-                    }
-                }
-            }
-            .content-info, .content-info-total {
-                th {
-                    padding: 10px;
-                }
-                .button-detalle {
-                    background: rgba(56, 56, 56, 0.2);
-                    border-radius: 6px;
-                    color: #FFF;   
-                    padding: 10px 20px;
-                    cursor: pointer;                 
-                }
-            }
-
         }
     }
 
@@ -86,37 +55,40 @@
         &__title {
             letter-spacing: 0.1em;
         }
-        &__flex {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 20px;
-            .width-flex {
-                width: max-content;
-            }
-        }
-        &__prestamo-disponible {
-            color: #464E5F;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
 
-            p {
-                &:nth-child(1){
-                    background-color: #9B9B9B;
-                    padding: 15px 40px;
-                    border-bottom-left-radius: 6px;
-                    border-top-left-radius: 6px;
+        .container-info-prestamo {
+            &__table {
+                width: 100%;
+                font-size: 14px;
+
+                .border_thead {
+                    th {
+                        background-color: rgba(56, 56, 56, 0.3);
+                        padding: 10px 0px;
+                        border-radius: 10px;    
+                        &:nth-child(1){
+                            background-color: #fff;
+                        }  
+                        &:last-child {
+                            background-color: rgba(56, 56, 56, 0.3);
+                            padding: 10px 10px;
+                            border-radius: 10px; 
+                        }
+                    }
                 }
-                &:nth-child(2){
-                    background-color: #C4C4C4;
-                    padding: 15px 80px;
-                    border-bottom-right-radius: 6px;
-                    border-top-right-radius: 6px;
+                .content-info {
+                    th {
+                        padding: 10px 0px;
+                        
+                        &:nth-child(1){
+                            background-color: rgba(56, 56, 56, 0.3);
+                            padding: 10px;
+                            border-radius: 10px; 
+                        }                    
+                    }
                 }
             }
         }
-    }
-    .container-info-prestamo {
-        border-bottom: 3px dashed #000000;;
+
     }
 }

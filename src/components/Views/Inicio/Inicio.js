@@ -24,52 +24,51 @@ const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} 
         })
     }, [])
     
-console.log(datosPersona)
-  return (
-    <div className='Inicio-wrapper'>
+    return (
+        <div className='Inicio-wrapper'>
 
-        <div className='user'>
-            <figure>
-                <FaUser className='fa' />
-            </figure>
-            <div>
-                {/* <p> { user.name ?? 'Alexandra Martinez' } </p> */}
-                <p> {datosPersona && datosPersona.nombreApe} </p>
-                <p> {datosPersona && datosPersona.grado} </p>
-                {/* <p>DNI {user.dni ?? '232453445'}</p> */}
-                <p>DNI {datosPersona && datosPersona.dni}</p>
+            <div className='user'>
+                <figure>
+                    <FaUser className='fa' />
+                </figure>
+                <div>
+                    {/* <p> { user.name ?? 'Alexandra Martinez' } </p> */}
+                    <p> {datosPersona && datosPersona.nombreApe} </p>
+                    <p> {datosPersona && datosPersona.grado} </p>
+                    {/* <p>DNI {user.dni ?? '232453445'}</p> */}
+                    <p>DNI {datosPersona && datosPersona.dni}</p>
+                </div>
+                <input type='button' onClick={logOut} value='Salir' />
             </div>
-            <input type='button' onClick={logOut} value='Salir' />
-        </div>
 
-        <div className='menu-container'>
-            <h2>Opciones de Menú</h2>
-            <section>
-                <div>
-                    <center>
-                    <Link to={"/saldo"}>
-                            <figure> <IoMdCheckboxOutline className='fasearch'/> </figure>
-                            <p>SALDO</p>
+            <div className='menu-container'>
+                <h2>Opciones de Menú</h2>
+                <section>
+                    <div>
+                        <center>
+                        <Link to={"/saldo"}>
+                                <figure> <IoMdCheckboxOutline className='fasearch'/> </figure>
+                                <p>SALDO</p>
+                            </Link>
+                        </center>
+
+                    </div>
+                    <div className='gray'>
+                        <Link to={"/aportes"}>
+                            <figure><FiPaperclip className='fasearch'/></figure>
+                            <p>APORTES</p>
                         </Link>
-                    </center>
+                    </div>
+                    <div>
+                        <Link to={"/pago"}>
+                            <figure><FaDollarSign className='fasearch'/></figure>
+                            <p>PAGO</p>
+                        </Link>
+                    </div>
+                </section>
+            </div>
 
-                </div>
-                <div className='gray'>
-                    <Link to={"/aportes"}>
-                        <figure><FiPaperclip className='fasearch'/></figure>
-                        <p>APORTES</p>
-                    </Link>
-                </div>
-                <div>
-                    <Link to={"/pago"}>
-                        <figure><FaDollarSign className='fasearch'/></figure>
-                        <p>PAGO</p>
-                    </Link>
-                </div>
-            </section>
         </div>
-
-    </div>
   )
 }
 
