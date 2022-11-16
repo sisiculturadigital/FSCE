@@ -7,9 +7,10 @@ import { useUserContext } from '../../../../context/UserProvider';
 
 const Pago = () => {
 
-const {user, setUser, logOut} = useUserContext()
+const {user, setUser, logOut, datosPersona} = useUserContext()
 
-console.log(user)
+    console.log(datosPersona)
+    
     const codAdmin = 120507200;
 
     const [servicios, setServicios] = useState()
@@ -19,7 +20,6 @@ console.log(user)
         .then(res => res.json())
         .then(res => {
                 console.log(res)
-
                 setServicios(res)
             })
     }, [])
@@ -34,9 +34,9 @@ console.log(user)
         <div className='pago-container'>
             <div className='pago-container__info-perfil'>
                 <p>Ec Nombrado</p>
-                { !servicios ? 'Cargando...' : <p className='pago-container__info-perfil__bg'>{servicios.codAdm}</p> }
+                { datosPersona && <p className='pago-container__info-perfil__bg'>{datosPersona.codAdm}</p> }
 
-                <p className='pago-container__info-perfil__bg'>{user.nombre}</p>
+                <p className='pago-container__info-perfil__bg'>{datosPersona.nombreApe}</p>
             </div>
 
             <section className='pago-container__Concepto_Pago'>

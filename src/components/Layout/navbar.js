@@ -1,17 +1,26 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import escudo from "../../imgs/Layout/NavBar/escudo.png"
 import { Link } from 'react-router-dom';
 import arrow from "../../imgs/Layout/NavBar/arrow.svg"
 import { useUserContext } from '../../context/UserProvider';
+import {FaUser} from 'react-icons/fa'
+import { FaAngleDown } from 'react-icons/fa'
+
+
 
 const Header = () => {
 
     const {user, setUser, isAuth}=useUserContext()
 
     const [open, setOpen] = useState(false)
+    const [openLogin, setOpenLogin] = useState(false)
+    const Icon = useRef(null)
 
-    const numero = 18
+
+    function openLoginMenu(){
+        setOpenLogin(!openLogin)
+    }
 
     function openMenu(){
         setOpen(!open)
@@ -97,13 +106,29 @@ const Header = () => {
                 <Link to="/contacto" className='nav' onClick={cerrarMenu}>
                     Contácto <img src={arrow} className='img_arrow' alt="flecha" />
                 </Link>
+
+  
+
             </div>
 
-        
-            <Link to='/usuarios' className='nav-usuario' onClick={cerrarMenu}>
-                Usuario
-            </Link>
+                {isAuth?
+                    
+                <figure className='figure-ingreso' ref={Icon} onClick={openLoginMenu} >
+                    <FaUser className='fa' />
+                    <FaAngleDown className='fa-arrow' />
+                    <div className={`menu-login ${openLogin && 'desplegado'} `}>
+                        <div>ALEXANDRA MARTINEZ</div>
+                        <p>DNI 323232</p>
+                        <div>ADSFDA- SALIR</div>
+                    </div>
+                </figure>
+                :
+                <Link to='/usuarios' className='nav-usuario' onClick={cerrarMenu}>
+                    Usuario           
+                </Link>
+                }
 
+                
 
 
 

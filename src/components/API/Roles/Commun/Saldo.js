@@ -1,7 +1,6 @@
 import { urlFSCE } from "../..//url-API";
 
 export const consultaPrestamosPorPersona = async (dni) => {
-
     const result =  await fetch(`${urlFSCE}/private/p/prestamo/${dni}`, {
         method: 'GET',
         headers: { 

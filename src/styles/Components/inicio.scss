@@ -118,6 +118,9 @@
                     @media screen and (max-width: 600px){
                         font-size: 14px;
                     }
+                    @media screen and (max-width: 500px){
+                        padding-bottom: 0px;
+                    }
                 }
                 p{
                     text-align: center;
@@ -131,8 +134,7 @@
                         align-items: center;
                     }
                     @media screen and (max-width: 520px){
-                        margin: 0;
-                        padding: 0;
+                        margin-bottom: 0px;
                     }
                     @media screen and (max-width: 372px){
                         font-size: 13px;
@@ -151,6 +153,10 @@
             @media screen and (max-width: 600px){
                 flex-direction: column;
                 padding-top: 20px;
+            }
+
+            @media screen and (max-width: 400px){
+                gap: 10px;
             }
         }
 
