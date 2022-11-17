@@ -39,6 +39,7 @@ import { useUserContext } from '../context/UserProvider';
 import Pago from '../components/Views/Rol/2/Pago.js';
 import Aportes from '../components/Views/Rol/2/Aportes.js';
 import Saldo from '../components/Views/Rol/2/Saldo.js';
+import RegistroDatos from '../components/Views/Inicio/RegistroDatos';
 
 const Router = ({x}) => {
     
@@ -76,6 +77,7 @@ const Router = ({x}) => {
             <Route element={<ProtectedRoute isAllowed={!!user} />}>
                 <Route path="/transparencia" element={<Transparencia />} />
                 <Route path="/inicio" element={<Inicio />} />
+                <Route path="/registro-datos" element={<RegistroDatos />} />
                 <Route path='/descargas' element={<Descargas />} />
                 <Route path='/pago' element={<Pago />} />
                 <Route path='/aportes' element={<Aportes />} />

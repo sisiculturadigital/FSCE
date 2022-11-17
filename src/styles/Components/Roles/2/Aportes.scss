@@ -4,7 +4,7 @@
 .Aportes-wrapper {
     background-color: #FFF;
     min-height: calc(100vh - 140px);
-    padding: 50px 30px 30px 30px;
+    padding: 50px 30px 60px 30px;
 
     .button-back-perfil {
         display: flex;
@@ -122,5 +122,10 @@
 
             }
         }
+    }
+    .total{
+        background-color: rgba(56, 56, 56, 0.3);
+        padding: 10px 0px;
+        border-radius: 10px;
     }
 }

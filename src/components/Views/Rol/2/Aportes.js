@@ -15,7 +15,7 @@ const Pago = () => {
     const [minYear, setMinYear] = useState()
     const [arrYear, SetArrYear] = useState()
 
-    console.log(datosPersona)
+    console.log(servicios)
 
     useEffect(() => {
         aportes(codAdm)
@@ -166,6 +166,22 @@ const Pago = () => {
                                     <th></th>
                                 </tr>
                             </tbody>
+
+
+                            <tr className='content-info-total'>
+                                <th colspan="12" align='right'></th>
+                                <th className='total'>Sub Total</th>
+                                <th>{servicios.totalAportes}</th>
+                                <th>##</th>
+                            </tr>
+
+                            <tr className='content-info-total'>
+                                <th colspan="12" align='right'></th>
+                                <th className='total'>Total</th>
+                                <th>{servicios.totalCuotas}</th>
+                                <th>##</th>
+                            </tr>
+
                         </table>
                     </div>
                 </div>

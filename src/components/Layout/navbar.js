@@ -6,6 +6,9 @@ import arrow from "../../imgs/Layout/NavBar/arrow.svg"
 import { useUserContext } from '../../context/UserProvider';
 import {FaUser} from 'react-icons/fa'
 import { FaAngleDown } from 'react-icons/fa'
+import MenuLogin from './menuLogin';
+import { useModal } from '../accesos-comunes/modals/useModal';
+import RecoverPassword from '../accesos-comunes/modals/RecoverPassword';
 
 
 
@@ -15,12 +18,14 @@ const Header = () => {
 
     const [open, setOpen] = useState(false)
     const [openLogin, setOpenLogin] = useState(false)
+    const [isOpen, openModal, closeModal] = useModal(false)
     const Icon = useRef(null)
 
 
-    function openLoginMenu(){
+    function openLoginMenu(e){
         setOpenLogin(!openLogin)
     }
+
 
     function openMenu(){
         setOpen(!open)
@@ -64,9 +69,12 @@ const Header = () => {
             <div className= {`header-navbar ${open ? 'open': ''}`}> 
         
                 <div className='line'></div>
+
+                { isAuth && 
                 <Link to='/inicio' className='nav' id='nav_inicio' onClick={cerrarMenu}>
                     Inicio
                 </Link>
+                }
                 
                 <Link to='/institucional/mision' className='nav' id='nav_institucional' onClick={cerrarMenu} >
                     Institucional <img src={arrow} className='img_arrow img_arrow_institucional' alt="flecha" />
@@ -111,25 +119,32 @@ const Header = () => {
 
             </div>
 
+            <MenuLogin isOpen={isOpen} closeModal={closeModal}/>
+
+            {/* <RecoverPassword isOpen={isOpen} closeModal={closeModal}/> */}
+
+
                 {isAuth?
                     
-                <figure className='figure-ingreso' ref={Icon} onClick={openLoginMenu} >
+                <figure className='figure-ingreso' ref={Icon} onClick={openModal} >
                     <FaUser className='fa' />
                     <FaAngleDown className='fa-arrow' />
-                    <div className={`menu-login ${openLogin && 'desplegado'} `}>
-                        <div>ALEXANDRA MARTINEZ</div>
+                    {/* <div className={`menu-login ${openLogin && 'desplegado'} `} onClick={close}>
+                        <div>
+                            <figure>
+                                <FaUser className='fa' />
+                            </figure>
+                            <p>ALEXANDRA MARTINEZ</p> 
+                        </div>
                         <p>DNI 323232</p>
                         <div>ADSFDA- SALIR</div>
-                    </div>
+                    </div> */}
                 </figure>
                 :
                 <Link to='/usuarios' className='nav-usuario' onClick={cerrarMenu}>
                     Usuario           
                 </Link>
                 }
-
-                
-
 
 
         </div>

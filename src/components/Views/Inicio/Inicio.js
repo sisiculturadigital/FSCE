@@ -28,9 +28,11 @@ const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} 
         <div className='Inicio-wrapper'>
 
             <div className='user'>
-                <figure>
-                    <FaUser className='fa' />
-                </figure>
+                <Link to='/registro-datos'>
+                    <figure>
+                        <FaUser className='fa' />
+                    </figure>
+                </Link>
                 <div>
                     {/* <p> { user.name ?? 'Alexandra Martinez' } </p> */}
                     <p> {datosPersona && datosPersona.nombreApe} </p>
@@ -49,7 +51,7 @@ const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} 
                         <Link to={"/saldo"}>
                                 <figure> <IoMdCheckboxOutline className='fasearch'/> </figure>
                                 <p>SALDO</p>
-                            </Link>
+                        </Link>
                         </center>
 
                     </div>
