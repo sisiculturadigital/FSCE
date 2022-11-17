@@ -62,9 +62,9 @@ const Saldo = () => {
                     <tbody>
                         <tr className='content-info'>
                             <th>#546786</th>
-                            <th>{datosPersona.grado}</th>
-                            <th>{datosPersona.nombreApe}</th>
-                            <th>{datosPersona.edad}</th>
+                            <th>{datosPersona && datosPersona.grado}</th>
+                            <th>{datosPersona && datosPersona.nombreApe}</th>
+                            <th>{datosPersona && datosPersona.edad}</th>
                         </tr>
                     </tbody>
                 </table>
@@ -121,7 +121,7 @@ const Saldo = () => {
                                         <tr height="15" ></tr>
                                     </thead>
                                     {
-                                        (element.prestamos).map((elm, index) =>
+                                       element.prestamos &&  (element.prestamos).map((elm, index) =>
                                             <tbody key={index}>
                                                 <tr className='content-info'>
                                                     <th>{elm.nroChe}</th>

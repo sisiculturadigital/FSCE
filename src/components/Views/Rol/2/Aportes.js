@@ -171,14 +171,14 @@ const Pago = () => {
                             <tr className='content-info-total'>
                                 <th colspan="12" align='right'></th>
                                 <th className='total'>Sub Total</th>
-                                <th>{servicios.totalAportes}</th>
+                                <th>{servicios && servicios.totalAportes}</th>
                                 <th>##</th>
                             </tr>
 
                             <tr className='content-info-total'>
                                 <th colspan="12" align='right'></th>
                                 <th className='total'>Total</th>
-                                <th>{servicios.totalCuotas}</th>
+                                <th>{servicios && servicios.totalCuotas}</th>
                                 <th>##</th>
                             </tr>
 
