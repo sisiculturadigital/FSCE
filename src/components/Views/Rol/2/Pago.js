@@ -4,16 +4,19 @@ import { useEffect, useState } from "react";
 import { pago } from '../../../API/Roles/Commun/Pago.js';
 
 import { useUserContext } from '../../../../context/UserProvider';
+import useMediaQuery from './useMediaQuery.js';
 
 const Pago = () => {
 
-const {user, setUser, logOut, datosPersona} = useUserContext()
+    const {user, setUser, logOut, datosPersona} = useUserContext()
+    const matches = useMediaQuery("(min-width: 700px)");
 
+    
+    const [servicios, setServicios] = useState()
+    const codAdmin = 120507200;
+    
     console.log(datosPersona)
     
-    const codAdmin = 120507200;
-
-    const [servicios, setServicios] = useState()
 
     useEffect(() => {
         pago(codAdmin)
@@ -31,13 +34,20 @@ const {user, setUser, logOut, datosPersona} = useUserContext()
                 <p>REGRESAR</p>
             </Link>
         </div>
+
+   
+  
+
+
         <div className='pago-container'>
             <div className='pago-container__info-perfil'>
-                <p>Ec Nombrado</p>
+                <p className='ec-nombrado'>Ec Nombrado</p>
                 { datosPersona && <p className='pago-container__info-perfil__bg'>{datosPersona.codAdm}</p> }
 
                 <p className='pago-container__info-perfil__bg'>{datosPersona.nombreApe}</p>
             </div>
+
+            {matches ? 
 
             <section className='pago-container__Concepto_Pago'>
                 <table>
@@ -50,7 +60,7 @@ const {user, setUser, logOut, datosPersona} = useUserContext()
                     </thead>
                     <tbody>
                     {
-                       !servicios ? 'Cargando...' : (servicios.pagos).map((pago , index) =>
+                       !servicios ? 'Cargando...' : (servicios.pagos).map((pago, index) =>
                             <tr className='content-info' key={index}>
                                 <th>{pago.concepto}</th>
                                 <th>{pago.fechChe}</th>
@@ -61,9 +71,9 @@ const {user, setUser, logOut, datosPersona} = useUserContext()
                     </tbody>
                 </table>
 
-                <div className='concepto-pago-sub-total'>
-                    <p>Sub. Total Girado / Transferencia</p>
-                    { !servicios ? 'Cargando...' : <p className='sub-total'>S/ {servicios.pagoTotal}</p> }
+                <div className='sub-total-girado'>
+                    <span>Sub. Total Girado / Transferencia</span>
+                    <span>{!servicios ? 'Cargando...' :  `S/ ${servicios.pagoTotal}` } </span>
                 </div>
                 
                 <table>
@@ -81,18 +91,115 @@ const {user, setUser, logOut, datosPersona} = useUserContext()
                 </table>
                 <div className='concepto-pago-sub-total'>
                     <p>Sub. Total Girado / Transferencia</p>
-                    { !servicios ? 'Cargando...' : <p className='sub-total'>S/ {servicios.devolucionTotal}</p> }
+                    <p>
+                        { !servicios ? 'Cargando...' : <span className='sub-total'>S/ {servicios.devolucionTotal}</span> }
+                    </p>
                 </div>
                 <div className='concepto-pago-sub-total'>
                     <p>Total Girado / Transferencia</p>
-                    { !servicios ? 'Cargando...' : <p className='sub-total'>S/ {servicios.totalTransferido}</p> }
+                    <p>
+                        { !servicios ? 'Cargando...' : <span className='sub-total'>S/ {servicios.totalTransferido}</span> }
+                    </p>
                 </div>
 
                 <hr className='dashed'/>
                 <hr className='dashed'/>
 
             </section>
+
+            :
+            
+            <section className='pago-container__Concepto_Pago_media'>
+                <table>
+                    {
+                        !servicios ? 'Cargando...' : (servicios.pagos).map((pago, index) =>
+                        <tbody key={index}>
+                                <tr className='content-info' >
+                                    <th>Concepto Pago</th>
+                                    <th>{pago.concepto}</th>
+                                </tr>
+                                <tr className='content-info'>
+                                    <th>Fecha</th>
+                                    <th>{pago.fechChe}</th>
+
+                                </tr>
+                                <tr className='content-info'>
+                                    <th>F.Giro/Transferencia</th>
+                                    <th>{pago.importe}</th>
+                                </tr>
+                        </tbody>
+                        ) 
+                    }
+                </table>
+
+                <div className='sub-total-girado'>
+                    <span>Sub. Total Girado / Transferencia</span>
+                    <span>{!servicios ? 'Cargando...' :  `S/ ${servicios.pagoTotal}` } </span>
+                </div>
+                
+                <table>
+
+                {
+                    !servicios ? 'Cargando...' : (servicios.devoluciones).map((pago, index) =>
+                    
+                    <table className='content-pago-devolucion' key={index}>
+                        <thead>
+                            <tr>{pago.concepto}</tr> 
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>{pago.fechChe}</th>
+                            </tr>
+                            <tr>
+                                <th>F.Giro/Transferencia</th>
+                                <th>{pago.importe}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    ) 
+                }
+ 
+                </table>
+                <div className='concepto-pago-sub-total'>
+                    <p>Sub. Total Girado / Transferencia</p>
+                    <p>
+                        { !servicios ? 'Cargando...' : <span className='sub-total'>S/ {servicios.devolucionTotal}</span> }
+                    </p>
+                </div>
+                <div className='concepto-pago-sub-total'>
+                    <p>Total Girado / Transferencia</p>
+                    <p>
+                        { !servicios ? 'Cargando...' : <span className='sub-total'>S/ {servicios.totalTransferido}</span> }
+                    </p>
+                </div>
+
+                <div className='dashed_container' >
+                    <hr className='dashed'/>
+                    <hr className='dashed'/>
+                </div>
+
+            </section>
+            
+            
+
+
+
+
+
+
+
+
+
+
+            }
+
         </div>
+
+
+
+
+ 
 
     </div>
   )

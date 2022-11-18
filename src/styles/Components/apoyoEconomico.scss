@@ -98,6 +98,7 @@
             @media screen and (max-width: 450px){
                 padding: 5px 10px;
                 margin-left: 0px;
+                min-width: none;
             }
         }
         
@@ -119,6 +120,11 @@
         }
         span{
             color: red;
+            @media screen and (max-width: 450px){
+                display: block;
+                text-align: center;
+            }
+          
         }
 
 

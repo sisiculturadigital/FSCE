@@ -88,7 +88,6 @@
                 width: 150px;
                 box-sizing: border-box;
                 width: 151px;
-                // height: 130px;
                 height: max-content;
                 border-radius: 10px;
                 display: flex;
@@ -101,7 +100,7 @@
                 }
                 a {
                     text-decoration: none;
-                    @media screen and (max-width: 372px){
+                    @media screen and (max-width: 600px){
                         display: flex;
                         flex-direction: row;
                         align-items: center;
@@ -140,9 +139,12 @@
                         font-size: 14px;
                         display: flex;
                         align-items: center;
+                        padding-bottom: 0;
+
                     }
                     @media screen and (max-width: 520px){
                         margin-bottom: 0px;
+                        
                     }
                     @media screen and (max-width: 372px){
                         font-size: 13px;
