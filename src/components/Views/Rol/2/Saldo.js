@@ -6,6 +6,10 @@ import {
     consultaPrestamosPorPersona ,
     consultaDetallePago
 } from '../../../API/Roles/Commun/Saldo.js';
+import escudo from "../../../../imgs/Layout/NavBar/escudo.png";
+
+
+
 
 const Saldo = () => {
     
@@ -39,6 +43,15 @@ const Saldo = () => {
         })
     }, [])
 
+    function showDetalle (nroChe) {
+        console.log(nroChe)
+        let x = document.getElementsByClassName('consultaDetallePago')
+        console.log(x[0].innerHTML)
+        let template = `
+        `
+
+    }
+
     return (
         <div className='Saldo-wrapper'>
             <div className='button-back-perfil'>
@@ -61,7 +74,7 @@ const Saldo = () => {
                     </thead>
                     <tbody>
                         <tr className='content-info'>
-                            <th>#546786</th>
+                            <th>{datosPersona && datosPersona.codAdm}</th>
                             <th>{datosPersona && datosPersona.grado}</th>
                             <th>{datosPersona && datosPersona.nombreApe}</th>
                             <th>{datosPersona && datosPersona.edad}</th>
@@ -87,7 +100,7 @@ const Saldo = () => {
                                     </thead>
                                     <tbody>
                                         <tr className='content-info'>
-                                            <th>#546786</th>
+                                            <th>{element.codigoPrestamo}</th>
                                             <th>{element.tipoPrestamo}</th>
                                         </tr>
                                     </tbody>
@@ -100,7 +113,7 @@ const Saldo = () => {
                                     </thead>
                                     <tbody>
                                         <tr className='content-info'>
-                                            <th>S/ 20.0000</th>
+                                            <th>{element.impApo}</th>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -131,7 +144,7 @@ const Saldo = () => {
                                                     <th>7,999.99</th>
                                                     <th>8720.00</th>
                                                     <th>{elm.refinancia}</th>
-                                                    <th className='button-detalle'>DETALLE</th>
+                                                    <th className='button-detalle' onClick={()=>showDetalle(elm.nroChe)}>DETALLE</th>
                                                 </tr>
                                                 <tr height="15" ></tr>
                                             </tbody>
@@ -158,6 +171,90 @@ const Saldo = () => {
                     ) 
                 }
             </section>
+
+            <div className='consultaDetallePago'>
+                <center>
+                    <img src={escudo} alt="" width="120"/>
+                </center>
+                <div className='consultaDetallePago__table'>
+                    <div className='consultaDetallePago__table__row'>
+                        <div className='consultaDetallePago__table__row__header'>CÓDIGO</div>
+                        <div className='consultaDetallePago__table__row__response'>{datosPersona && datosPersona.codAdm}</div>
+                    </div>
+                    <div className='consultaDetallePago__table__row'>
+                        <div className='consultaDetallePago__table__row__header'>GRADO</div>
+                        <div className='consultaDetallePago__table__row__response'>{datosPersona && datosPersona.grado}</div>
+                    </div>
+                    <div className='consultaDetallePago__table__row'>
+                        <div className='consultaDetallePago__table__row__header'>DNI</div>
+                        <div className='consultaDetallePago__table__row__response'>{datosPersona && datosPersona.dni}</div>
+                    </div>
+                    <div className='consultaDetallePago__table__row'>
+                        <div className='consultaDetallePago__table__row__header'>APELLIDOS Y NOMBRES</div>
+                        <div className='consultaDetallePago__table__row__response'>{datosPersona && datosPersona.nombreApe}</div>
+                    </div>
+                    <div className='consultaDetallePago__table__row'>
+                        <div className='consultaDetallePago__table__row__header'>EDAD</div>
+                        <div className='consultaDetallePago__table__row__response'>{datosPersona && datosPersona.edad}</div>
+                    </div>
+                </div>
+                <div className='consultaDetallePago__table'>
+                    <div className='consultaDetallePago__table__row'>
+                        <div className='consultaDetallePago__table__row__header title'>DETALLE DE PAGO</div>
+                    </div>
+                </div>
+                {
+                    detallePago && detallePago.map((pago, index) =>
+                    <div className='consultaDetallePago__table' key={index}>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>CÓDIGO</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.codAdm}</div>
+                        </div>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>AÑO</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.aaCuo}</div>
+                        </div>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>MES</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.mmCuo}</div>
+                        </div>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>NRO</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.nroChe}</div>
+                        </div>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>N° CUOTAS</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.nroCuo}</div>
+                        </div>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>IMPORTE CUOTAS</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.impCuCap}</div>
+                        </div>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>IMPORTE PAGO</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.impPago}</div>
+                        </div>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>TIPO DE PAGO</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.tipoPago}</div>
+                        </div>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>SITUACIÓN</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.situacion}</div>
+                        </div>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>IMPORTE CUOTA INT</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.impCuoInt}</div>
+                        </div>
+                        <div className='consultaDetallePago__table__row'>
+                            <div className='consultaDetallePago__table__row__header'>IMPORTE CUOTA</div>
+                            <div className='consultaDetallePago__table__row__response'>{pago.impCuo}</div>
+                        </div>
+                    </div>
+                )}
+
+
+            </div>
             <div className='dowloand-saldo'>
                 <a href="https://backend-app-v1.herokuapp.com/publico/pdf/80467508">
                     <p>DESCARGAS</p>
