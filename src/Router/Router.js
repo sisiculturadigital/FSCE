@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { ProtectedRoute } from './ProtectedRouter'
 
 import Navbar from '../components/Layout/navbar';
@@ -40,6 +40,7 @@ import Pago from '../components/Views/Rol/2/Pago.js';
 import Aportes from '../components/Views/Rol/2/Aportes.js';
 import Saldo from '../components/Views/Rol/2/Saldo.js';
 import RegistroDatos from '../components/Views/Inicio/RegistroDatos';
+import DetalleSaldo from '../components/Views/Rol/2/DetalleSaldo';
 
 const Router = ({x}) => {
     
@@ -81,8 +82,7 @@ const Router = ({x}) => {
                 <Route path='/descargas' element={<Descargas />} />
                 <Route path='/pago' element={<Pago />} />
                 <Route path='/aportes' element={<Aportes />} />
-                <Route path='/saldo' element={<Saldo />} />
-
+                <Route path='/saldo/' element={<Saldo />} />
             </Route>
             
             <Route path="/contacto" element={<Contacto />} />

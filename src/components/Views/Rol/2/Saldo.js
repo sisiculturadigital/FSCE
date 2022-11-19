@@ -1,29 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useUserContext } from '../../../../context/UserProvider';
-import { 
-    consultaPrestamosPorPersona ,
-    consultaDetallePago
-} from '../../../API/Roles/Commun/Saldo.js';
+import { consultaPrestamosPorPersona , consultaDetallePago } from '../../../API/Roles/Commun/Saldo.js';
+import DetalleSaldo from './DetalleSaldo';
 import escudo from "../../../../imgs/Layout/NavBar/escudo.png";
-
 
 
 
 const Saldo = () => {
     
     const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} = useUserContext()
-    const [consultaPrestamo, SetConsultaPrestamo] = useState()
-    const [detallePago, SetDetallePago] = useState()
+    const [consultaPrestamo, SetConsultaPrestamo] = useState(null)
+    const [idDetalle, setIdDetalle] = useState(null)
+    const container = useRef(null)
 
-
-    console.log(datosPersona)
-    console.log(user)
-
+    
+    console.log('datosPersona', datosPersona.codAdm, datosPersona.dni)
+    
     const dni = 44234811;
     const codAdm = 622999900;
-    const idDetalle = "10339868-2017-3";
+
+
+    function scrollToSection(elementRef){
+        window.scrollTo({
+            top: elementRef.current.offsetTop,
+            behavior: 'smooth'
+        })
+    }
 
 
     useEffect(() => {
@@ -34,23 +38,18 @@ const Saldo = () => {
             SetConsultaPrestamo(res)
         })
 
-        consultaDetallePago(codAdm, idDetalle)
-        .then(res => res.json())
-        .then(res => {
-            console.log('consultaDetallePago', res)
-            SetDetallePago(res)
-            
-        })
+     
     }, [])
 
-    function showDetalle (nroChe) {
-        console.log(nroChe)
-        let x = document.getElementsByClassName('consultaDetallePago')
-        console.log(x[0].innerHTML)
-        let template = `
-        `
 
-    }
+    // function showDetalle (nroChe) {
+    //     console.log(nroChe)
+    //     let x = document.getElementsByClassName('consultaDetallePago')
+    //     console.log(x[0].innerHTML)
+    //     let template = `
+    //     `
+
+    // }
 
     return (
         <div className='Saldo-wrapper'>
@@ -144,7 +143,13 @@ const Saldo = () => {
                                                     <th>7,999.99</th>
                                                     <th>8720.00</th>
                                                     <th>{elm.refinancia}</th>
-                                                    <th className='button-detalle' onClick={()=>showDetalle(elm.nroChe)}>DETALLE</th>
+                                                    <th className='button-detalle' onClick={ ()=>{
+                                                        container.current.style.display='block'
+                                                        scrollToSection(container)
+                                                        setIdDetalle(elm.nroChe)
+                                                        } }>
+                                                        DETALLE
+                                                    </th>
                                                 </tr>
                                                 <tr height="15" ></tr>
                                             </tbody>
@@ -172,7 +177,14 @@ const Saldo = () => {
                 }
             </section>
 
-            <div className='consultaDetallePago'>
+            <div ref={container}  style={{display:'none'}} >
+                <DetalleSaldo datosPersona={datosPersona} idDetalle={idDetalle}  />
+            </div>
+
+ 
+
+        
+            {/* <div className='consultaDetallePago'>
                 <center>
                     <img src={escudo} alt="" width="120"/>
                 </center>
@@ -254,7 +266,9 @@ const Saldo = () => {
                 )}
 
 
-            </div>
+            </div> */}
+
+
             <div className='dowloand-saldo'>
                 <a href="https://backend-app-v1.herokuapp.com/publico/pdf/80467508">
                     <p>DESCARGAS</p>
