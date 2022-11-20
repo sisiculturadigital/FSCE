@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { useUserContext } from '../../../../context/UserProvider';
 import { consultaPrestamosPorPersona , consultaDetallePago } from '../../../API/Roles/Commun/Saldo.js';
 import DetalleSaldo from './DetalleSaldo';
-import escudo from "../../../../imgs/Layout/NavBar/escudo.png";
+import useMediaQuery from './useMediaQuery.js';
 
 
 
@@ -15,6 +15,8 @@ const Saldo = () => {
     const [idDetalle, setIdDetalle] = useState(null)
     const container = useRef(null)
 
+    const matches = useMediaQuery("(min-width: 600px)");
+    const matches2 = useMediaQuery("(min-width: 890px)");
     
     console.log('datosPersona', datosPersona.codAdm, datosPersona.dni)
     
@@ -42,15 +44,6 @@ const Saldo = () => {
     }, [])
 
 
-    // function showDetalle (nroChe) {
-    //     console.log(nroChe)
-    //     let x = document.getElementsByClassName('consultaDetallePago')
-    //     console.log(x[0].innerHTML)
-    //     let template = `
-    //     `
-
-    // }
-
     return (
         <div className='Saldo-wrapper'>
             <div className='button-back-perfil'>
@@ -62,34 +55,57 @@ const Saldo = () => {
                 <div className='situacion-financiera__title'>
                     SITUACIÓN FINANCIERA
                 </div>
-                <table>
-                    <thead>
-                        <tr className='border_thead'>
-                            <th>Código</th>
-                            <th>Cargo</th>
-                            <th>Nombre</th>
-                            <th>Edad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr className='content-info'>
-                            <th>{datosPersona && datosPersona.codAdm}</th>
-                            <th>{datosPersona && datosPersona.grado}</th>
-                            <th>{datosPersona && datosPersona.nombreApe}</th>
-                            <th>{datosPersona && datosPersona.edad}</th>
-                        </tr>
-                    </tbody>
-                </table>
+
+                {
+                matches ?
+                    <table>
+                        <thead>
+                            <tr className='border_thead'>
+                                <th>Código</th>
+                                <th>Cargo</th>
+                                <th>Nombre</th>
+                                <th>Edad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className='content-info'>
+                                <th>{datosPersona && datosPersona.codAdm}</th>
+                                <th>{datosPersona && datosPersona.grado}</th>
+                                <th>{datosPersona && datosPersona.nombreApe}</th>
+                                <th>{datosPersona && datosPersona.edad}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                :
+                    <div className='situacion-financiera-response' >
+                        <p className='situacion-financiera-response__p'>Código</p>
+                        <p>{datosPersona && datosPersona.codAdm}</p>
+                        <p className='situacion-financiera-response__p'>Cargo</p>
+                        <p>{datosPersona && datosPersona.nombreApe}</p>
+                        <p className='situacion-financiera-response__p'>Nombre</p>
+                        <p>{datosPersona && datosPersona.nombreApe}</p>
+                        <p className='situacion-financiera-response__p'>Edad</p>
+                        <p>{datosPersona && datosPersona.edad}</p>
+                    </div>
+                }
+
+
             </section>
+
+        {
+            matches2 ? 
 
             <section className='prestamo-saldo-pendiente'>
                 <div className='prestamo-saldo-pendiente__title'>
                     RELACIÓN DE PRESTAMOS OTORGADOS CON SALDO PENDIENTE
                 </div>
+
                 {
                     consultaPrestamo && consultaPrestamo.map((element, index) =>
                         <div className='container-info-prestamo' key={index}>
                             <div className='prestamo-saldo-pendiente__flex'>
+                                 
                                 <table className='width-flex'>
                                     <thead>
                                         <tr className='border_thead'>
@@ -177,103 +193,124 @@ const Saldo = () => {
                 }
             </section>
 
+
+                :
+
+                <section className='prestamo-saldo-pendiente'>
+                <div className='prestamo-saldo-pendiente__title'>
+                    RELACIÓN DE PRESTAMOS OTORGADOS CON SALDO PENDIENTE
+                </div>
+
+                {
+                    consultaPrestamo && consultaPrestamo.map((element, index) =>
+                        <div className='container-info-prestamo-response' key={index}>
+                            <div className='prestamo-saldo-pendiente__flex'>
+
+                                <div className='situacion-financiera-response' >
+                                    <p className='situacion-financiera-response__p'>Código</p>
+                                    <p>{element.codigoPrestamo}</p>
+                                    <p className='situacion-financiera-response__p'>Tipo de prestamo</p>
+                                    <p>{element.tipoPrestamo}</p>
+                                    <p className='situacion-financiera-response__p'>Saldo aprobado</p>
+                                    <p>{element.impApo}</p>
+                                </div>
+                               
+                            </div>
+                           
+                            <div className='container-map'>
+
+                                
+                                {element.prestamos &&  (element.prestamos).map((elm, index) =>
+                                    <div>
+
+                                        <div className='container-map__element'>
+
+                                            <div className='container-map__element__child' >
+                                                <p className='child_key'>N° PRESTAMO</p>
+                                                <p className='child_value'>{elm.nroChe}</p>
+                                            </div>
+                                            <div className='container-map__element__child'>
+                                                <p className='child_key'>IMP. SOLICITADO</p>
+                                                <p className='child_value'>{elm.impSol}</p>
+                                            </div>
+                                            <div className='container-map__element__child'>
+                                                <p className='child_key'>FECHA</p>
+                                                <p className='child_value'>{elm.fecAprob.replace('T00:00:00.000+00:00', '')}</p>
+                                            </div>
+                                            <div className='container-map__element__child'>
+                                                <p className='child_key'>N° CUOTAS</p>
+                                                <p className='child_value'>{elm.nroCuo}</p>
+                                            </div>
+                                            <div className='container-map__element__child'>
+                                                <p className='child_key'>SALDO CAPITAL</p>
+                                                <p className='child_value'>##.###</p>
+                                            </div>
+                                            <div className='container-map__element__child'>
+                                                <p className='child_key'>SALDO TOTAL</p>
+                                                <p className='child_value'>##.###</p>
+                                            </div>
+                                            <div className='container-map__element__child'>
+                                                <p className='child_key'>REFINANCIABLE</p>
+                                                <p className='child_value'>{elm.refinancia}</p>
+                                            </div>
+
+                                            <div className='button-container'>
+                                                <input type='button' value='Detalle' className='button-detalle'
+                                                        onClick={ ()=>{
+                                                        container.current.style.display='block'
+                                                        scrollToSection(container)
+                                                        setIdDetalle(elm.nroChe)
+                                                        } } />
+                                            </div>
+                                        </div>
+
+                                        <div className='total-container'>
+                                            <div className='total-container__child'>
+                                                <div className='child_key'>TOTAL Imp.Solicitado</div>
+                                                <div className='child_value'>$$.$$$</div>
+                                            </div>
+
+                                            <div className='total-container__child'  >
+                                                <div className='child_key'>TOTAL Saldo Capital</div>
+                                                <div className='child_value'>$$.$$$</div>
+                                            </div>
+                                            <div className='total-container__child' >
+                                                <div className='child_key'>TOTAL Saldo Total</div>
+                                                <div className='child_value'>$$.$$$</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div className='prestamo-saldo-pendiente__prestamo-disponible_media'>
+                                            <p>Prestamo</p>
+                                            <p>S/ #,000</p>
+                                        </div>
+
+                                    </div>
+                                )}
+                                
+                     
+
+
+                                    
+                            </div>
+                            
+                        </div>
+                    ) 
+                }
+            </section>
+
+        }
+
+
+
             <div ref={container}  style={{display:'none'}} >
                 <DetalleSaldo datosPersona={datosPersona} idDetalle={idDetalle}  />
             </div>
 
  
 
-        
-            {/* <div className='consultaDetallePago'>
-                <center>
-                    <img src={escudo} alt="" width="120"/>
-                </center>
-                <div className='consultaDetallePago__table'>
-                    <div className='consultaDetallePago__table__row'>
-                        <div className='consultaDetallePago__table__row__header'>CÓDIGO</div>
-                        <div className='consultaDetallePago__table__row__response'>{datosPersona && datosPersona.codAdm}</div>
-                    </div>
-                    <div className='consultaDetallePago__table__row'>
-                        <div className='consultaDetallePago__table__row__header'>GRADO</div>
-                        <div className='consultaDetallePago__table__row__response'>{datosPersona && datosPersona.grado}</div>
-                    </div>
-                    <div className='consultaDetallePago__table__row'>
-                        <div className='consultaDetallePago__table__row__header'>DNI</div>
-                        <div className='consultaDetallePago__table__row__response'>{datosPersona && datosPersona.dni}</div>
-                    </div>
-                    <div className='consultaDetallePago__table__row'>
-                        <div className='consultaDetallePago__table__row__header'>APELLIDOS Y NOMBRES</div>
-                        <div className='consultaDetallePago__table__row__response'>{datosPersona && datosPersona.nombreApe}</div>
-                    </div>
-                    <div className='consultaDetallePago__table__row'>
-                        <div className='consultaDetallePago__table__row__header'>EDAD</div>
-                        <div className='consultaDetallePago__table__row__response'>{datosPersona && datosPersona.edad}</div>
-                    </div>
-                </div>
-                <div className='consultaDetallePago__table'>
-                    <div className='consultaDetallePago__table__row'>
-                        <div className='consultaDetallePago__table__row__header title'>DETALLE DE PAGO</div>
-                    </div>
-                </div>
-                {
-                    detallePago && detallePago.map((pago, index) =>
-                    <div className='consultaDetallePago__table' key={index}>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>CÓDIGO</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.codAdm}</div>
-                        </div>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>AÑO</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.aaCuo}</div>
-                        </div>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>MES</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.mmCuo}</div>
-                        </div>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>NRO</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.nroChe}</div>
-                        </div>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>N° CUOTAS</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.nroCuo}</div>
-                        </div>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>IMPORTE CUOTAS</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.impCuCap}</div>
-                        </div>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>IMPORTE PAGO</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.impPago}</div>
-                        </div>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>TIPO DE PAGO</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.tipoPago}</div>
-                        </div>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>SITUACIÓN</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.situacion}</div>
-                        </div>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>IMPORTE CUOTA INT</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.impCuoInt}</div>
-                        </div>
-                        <div className='consultaDetallePago__table__row'>
-                            <div className='consultaDetallePago__table__row__header'>IMPORTE CUOTA</div>
-                            <div className='consultaDetallePago__table__row__response'>{pago.impCuo}</div>
-                        </div>
-                    </div>
-                )}
 
-
-            </div> */}
-
-
-            <div className='dowloand-saldo'>
-                <a href="https://backend-app-v1.herokuapp.com/publico/pdf/80467508">
-                    <p>DESCARGAS</p>
-                </a>
-            </div>
         </div>
     )
 }

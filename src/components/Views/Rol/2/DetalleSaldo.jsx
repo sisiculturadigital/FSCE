@@ -2,11 +2,15 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import escudo from "../../../../imgs/Layout/NavBar/escudo.png";
 import { consultaPrestamosPorPersona , consultaDetallePago } from '../../../API/Roles/Commun/Saldo.js';
+import useMediaQuery from './useMediaQuery.js';
 
 
 const DetalleSaldo = ({ datosPersona=[{}] }) => {
 
   const [detallePago, setDetallePago] = useState([{}])
+  const matches = useMediaQuery("(min-width: 1110px)");
+
+
 
   const codAdm = '622999900';
   const idDetalle = '10339868-2017-3'
@@ -23,7 +27,14 @@ const DetalleSaldo = ({ datosPersona=[{}] }) => {
 
   return (
 
-    <div className='consultaDetallePago'>
+<div>
+    {
+        matches?
+      
+        
+        <div className='consultaDetallePago'>
+
+ 
 
       <center>
           <img src={escudo} alt="" width="120"/>
@@ -105,13 +116,119 @@ const DetalleSaldo = ({ datosPersona=[{}] }) => {
                 <div className='consultaDetallePago__table__row__header'>IMPORTE CUOTA</div>
                 <div className='consultaDetallePago__table__row__response'>{pago.impCuo}</div>
             </div>
+
+
+
+
+
         </div>
       )}
 
-    </div>
+            <div className='dowloand-saldo'>
+                <a href="https://backend-app-v1.herokuapp.com/publico/pdf/80467508">
+                    <p>DESCARGAS</p>
+                </a>
+            </div>
+      
+      </div>
+
+      :
+        <div className='consultaDetallePago_media'>
+
+            <center>
+                <img src={escudo} alt="" width="120"/>
+            </center>
+
+            <div style={{borderBottom:'1px solid rgba(70, 78, 95, 1)'}}>
+                <div className='consultaDetallePago_media__child' >
+                    <p>CÓDIGO</p>
+                    <p>{datosPersona && datosPersona.codAdm}</p>
+                </div>
+                <div className='consultaDetallePago_media__child'>
+                    <p>GRADO</p>
+                    <p>{datosPersona && datosPersona.grado}</p>
+                </div>
+                <div className='consultaDetallePago_media__child' >
+                    <p>DNI</p>
+                    <p>{datosPersona && datosPersona.dni}</p>
+                </div>
+                <div className='consultaDetallePago_media__child' >
+                    <p>APELLIDOS Y NOMBRES</p>
+                    <p>{datosPersona && datosPersona.nombreApe}</p>
+                </div>
+                <div className='consultaDetallePago_media__child' >
+                    <p>EDAD</p>
+                    <p>{datosPersona && datosPersona.edad}</p>
+                </div>
+            </div>
 
 
-  )
-}
+            <h2>DETALLE PAGO</h2>
+
+            {detallePago && detallePago.map((pago, index) =>
+
+                <div style={{borderBottom:'1px solid rgba(70, 78, 95, 1)'}}>
+
+                    <div className='consultaDetallePago_media__child' >
+                        <p>CÓDIGO</p>
+                        <p>{pago.codAdm}</p>
+                    </div>
+                    <div className='consultaDetallePago_media__child' >
+                        <p>AÑO</p>
+                        <p>{pago.aaCuo}</p>
+                    </div>
+                    <div className='consultaDetallePago_media__child' >
+                        <p>MES</p>
+                        <p>{pago.mmCuo}</p>
+                    </div>
+                    <div className='consultaDetallePago_media__child' >
+                        <p>NRO</p>
+                        <p>{pago.nroChe}</p>
+                    </div>
+                    <div className='consultaDetallePago_media__child' >
+                        <p>N° CUOTAS</p>
+                        <p>{pago.nroCuo}</p>
+                    </div>
+                    <div className='consultaDetallePago_media__child' >
+                        <p>IMPORTE CUOTAS</p>
+                        <p>{pago.impCuCap}</p>
+                    </div>
+                    <div className='consultaDetallePago_media__child' >
+                        <p>IMPORTE PAGO</p>
+                        <p>{pago.impPago}</p>
+                    </div>
+                    <div className='consultaDetallePago_media__child' >
+                        <p>TIPO DE PAGO</p>
+                        <p>{pago.tipoPago}</p>
+                    </div>
+                    <div className='consultaDetallePago_media__child' >
+                        <p>SITUACIÓN</p>
+                        <p>{pago.situacion}</p>
+                    </div>
+                    <div className='consultaDetallePago_media__child' >
+                        <p>IMPORTE CUOTA INT</p>
+                        <p>{pago.impCuoInt}</p>
+                    </div>
+                    <div className='consultaDetallePago_media__child' >
+                        <p>IMPORTE CUOTA</p>
+                        <p>{pago.impCuo}</p>
+                    </div>
+
+                </div>
+            )}
+
+                
+            <div className='dowloand-saldo'>
+                <a href="https://backend-app-v1.herokuapp.com/publico/pdf/80467508">
+                    <p>DESCARGAS</p>
+                </a>
+            </div>
+
+
+        </div>
+    }
+
+</div>
+)}
 
 export default DetalleSaldo
