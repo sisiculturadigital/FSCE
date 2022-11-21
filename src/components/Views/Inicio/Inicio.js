@@ -26,15 +26,15 @@ const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} 
         })
     }, [])
     
+    console.log(user);
+
     return (
         <div className='Inicio-wrapper'>
 
             <div className='user'>
-                <Link to='/registro-datos'>
-                    <figure>
-                        <FaUser className='fa' />
-                    </figure>
-                </Link>
+                <figure>
+                    <FaUser className='fa' />
+                </figure>
                 <div>
                     {/* <p> { user.name ?? 'Alexandra Martinez' } </p> */}
                     <p> {datosPersona && datosPersona.nombreApe} </p>
@@ -47,35 +47,48 @@ const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} 
 
             <div className='menu-container'>
                 <h2>Opciones de Menú</h2>
-                <section>
-                    <div>
-                        <center>
-                        <Link to={"/saldo"}>
-                                <figure> <IoMdCheckboxOutline className='fasearch'/> </figure>
-                                <p>SALDO</p>
-                        </Link>
-                        </center>
+                {/* {
+                    user && user.rol === "USUARIO" ?  */}
+                    <section>
+                        <div>
+                            <center>
+                            <Link to={"/saldo"}>
+                                    <figure> <IoMdCheckboxOutline className='fasearch'/> </figure>
+                                    <p>SALDO</p>
+                            </Link>
+                            </center>
 
-                    </div>
-                    <div className='gray'>
-                        <Link to={"/aportes"}>
-                            <figure><FiPaperclip className='fasearch'/></figure>
-                            <p>APORTES</p>
-                        </Link>
-                    </div>
+                        </div>
+
+                        <div className='gray'>
+                            <Link to={"/aportes"}>
+                                <figure><FiPaperclip className='fasearch'/></figure>
+                                <p>APORTES</p>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link to={"/pago"}>
+                                <figure><FaDollarSign className='fasearch'/></figure>
+                                <p>PAGO</p>
+                            </Link>
+                        </div>
+                    </section>
+                    {/* : */}
+                    <section>
                     <div>
-                        <Link to={"/pago"}>
-                            <figure><FaDollarSign className='fasearch'/></figure>
-                            <p>PAGO</p>
-                        </Link>
-                    </div>
-                    <div className='gray'>
-                        <Link to={"/registroDeDatos"}>
-                            <figure><FaFileAlt className='fasearch'/></figure>
-                            <p>REGISTRO</p>
-                        </Link>
-                    </div>
-                </section>
+                            <Link to={'/registro-datos'}>
+                                <figure><FaFileAlt className='fasearch'/></figure>
+                                <p>Solicitud</p>
+                            </Link>
+                        </div>
+                        <div className='gray'>
+                            <Link to={"/registroDeDatos"}>
+                                <figure><FaFileAlt className='fasearch'/></figure>
+                                <p>REGISTRO</p>
+                            </Link>
+                        </div>
+                    </section>
+                {/* } */}
             </div>
 
         </div>

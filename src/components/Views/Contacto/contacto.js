@@ -6,6 +6,7 @@ import MapView from './MapView';
 const Contacto = () => {
 
 //  width="640" height="480"
+
   return (
     <div className='contacto-wrapper'> 
 
@@ -19,12 +20,12 @@ const Contacto = () => {
             <div className='formulario_container'>
                 <h2>Contáctanos</h2>
                 <div className='linea'> <span></span> </div>
-                <form className='form-contacto'> 
+                <form className='form-contacto' action= "mailto:atencionalcliente@fsce.pe?subject=Atención al Cliente" enctype ="text/plain"  method="POST"> 
 
-                    <input type='text' id='nombre' name='nombre' placeholder='Nombre' /> 
-                    <input type='email' id='email' name='email' placeholder='Email' />
-                    <input type='phone' id='celular' name='celular'  placeholder='Celular'/>
-                    <input type='text' id='curso' name='curso'  placeholder='Curso'/>
+                    <input type='text' id='nombre' placeholder='Nombre' /> 
+                    <input type='email' id='email'  placeholder='Email' />
+                    <input type='phone' id='celular' placeholder='Celular'/>
+                    <input type='text' id='curso'  placeholder='Curso'/>
                     <textarea id='mensaje' name='mensaje' />
                     <button type='submit' className='input_type_submit'>Enviar</button>
 
