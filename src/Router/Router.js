@@ -42,6 +42,7 @@ import Saldo from '../components/Views/Rol/2/Saldo.js';
 import RegistroDatos from '../components/Views/Inicio/RegistroDatos';
 import DetalleSaldo from '../components/Views/Rol/2/DetalleSaldo';
 import RegistroDeDatos from '../components/Views/Rol/1/RegistroDeDatos';
+import ActualizarContrasenia from '../components/Views/ActualizarContrasenia/ActualizarContrasenia';
 
 const Router = ({x}) => {
     
@@ -85,6 +86,7 @@ const Router = ({x}) => {
                 <Route path='/pago' element={<Pago />} />
                 <Route path='/aportes' element={<Aportes />} />
                 <Route path='/saldo/' element={<Saldo />} />
+                <Route path='/actualizar-contrasenia/' element={<ActualizarContrasenia />} />
             </Route>
             
             <Route path="/contacto" element={<Contacto />} />
