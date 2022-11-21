@@ -41,6 +41,7 @@ import Aportes from '../components/Views/Rol/2/Aportes.js';
 import Saldo from '../components/Views/Rol/2/Saldo.js';
 import RegistroDatos from '../components/Views/Inicio/RegistroDatos';
 import DetalleSaldo from '../components/Views/Rol/2/DetalleSaldo';
+import RegistroDeDatos from '../components/Views/Rol/1/RegistroDeDatos';
 
 const Router = ({x}) => {
     
@@ -79,6 +80,7 @@ const Router = ({x}) => {
                 <Route path="/transparencia" element={<Transparencia />} />
                 <Route path="/inicio" element={<Inicio />} />
                 <Route path="/registro-datos" element={<RegistroDatos />} />
+                <Route path="/RegistroDeDatos" element={<RegistroDeDatos />} />
                 <Route path='/descargas' element={<Descargas />} />
                 <Route path='/pago' element={<Pago />} />
                 <Route path='/aportes' element={<Aportes />} />
