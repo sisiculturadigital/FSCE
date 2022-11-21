@@ -107,7 +107,7 @@
                     resize: none;
                 }
                 
-                #nombre, #email, #celular, #curso{
+                #nombre, #email, #celular, #asunto{
                     box-sizing: border-box;
                     width: 240px;
                     padding: 10px 12px;
@@ -130,7 +130,7 @@
                 }
                 
                 @media screen and (max-width: 590px){
-                    #nombre, #email, #celular, #curso{
+                    #nombre, #email, #celular, #asunto{
                         width: 100%;    
                     } 
                     textarea{

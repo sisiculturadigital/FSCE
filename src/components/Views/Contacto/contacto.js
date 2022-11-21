@@ -1,7 +1,7 @@
 import React from 'react';
 import { GrPhone, GrLocation, GrFormClock } from "react-icons/gr"
 import './mapView.css'
-import MapView from './MapView';
+// import MapView from './MapView';
 
 const Contacto = () => {
 
@@ -25,7 +25,7 @@ const Contacto = () => {
                     <input type='text' id='nombre' placeholder='Nombre' /> 
                     <input type='email' id='email'  placeholder='Email' />
                     <input type='phone' id='celular' placeholder='Celular'/>
-                    <input type='text' id='asunto'  placeholder='Asunti'/>
+                    <input type='text' id='asunto'  placeholder='Asunto'/>
                     <textarea id='mensaje' name='mensaje' />
                     <button type='submit' className='input_type_submit'>Enviar</button>
 
