@@ -1,7 +1,63 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import { listaProductos } from '../../API/SOLICITUD-PRESTAMOS-POR-SEDE/listaProductos';
+import { registrarSolicitudPrestamoPorSede } from '../../API/SOLICITUD-PRESTAMOS-POR-SEDE/Registrar-Solicitud-Prestamo-Por-Sede';
+
+const initialForm = {
+    nroCuo: '',
+    impSol: '',
+    usuIng: '',
+    liquidez: '',
+    dni: '',
+    ecPtmo: ''
+}
 
 const RegistroDatos = () => {
+    const [servicios, setServicios] = useState()
+    const [form, setForm] = useState(initialForm)
+    const [valueCodigo, setValueCodigo] = useState("");
+
+    useEffect(() => {
+        listaProductos()
+        .then(res => res.json())
+        .then(res => {
+                console.log(res)
+                setServicios(res)
+            })
+    }, [])
+
+    const onKeyUpValue = (e) => {
+        console.log(e.target.value)
+    }
+    const HandleChange = (e) =>{
+        setForm({
+            ...form,
+            [e.target.name ]:e.target.value
+        })
+    }
+    function submit () {
+        registrarSolicitudPrestamoPorSede(form.nroCuo, form.impSol, form.usuIng, form.liquidez, form.dni, form.ecPtmo)
+        .then(res => res.json())
+        .then(res => {
+            console.log(res)
+        })
+    }
+
+    const HandleSubmit = (e) =>{
+    e.preventDefault()
+    // valueCodigo === '' ?  form.ecPtmo = '0001' : form.ecPtmo = valueCodigo;
+    valueCodigo === '' ?  form.ecPtmo = '8650' : form.ecPtmo = valueCodigo;
+    form.nroCuo = parseFloat(form.nroCuo)
+    form.impSol = parseFloat(form.impSol)
+    form.liquidez = parseFloat(form.liquidez)
+ 
+    setForm(form);
+    // Validacion()
+    console.log(form)
+    submit()
+    }
+
   return (
     <div className='RegistroDatos-wrapper'>
 
@@ -10,49 +66,60 @@ const RegistroDatos = () => {
                 <p>REGRESAR</p>
             </Link>
         </div>
+        <form className='form-user'>
+            <div className='container'>
+                <h2>Registro de datos</h2>
+                <div className='input_container'>
+                    <div>
+                        <label htmlFor="dni"> DNI </label>
+                        <input type="text" name='dni' autoComplete='off' onKeyUp={onKeyUpValue} onChange={HandleChange} value={form.dni} onBlur={HandleChange}/>
+                    </div>
 
-        <div className='container'>
-            <h2>Registro de datos</h2>
-            <div className='input_container'>
-                <div>
-                    <label htmlFor="dni"> DNI </label>
-                    <input type="text" name='dni' />
+                    <div>
+                        <label htmlFor=""> Usuario ingresado </label>
+                        <input type="text" name='usuIng' autoComplete='off' onChange={HandleChange} value={form.usuIng} onBlur={HandleChange}/>
+                    </div>
                 </div>
 
-                <div>
-                    <label htmlFor=""> Usuario ingresado </label>
-                    <input type="text" />
+                <div className='input_container'>
+                    <div>
+                        <label htmlFor=""> Importe solicitado </label>
+                        <input type="number" name='impSol' autoComplete='off' onChange={HandleChange} value={form.impSol} onBlur={HandleChange}/>
+                    </div>
+                    <div>
+                        <label htmlFor=""> Nº de Cuotas </label>
+                        <input type="number"  name='nroCuo' autoComplete='off' onChange={HandleChange} value={form.nroCuo} onBlur={HandleChange} />
+                    </div>
+                </div>
+
+                <div className='input_container'>
+                    <div>
+                        <label htmlFor=""> Liquidez </label>
+                        <input type="number" name='liquidez' autoComplete='off' onChange={HandleChange} value={form.liquidez} onBlur={HandleChange}  />
+                    </div>
+                    <div>
+                        <label htmlFor=""> Producto </label>
+                        <select name='ecPtmo' onChange={ (event) => setValueCodigo( event.target.value)  }>
+                            {
+                                !servicios ? 'Cargando...' : (servicios.productos).map((option, index) =>
+                                    <option key={index} value={option.codigo}>{option.desProducto}</option>
+                                ) 
+                            }
+                        </select>
+
+                            
+
+                    </div>
+                </div>
+
+                <div className='button-back-perfil  register'>
+                <Link to={"/inicio"}>
+                    <p onClick={HandleSubmit}>REGISTRAR</p>
+                </Link>
                 </div>
             </div>
+        </form>
 
-            <div className='input_container'>
-                <div>
-                    <label htmlFor=""> Importe solicitado </label>
-                    <input type="text" />
-                </div>
-                <div>
-                    <label htmlFor=""> Nº de Cuotas </label>
-                    <input type="text"  />
-                </div>
-            </div>
-
-            <div className='input_container'>
-                <div>
-                    <label htmlFor=""> Liquidez </label>
-                    <input type="text" />
-                </div>
-                <div>
-                    <label htmlFor=""> Producto </label>
-                    <input type="text" />
-                </div>
-            </div>
-
-            <div className='button-back-perfil  register'>
-            <Link to={"/inicio"}>
-                <p>REGISTRAR</p>
-            </Link>
-            </div>
-        </div>
         <div className='linea'></div>
     </div>
   )

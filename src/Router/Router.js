@@ -9,7 +9,7 @@ import Contacto from '../components/Views/Contacto/contacto';
 import Usuarios from '../components/Views/Usuarios//usuarios';
 import Descargas from '../components/Views/Descargas/descargas';
 import Registrate from '../components/Views/Usuarios/registrate';
-import CambiarContrasenia from '../components/Views/Usuarios/CambiarContrasenia';
+import RecuperarContrasenia from '../components/Views/Usuarios/RecuperarContrasenia';
 import Transparencia from '../components/Views/Transparencia/transparencia';
 
 import Institucional from '../components/Views/Institucional/institucional';
@@ -53,7 +53,7 @@ const Router = ({x}) => {
             <Route exact path="/" element={<Home />} />
             <Route path='/registrate' element={!isAuth ? <Registrate/>: <Inicio />} />
             <Route path='/usuarios' element={!isAuth ? <Usuarios/> : <Inicio />} />
-            <Route path='/cambiar-contrasenia' element={ <CambiarContrasenia /> } />
+            <Route path='/recuperar-contrasenia' element={ <RecuperarContrasenia /> } />
             <Route path='/institucional/*' element={<Institucional />}>
                 <Route path='mision' element={<Mision context={x.matches}/>} />
                 <Route path='organizacion' element={<Organizacion context={x.matches}/>} />

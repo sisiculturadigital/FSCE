@@ -6,6 +6,8 @@ import {FaUser} from 'react-icons/fa'
 import {FiPaperclip} from 'react-icons/fi'
 import {IoMdCheckboxOutline} from 'react-icons/io'
 import {FaDollarSign} from 'react-icons/fa'
+// IoNewspaper
+import {FaFileAlt} from 'react-icons/fa'
 
 import { useUserContext } from '../../../context/UserProvider';
 import { datosPersonaFx } from '../../../components/API/Datos-Persona';
@@ -65,6 +67,12 @@ const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} 
                         <Link to={"/pago"}>
                             <figure><FaDollarSign className='fasearch'/></figure>
                             <p>PAGO</p>
+                        </Link>
+                    </div>
+                    <div className='gray'>
+                        <Link to={"/registroDeDatos"}>
+                            <figure><FaFileAlt className='fasearch'/></figure>
+                            <p>REGISTRO</p>
                         </Link>
                     </div>
                 </section>
