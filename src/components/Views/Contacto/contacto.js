@@ -25,7 +25,7 @@ const Contacto = () => {
                     <input type='text' id='nombre' placeholder='Nombre' /> 
                     <input type='email' id='email'  placeholder='Email' />
                     <input type='phone' id='celular' placeholder='Celular'/>
-                    <input type='text' id='curso'  placeholder='Curso'/>
+                    <input type='text' id='asunto'  placeholder='Asunti'/>
                     <textarea id='mensaje' name='mensaje' />
                     <button type='submit' className='input_type_submit'>Enviar</button>
 
