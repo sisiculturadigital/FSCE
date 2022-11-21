@@ -1,76 +1,90 @@
 import './styles/App.scss';
+import { UserProvider } from './context/UserProvider';
+import Router from './Router/Router';
+// import { usePostLogin } from './components/API/POST-Login';
 
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+// import { BsFillMoonStarsFill, BsFillBrightnessHighFill } from "react-icons/bs";
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { usuarioPermitidoState } from "./redux/usuarios/verificacionUsuarioSlice";
-
-import WhattsApp from "./imgs/whatsapp.png"
-import { BsFillMoonStarsFill, BsFillBrightnessHighFill } from "react-icons/bs";
-
-
-
-import Header from './components/accesos-comunes/header';
-import Footer from './components/accesos-comunes/footer';
-import Home from './components/accesos-comunes/home';
-import Contacto from './components/forms/contacto'; 
-import Usuarios from './components/forms/usuarios';
-import NuevoUsuario from './components/forms/nuevoUsuario';
-import Institucional from './components/institucional';
-import NotFound from './components/accesos-comunes/notFound';
-import Beneficios from './components/beneficios';
 
 function App() {
+  // var urlApi ="https://backend-app-v1.herokuapp.com"
+  // fetch('https://backend-app-v1.herokuapp.com/publico/noticias')
+  // .then((response) => response.json())
+  // .then((data) => console.log(data));
 
-  useEffect(() => {
-    if (!localStorage.getItem('theme')) {
-      localStorage.setItem('theme', 'light');
-    }
-  }, []);
+  // datos mandados con la solicutud POST
 
+
+  // const { data, error } = usePostLogin()
   
-  const theme = localStorage.getItem('theme');
+  // console.log(data || error &&  `${error.status}- ${error.statusText}` )
 
-  const [currentTheme, setCurrentTheme] = useState(theme);
 
-  const estadoUsuarioVerificado = useSelector(usuarioPermitidoState)
+let registro = {
+  dni: "80467508",
+  fechaNac: "19/10/1979",
+  codAdm: "583704900",
+  email: "randy.vdiaz@gmail.com",
+  password: "randy",
+  nombres: "Joseph Randy",
+  apellidos: "Vega Diaz",
+  codRole: "2"
+}
 
-  const setTheme = () => {
-    if (currentTheme === 'light') {
-      setCurrentTheme('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      setCurrentTheme('light');
-      localStorage.setItem('theme', 'light');
-    };
-  };
+
+
+  var x = window.matchMedia("(max-width: 700px)")
+  let navegador = navigator.userAgent;
+  let isMobile;
+  let isOrientationVertical;
+  
+  // eslint-disable-next-line no-unused-expressions
+  (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i))?
+    ( isMobile = true,
+      window.orientation ===  0 ? isOrientationVertical = true : isOrientationVertical = false
+    )
+    :
+    ( isMobile = false,
+      window.orientation ===  0 ? isOrientationVertical = false : isOrientationVertical = true
+    );
+    // console.log(window.orientation , "si es 0 entonces False, si es 90 entonces True");
+
+  // console.log('isOrientationVertical', isOrientationVertical);
+
+  // alert(`window.innerWidth :: ${window.innerWidth} ; window.innerHeight :: ${window.innerHeight}`);
+
+  //*******************Theme *******************
+
+  // useEffect(() => {
+  //   if (!localStorage.getItem('theme')) {
+  //     localStorage.setItem('theme', 'light');
+  //   }
+  // }, []);
+
+  // const theme = localStorage.getItem('theme');
+  // const [currentTheme, setCurrentTheme] = useState(theme);
+
+  // const setTheme = () => {
+  //   if (currentTheme === 'light') {
+  //     setCurrentTheme('dark');
+  //     localStorage.setItem('theme', 'dark');
+  //   } else {
+  //     setCurrentTheme('light');
+  //     localStorage.setItem('theme', 'light');
+  //   };
+  // };
+
+  // const { user } = useUserContext()
+
+  // console.log(useUserContext())
+  // console.log(numero)
+  
 
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path='/institucional' element={<Institucional />} />
-        <Route path='/beneficios' element={<Beneficios />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path='/usuarios' element={<Usuarios />} />
 
-        { estadoUsuarioVerificado === false ? null : <Route path='/registro' element={<NuevoUsuario />} />}
-
-        <Route path='*' element={<NotFound /> } />
-      </Routes>
-      <Footer />
-
-      { theme === 'light' 
-      ? 
-      <div className='them-icon' onClick={setTheme} ><BsFillMoonStarsFill /></div> 
-      : 
-      <div className='them-icon' onClick={setTheme}><BsFillBrightnessHighFill /></div> }
-      
-      <img className='WSimg' src={WhattsApp} alt="WhatsAppLogo" />
-
-    </Router>
+    <UserProvider>
+      <Router x={x} />
+    </UserProvider>
 
   );
 }

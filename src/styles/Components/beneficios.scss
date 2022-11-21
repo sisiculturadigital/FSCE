@@ -1,0 +1,384 @@
+@import "../Layout/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.beneficios-wrapper {
+    background: url('../../imgs/View/descargas/bg-descargas.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: calc(100vh - 140px);
+    padding: 0 30px;
+
+    box-sizing: border-box;
+    display: flex;
+    padding: 70px 30px 10px 30px ;
+    min-height: calc(100vh - 140px);
+    align-items: flex-start;
+    scroll-behavior:smooth;
+
+
+    @media screen and (max-width: 900px){
+        flex-direction: column;
+        gap: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @media screen and (max-width: 450px){
+        padding: 70px 10px 50px 10px;
+    }
+
+
+    .nav-desktop{
+        display: flex;
+        justify-content:space-between;
+        height: max-content;
+        background-color: rgb(229, 229, 236);
+        padding: 20px;
+        border-radius: 8px;
+        gap: 0px;
+        flex-direction: column;
+
+        box-sizing: border-box;
+        // height: 578px;
+        width: 350px;
+        // width: 500px;
+        align-self:flex-start;
+
+
+
+
+        @media screen and (max-width: 900px){
+            // flex-direction: column;
+            width: 100%;
+            // gap: 30px;
+        }
+
+        a{
+            background-color: gray;
+            color: aliceblue;
+            text-decoration: none;
+            padding: 5px 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 20px;
+            margin: 5px;
+
+            @media screen and (max-width: 450px){
+                font-size: 18px;
+                padding: 5px 10px;
+            }
+
+        }
+
+        .list__show{
+            margin: 0;
+            overflow-y: hidden;
+            padding-left: 30px;
+            transition: height .4s;
+            height: 0px;
+
+            @media screen and (max-width: 450px){
+                padding-left: 10px;
+
+            }
+
+            a{
+                padding-left: 10px 0 10px 40px;
+                color: black;
+                background-color: rgb(229, 229, 236);
+                border-radius: 0;
+                font-size: 18px;
+
+                &:first-child{
+                    border-bottom: 1px solid black;
+                    
+                }
+                @media screen and (max-width: 450px){
+                    font-size: 15px;
+                    padding-left: 5px 0 5px 20px;
+
+                }
+
+            }
+
+        }
+        img{
+            transform: rotate(90deg);
+        }
+       
+    }
+
+    .container{
+        flex: 1;        
+        height: max-content;
+        background-color: transparent;
+        padding: 40px 20px ;
+
+        h3{
+            font-size: 30px;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+        h2{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            letter-spacing: 3.5px;
+            font-size: 30px;
+            margin: 0;
+        }
+        p{
+            text-align:justify;
+        }
+        li{
+            list-style-type: none;
+        }
+
+        @media screen and (max-width: 450px){
+            padding: 5px 0px ;
+            margin-top: 35px;
+
+            h2, h3{
+                font-size: 22px;
+            }
+
+            p{
+                font-size: 15px;
+            }
+            table{
+                font-size: 15px;
+            }
+            ol{
+                padding-left: 20px;
+            }
+            ul{
+                padding-left: 20px;
+                li{
+                    padding: 5px 0 5px 0;
+                }
+            }
+        }
+  
+    }
+
+    .CartaDeclaratoria{
+        color: white;
+        span{
+            color: yellow;
+        }
+        ol{
+            li{
+                list-style-type:upper-alpha;
+            }
+        }
+        .important{
+            color: red;
+            border: 1px solid red;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            box-sizing: border-box;
+
+            p{
+                margin: 0;
+            }
+
+
+            .fa-circle-exclamation{
+                color: crimson  ;
+            }
+
+        }
+    }
+
+    .EjemploCalculo{
+        p{
+            margin: 0;
+        }
+        .undeLine{
+            width: max-content;
+            border-bottom: 1px solid red;
+            padding-right:10px ;
+        }
+        .space-bottom{
+            margin-bottom: 20px;
+        }
+    }
+
+    .TramiteAdelanto{
+        h3{
+            text-transform: uppercase;
+        }
+        ol > li{
+            list-style:upper-alpha;
+        }
+        ul{
+            padding-left: 20px;
+
+            li{
+                padding: 5px;
+            }
+        }
+    }
+
+    .AdelantoBeneficios{
+        .important{
+            color: red;
+            border: 1px solid red;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            box-sizing: border-box;
+
+            p{
+                margin: 0;
+            }
+
+            .fa-circle-exclamation{
+                color: crimson  ;
+            }
+
+        }
+    }
+
+    .EjemploActualizacion{
+
+        table{
+            width: 350px;
+            text-align: left;
+            th{
+                text-decoration: underline;
+            }
+            .color{
+                text-decoration: none;
+                color: yellow;
+            }
+            span{
+                color: red;
+            }
+
+
+        }
+        @media screen and (max-width: 600px){
+            h3{
+                font-size: 24px;
+                margin-bottom:10px;
+            }
+
+            table{
+                min-width: 200px;
+                width: max-content;
+                font-size: 13px;
+            }
+        }
+        @media screen and (max-width: 450px){
+            box-sizing: border-box;
+            padding: 0;
+            min-width: 150px;
+
+            table{
+                min-width: 200px;
+                width: max-content;
+                font-size: 13px;
+            }
+        }
+
+
+    }
+
+    .TramiteActualizacion{
+        h3{
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+        ol > li{
+            list-style:upper-alpha;
+        }
+        ul{
+            padding-left: 20px;
+    
+            li{
+                padding: 5px;
+            }
+        }
+
+        .important{
+            color: red;
+            border: 1px solid red;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            box-sizing: border-box;
+
+            p{
+                margin: 0;
+            }
+
+            .fa-circle-exclamation{
+                color: crimson  ;
+            }
+
+        }
+
+    }
+
+    .TramiteDevolucion{
+        ol > li{
+            list-style:upper-alpha;
+        }
+    }
+
+
+    /* scroll to top button */
+  
+    .top-btn-position {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        position: fixed;
+        // bottom: 120px;
+        // right: 100px;
+        right: 30% ;
+        bottom: 70px;
+
+
+        &:hover{
+            animation: none;
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        @media screen and (max-width: 900px){
+            bottom: 50px;
+            right: 50%;
+        }
+        @media screen and (max-width: 450px){
+            bottom: 80px;
+            right: 50%;
+        }
+        @media screen and (max-width: 330px){
+            bottom: 90px;
+            right: 50%;
+        }
+
+    }
+    
+}
+

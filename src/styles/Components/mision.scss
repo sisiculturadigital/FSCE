@@ -1,0 +1,36 @@
+@import "../Layout/variables.scss";
+
+.mision-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.mision-content { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 85%;
+    text-align: center;
+}
+
+.mision-text {
+    p {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-bottom: 50px;
+    }
+
+    a {
+        // @include boton;
+        margin-top: 20px;
+    }
+}
+
+.img-wrapper {
+    img {
+        width: auto;
+        height: 300px;
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    }
+}

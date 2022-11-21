@@ -1,0 +1,99 @@
+
+[
+    {
+        "Position": 1,
+        "NombreArchivo": "AUT_DSCTO_DESCUENTO_COPERE.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/AUT_DSCTO_DESCUENTO_COPERE.768e6b1b036c4274e84b.pdf",
+        "urlImgPreview": "/static/media/AUT_DSCTO_DESCUENTO_COPERE.d24bbf34e74c78aa26bc.png"
+    },
+    {
+        "Position": 2,
+        "NombreArchivo": "AUT_DSCTO_DESCUENTO_CPMP.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/AUT_DSCTO_DESCUENTO_CPMP.b68602ba40d2d77581cd.pdf",
+        "urlImgPreview": "/static/media/AUT_DSCTO_DESCUENTO_CPMP.c4645c12e3435870afe4.png"
+    },    
+    {
+        "Position": 3,
+        "NombreArchivo": "AUTORIZACION_DE_DESCUENTO_SUB_CAFAE_EP.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/AUTORIZACION_DE_DESCUENTO_SUB_CAFAE_EP.ad5f18930d36811b6b44.pdf",
+        "urlImgPreview": "/static/media/AUTORIZACION_DE_DESCUENTO_SUB_CAFAE_EP.2a2697ecb2196cc969be.png"
+    },    
+    {
+        "Position": 4,
+        "NombreArchivo": "CARTA_DECLARATORIA_FSCEC.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/CARTA_DECLARATORIA_FSCEC.b7e828e15415f712e2fa.pdf",
+        "urlImgPreview": "/static/media/CARTA_DECLARATORIA_FSCEC.788532805ef738220101.png"
+    },    
+    {
+        "Position": 5,
+        "NombreArchivo": "COMPROMISO_PAGO_OBLIGATORIO.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/COMPROMISO_PAGO_OBLIGATORIO.47ecef318328476fe7a0.pdf",
+        "urlImgPreview": "/static/media/COMPROMISO_PAGO_OBLIGATORIO.e3b1ac187f8fbc592920.png"
+    },    
+    {
+        "Position": 6,
+        "NombreArchivo": "CONTRATO_FIANZA.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/CONTRATO_FIANZA.593ac4557931e3c90238.pdf",
+        "urlImgPreview": "/static/media/CONTRATO_FIANZA.9f06976768dca5a34ca8.png"
+    },    
+    {
+        "Position": 7,
+        "NombreArchivo": "DOC_NO_REVOCATORIA_CPMP.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/DOC_NO_REVOCATORIA_CPMP.0c8e19d97a88abd8c658.pdf",
+        "urlImgPreview": "/static/media/DOC_NO_REVOCATORIA_CPMP.f0dee1b584ef171cc4ed.png"
+    },    
+    {
+        "Position": 8,
+        "NombreArchivo": "FOLLETO_FSCEC.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/FOLLETO_FSCEC.082a358e16db3a2aa349.pdf",
+        "urlImgPreview": "/static/media/FOLLETO_FSCEC.f6ec9e9b8b7b79740b25.png"
+    },    
+    {
+        "Position": 9,
+        "NombreArchivo": "SOLICITUD_FSCEC.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/SOLICITUD_FSCEC.56c00228755ef1376206.pdf",
+        "urlImgPreview": "/static/media/SOLICITUD_FSCEC.fb228136cbcbff9a6e18.png"
+    },    
+    {
+        "Position": 10,
+        "NombreArchivo": "SOLICITUD_FSRyC_VARIOS.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/SOLICITUD_FSRyC_VARIOS.09f1d09de623d701cec8.pdf",
+        "urlImgPreview": "/static/media/SOLICITUD_FSRyC_VARIOS.36d25d1f48b013ffff53.png"
+    },    
+    {
+        "Position": 11,
+        "NombreArchivo": "SOLICITUD_PRESTAMO.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/SOLICITUD_PRESTAMO.559ac6777e470c9f2623.pdf",
+        "urlImgPreview": "/static/media/SOLICITUD_PRESTAMO.2f7dba6b71558214a721.png"
+    },    
+    {
+        "Position": 12,
+        "NombreArchivo": "SOLICITUD_VARIOS.pdf",
+        "Extension": "pdf",
+        "ImagenPreview": "/static/media/img-preview.2a2697ecb2196cc969be.png",
+        "urlArchivo": "/static/media/SOLICITUD_VARIOS.f94d40a8d3802993e94e.pdf",
+        "urlImgPreview": "/static/media/SOLICITUD_VARIOS.a7997643aded2b034686.png"
+    }
+]

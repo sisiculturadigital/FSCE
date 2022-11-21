@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+.ApoyoEconomico{
+    padding-top: 60px;
+    min-height: calc( 100vh - 200px);
+    h2{
+        margin: 0;
+        text-transform: uppercase;
+        text-align: center;
+        @media screen and (max-width: 450px){
+            font-size: 22px;
+        }
+    }
+    h3{
+        margin: 10px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        text-align: center;
+        @media screen and (max-width: 450px){
+            font-size: 18px;
+        }
+    }
+    .requisitos{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        margin: auto;
+        margin-bottom:10px;
+        max-width: 360px;
+        padding: 0 10px 0 10px;
+
+        p{
+            cursor: pointer;
+            margin: 5px 0 5px 0;
+            // width: max-content;
+        }
+        .list__show{
+            margin: 0;
+            padding: 0 0 0 30px;
+            overflow-y: hidden;
+            transition: height .4s;
+            height: 0px;
+        }
+   
+        ul > li{
+            list-style-type: disc;
+        }
+        svg{
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            line-height: 22px;
+            background-color: rgb(255, 0, 0);
+            margin-right: 5px;
+        }
+
+    }
+
+    .simulador{
+        background-color: #fff;
+        box-sizing: border-box;
+        width: 350px;
+        color: #333;
+        padding: 10px 20px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: auto;
+        margin-bottom: 10px;
+        
+        label{
+            display: inline-block;
+            width: 120px;
+        }
+        h4{
+            text-align: center;
+            margin: 0;
+        }
+
+        p{
+            margin: 0;
+        }
+
+        input[type='text']{
+            box-sizing: border-box;
+            display: inline-block;
+            width: 150px;
+            outline: none;
+            border: black 1px solid ;
+            border-radius: 8px;
+            margin-left: 10px;
+            padding: 5px;
+            padding-left: 20px;
+
+            &:focus{
+                border: 1px solid red;
+            }
+            @media screen and (max-width: 450px){
+                padding: 5px 10px;
+                margin-left: 0px;
+                min-width: none;
+            }
+        }
+        
+        input[type='button']{
+            box-sizing: border-box;
+            background-color: red;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 20px;
+            color: white;
+            display: inline-block; 
+            width: max-content;
+            margin: auto;
+            cursor: pointer;
+            @media screen and (max-width: 450px){
+                padding: 5px 10px;
+                font-size: 16px;
+            }
+        }
+        span{
+            color: red;
+            @media screen and (max-width: 450px){
+                display: block;
+                text-align: center;
+            }
+          
+        }
+
+
+        @media screen and (max-width: 450px){
+            margin: auto;
+            width: 300px;
+            padding: 10px;
+        }
+
+    }
+
+
+    @media screen and (max-width: 900px){
+        margin-bottom: 50px;
+    }
+
+    /* scroll to top button */
+
+    .top-btn-position {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        position: fixed;
+        // bottom: 120px;
+        // right: 100px;
+        right: 20% ;
+        bottom: 70px;
+
+
+        &:hover{
+            animation: none;
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        @media screen and (max-width: 900px){
+            bottom: 50px;
+            right: 50%;
+            right: 20%;
+        }
+        @media screen and (max-width: 450px){
+            bottom: 80px;
+            right: 50%;
+        }
+        @media screen and (max-width: 330px){
+            bottom: 90px;
+            right: 50%;
+        }
+
+    }
+}

@@ -1,0 +1,1 @@
+export const urlFSCE = 'https://backend-app-v1.herokuapp.com';

@@ -1,0 +1,162 @@
+
+.RegistroDeDatos{
+    padding: 30px;
+    background-color: white;
+    min-height: calc(100vh - 200px);
+    .success-message {
+        margin-top: 10px;
+        background-color: #E6FDF8;
+        p {
+            color: #1BE9B8;
+            margin: 0;
+            padding: 2px;
+        }
+        figure {
+            margin: 0;
+            padding: 5px;
+        }
+
+    }
+    .error-message {
+        margin-top: 10px;
+        background-color: #ff9b99;
+        p {
+            color: #CA3937;
+            margin: 0;
+            padding: 2px;
+        }
+        figure {
+            margin: 0;
+            padding: 5px;
+        }
+    }
+    .button-back-perfil {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        p{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            background-color: #F50C10;
+            color: #FFF;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 15px 10px;
+            border-radius: 15px;
+        }
+        a {
+            text-decoration: none;
+        }
+    }   
+
+    .button-registrar{
+        justify-content: center;
+    }
+
+    form{
+        background-color: rgba(231, 227, 227, 1);
+        border-radius: 12px;
+        color: rgba(70, 78, 95, 1);
+
+        h2{
+            color: rgba(70, 78, 95, 1);
+            margin: 0;
+            padding: 10px;
+            padding-left: 20%;
+            font-size: 20px;
+        }
+    
+        .total-container{
+            border: 1px solid white;
+            padding: 20px;
+            padding-left: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+    
+    
+            .label-container{
+                color: rgba(70, 78, 95, 1);
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                
+                label{
+                    width: 200px;
+
+                    @media screen and (max-width: 880px){
+                        width: 180px;
+                        text-align: center;
+                    }
+                }
+                
+                input{
+                    width: 400px;
+                    border-radius: 8px;
+                    padding-left: 20px;
+                    border: none;
+                    outline: none;
+                    height: 40px;
+                    box-sizing: border-box;
+
+                    @media screen and (max-width: 880px){
+                        width: 90%;
+                    }
+                }
+
+                @media screen and (max-width: 880px){
+                    flex-direction: column;
+
+                }
+                @media screen and (max-width: 400px){
+                    flex-direction: column;
+
+                }
+           
+
+            }
+
+            #numeroContacto{
+                width: 200px;
+            }
+
+
+            @media screen and (max-width: 400px){
+                padding: 10px;
+
+            }
+
+        }
+
+
+        .button-registrar-container{
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+
+
+            .button-registrar{
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                background-color: #F50C10;
+                color: #FFF;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                padding: 15px 10px;
+                border-radius: 15px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+
+            }
+        }
+
+
+    }
+
+
+
+
+}

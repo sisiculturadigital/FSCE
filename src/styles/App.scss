@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "./Layout/variables.scss";
 
 body {
   margin: 0px;
@@ -28,16 +28,35 @@ body {
 }
 
 .not-found {
-  @include min-height;
 }
 
-@import "./header.scss";
-@import "./home.scss";
-@import "./mision.scss";
-@import "./footer.scss";
-@import "./contacto.scss";
-@import "./usuarios.scss";
+@import "./Components/header.scss";
+@import "./Components/home.scss";
+@import "./Components/mision.scss";
+@import "./Components/footer.scss";
+@import "./Components/contacto.scss";
+@import "./Components/usuarios.scss";
 @import "./nuevo-usuario.scss";
-@import "./institucional.scss";
-@import "./modal.scss";
-@import "./beneficios.scss";
+@import "./Components/transparencia.scss";
+@import "./Layout/modal.scss";
+@import "./Components/beneficios.scss";
+@import "./Components/descargas.scss";
+@import "./Components/registrate.scss";
+@import "./Components/modal.scss";
+@import "./Components/recoveryPassword.scss";
+@import "./Components/inicio.scss";
+@import "./Components/apoyoEconomico.scss";
+@import "./Components/menuLoging.scss";
+
+@import "./Components/institucional/institucional.scss";
+@import "./Components/institucional/mision.scss";
+
+@import "./Components/Roles/2/Pago.scss";
+@import "./Components/Roles/2/Aportes.scss";
+@import "./Components/Roles/2/Saldo.scss";
+@import "./Components/registroDatos.scss";
+@import "./Components/RegistroDeDatos.scss";
+
+@import "./Components/RecuperarContrasenia.scss";
+@import "./Components/actualizarContraseña.scss";
+

@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+.Saldo-wrapper {
+    background-color: #FFF;
+    min-height: calc(100vh - 140px);
+    padding: 50px 30px 30px 30px;
+
+    .button-back-perfil, .dowloand-saldo {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        p{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            background-color: #F50C10;
+            color: #FFF;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 15px 10px;
+            border-radius: 15px;
+        }
+        a {
+            text-decoration: none;
+        }
+
+    }
+
+    .dowloand-saldo{
+        padding: 15px 15px;
+        border-radius: 15px;
+        font-size: 18px;
+    }
+
+    .situacion-financiera, .prestamo-saldo-pendiente {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+
+        &__title {
+            text-align: center;
+            background: #F50C10;
+            box-shadow: 0px 4px 10px #242324;
+            border-radius: 6px;
+            padding: 10px 0px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 15px;
+
+            @media screen and (max-width: 600px){
+                font-size: 18px;
+            }
+            @media screen and (max-width: 390px){
+                font-size: 16px;
+            }
+        }
+        table {
+            color: #464E5F;
+            border-collapse: collapse;
+            width: 100%;
+            .border_thead {
+                background: rgba(56, 56, 56, 0.3);
+                th {
+                    padding: 10px;
+
+                    &:nth-child(1){
+                        border-bottom-left-radius: 6px;
+                        border-top-left-radius: 6px;
+                    } 
+                    &:last-child {
+                        border-bottom-right-radius: 6px;
+                        border-top-right-radius: 6px;
+                        text-align: left;
+                    }
+                }
+            }
+            .content-info, .content-info-total {
+                th {
+                    padding: 10px;
+                }
+                .button-detalle {
+                    background: rgba(56, 56, 56, 0.2);
+                    border-radius: 6px;
+                    color: #FFF;   
+                    padding: 10px 20px;
+                    cursor: pointer;     
+                    &:hover {
+                        background: #F50C10;
+                    }            
+                }
+            }
+
+
+        }
+        
+    }
+
+    .prestamo-saldo-pendiente {
+        margin-top: 50px;
+        &__title {
+            letter-spacing: 0.1em;
+        }
+        &__flex {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            .width-flex {
+                width: max-content;
+            }
+        }
+        &__prestamo-disponible {
+            color: #464E5F;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            p {
+                &:nth-child(1){
+                    background-color: #9B9B9B;
+                    padding: 15px 40px;
+                    border-bottom-left-radius: 6px;
+                    border-top-left-radius: 6px;
+                }
+                &:nth-child(2){
+                    background-color: #C4C4C4;
+                    padding: 15px 80px;
+                    border-bottom-right-radius: 6px;
+                    border-top-right-radius: 6px;
+                }
+            }
+        }
+    }
+    .container-info-prestamo {
+        border-bottom: 3px dashed #000000;;
+    }
+    .dowloand-saldo {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .consultaDetallePago {
+        font-family: 'Roboto', sans-serif;
+        margin-top: 20px;
+        .title {
+            font-size: 25px;
+        }
+        &__table {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin: 20px 0 20px 0;
+            &__row {
+                width: 100%;
+                &__header {
+                    border: 1px solid #464E5F;
+                    background-color: #F50C10;
+                    font-weight: 700;
+                }
+                &__response {
+                    border: 1px solid #464E5F;
+                    color: #242324;
+                    font-family: 'Roboto', sans-serif;
+                }
+                div {
+                    padding: 10px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }        
+    }
+    .open{
+        display: block;
+    }
+
+    .situacion-financiera-response{
+        color:#464E5F;
+        text-align: center;
+        padding-top: 10px;
+        width: 100%;
+
+        p{
+            width: 80%;
+            margin: 14px auto;
+
+            @media screen and (max-width: 390px){
+                width: 90%;
+            }
+        }
+        &__p{
+            background-color: rgba(56, 56, 56, 0.3);
+            border-radius: 6px;
+        }
+    }
+    
+    .container-info-prestamo-response{
+        border-bottom: 3px dashed rgba(70, 78, 95, 1);
+        .container-map{
+            width:'80%';
+            margin:'auto';
+            color: rgba(70, 78, 95, 1);
+            padding-bottom: 30px ;
+
+            .container-map__element{
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                width:100%;
+                padding-top: 20px ;
+                padding-bottom: 20px ;
+                border-bottom: 2px solid rgba(70, 78, 95, 1);
+    
+                .container-map__element__child{
+                    display:flex; 
+                    justify-content:space-between;
+    
+                    .child_key{
+                        flex:1;
+                        background-color:rgba(56, 56, 56, 0.3); 
+                        border-radius:6px 0 0 6px;
+                        color:rgba(70, 78, 95, 1);
+                        text-align:center;
+                    }
+                    .child_value{
+                        flex:1;
+                        text-align:center;
+                        border-radius: 0 6px 6px 0;
+                        border: 1px solid rgba(56, 56, 56, 0.3); ;
+                    }
+                          
+                }
+
+    
+            }
+
+            .total-container{
+                margin: 20px 0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                &__child{
+                    display:flex; 
+                    justify-content:space-between;
+                }
+                .child_key{
+                    flex:1;
+                    background-color:rgba(56, 56, 56, 0.3); 
+                    border-radius:6px 0 0 6px;
+                    color:rgba(70, 78, 95, 1);
+                    text-align:center;
+                    @media screen and (max-width: 330px){
+                        font-size: 14px;
+                    }
+                }
+                .child_value{
+                    flex:1;
+                    text-align:center;
+                    border-radius: 0 6px 6px 0;
+                    border: 1px solid rgba(56, 56, 56, 0.3); ;
+                }
+            }
+
+            .button-container{
+                margin: auto;
+                
+                .button-detalle {
+                    display: inline-block;
+                    background: rgba(56, 56, 56, 0.2);
+                    border-radius: 6px;
+                    border: none;
+                    color: #FFF;   
+                    padding: 10px 20px;
+                    box-sizing: border-box;
+                    width: 215px;
+                    font-size: 18px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    margin-top: 10px;
+                    cursor: pointer;     
+                    &:hover {
+                        background: #F50C10;
+                    }            
+                }
+            }
+            .prestamo-saldo-pendiente__prestamo-disponible_media{
+                display: flex;
+                justify-content: end;
+                color: rgba(70, 78, 95, 1);
+                padding-right: 30px;
+
+                :nth-child(1){
+                    background-color: #aba9a9;
+                    padding: 10px 25px;
+                    border-radius: 6px 0 0 6px;
+                    font-size: 14px;
+                    @media screen and (max-width: 330px){
+                        padding: 10px 10px;
+                    }
+                }
+                :nth-child(2){
+                    background-color: #C4C4C4;
+                    padding: 10px  25px;
+                    border-radius: 0 6px 6px 0;
+                    font-size: 14px;
+                    @media screen and (max-width: 330px){
+                        padding: 10px 10px;
+                    }
+                }
+                @media screen and (max-width: 330px){
+                    padding-right: 0px;
+                }
+            }
+        }
+    }
+
+
+    .consultaDetallePago_media{
+        color:rgba(70, 78, 95, 1); 
+        text-align:center;
+        margin-top:30px; 
+        display:flex;
+        flex-direction:column;
+        font-weight: 700;
+        font-family: 'Roboto';
+
+        &__child{
+            display:flex;
+            flex-direction:column;
+
+            :nth-child(1){
+                border:1px solid rgba(70, 78, 95, 1);
+                border-bottom: none;
+                margin:0;
+                background-color:rgba(245, 12, 16, 1);
+                color: white;
+                padding-top: 5px ;
+                padding-bottom: 5px ;
+            }
+            :nth-child(2){
+                border:1px solid rgba(70, 78, 95, 1);
+                border-bottom: none;
+                margin:0;
+                padding-top: 5px ;
+                padding-bottom: 5px ;
+            }
+        }
+
+        h2{
+            background-color: rgba(245, 12, 16, 1);
+            font-weight: 700;
+            color: white;
+            margin: 40px 0;
+        }
+
+
+        .dowloand-saldo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p{
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                background-color: #F50C10;
+                color: #FFF;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                padding: 15px 15px;
+                border-radius: 15px;
+                font-size: 18px;
+            }
+            a {
+                text-decoration: none;
+            }
+
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    @media screen and (max-width: 500px){
+        padding: 50px 20px 30px 20px;
+    }
+
+
+
+
+
+
+
+
+}

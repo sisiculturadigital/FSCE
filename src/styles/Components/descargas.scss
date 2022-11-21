@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+.container-descargas {
+    padding: 30px;
+    padding-top: 50px;
+    background: url('../../imgs/View/descargas/bg-descargas.png') no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: calc(100vh - 180px);
+
+    @media screen and (max-width: 600px){
+        padding: 0;
+        padding-top: 50px;
+        max-width: max-content;
+        h1{
+            font-size: 26px;
+        }
+    }
+        
+    .title-descargas {
+        font-weight: 900;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 5px;
+    }
+    .descargas-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0 90px;
+
+
+        @media screen and (max-width: 600px){
+            padding: 0px 0 30px 0;
+        }
+
+        .descargas-card {
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            background-color: #FFF;
+            max-width: 284px;
+            border: 1.5px solid rgb(116, 118, 120);
+
+            @media screen and (max-width: 600px){
+                max-width: 280px;
+            }
+            .preview-img-pdf {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 1px solid rgb(116, 118, 120);
+            }
+            .title-preview {
+                padding: 13px 16px;
+                position: relative;
+                a {
+                    text-decoration: none;
+                    color: rgb(60,64,67);
+                    font-weight: 700;
+                    font-size: 13px;
+                    display:inline-block;
+                    width: 224px;
+                    text-overflow:ellipsis;
+                    white-space:nowrap; 
+                    overflow:hidden;  
+                    margin-left: 8px;
+                }
+                .icon-extension {
+                    width: 16px;
+                    height: 16px;
+                }
+                .tooltiptext {
+                    visibility: hidden;
+                    background-color: #37383A;
+                    color: #CED0D3;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 5px 20px;
+                    font-size: 12px;
+                  
+                    /* Position the tooltip */
+                    position: absolute;
+                    top: 60%;
+                    left: 10%;
+                    z-index: 1;
+
+                    @media screen and (max-width: 480px){
+                        left: 0%;
+                        padding: 5px 7px;
+                        font-size: 10px;
+                    }
+                  }
+                  
+                  &:hover .tooltiptext {
+                    visibility: visible;
+                  }
+            }
+        }
+}
+}
