@@ -39,7 +39,6 @@ const Header = () => {
 
     open ? document.body.classList.add('hide') : document.body.classList.remove('hide')
 
-    // console.log(user)
   return (
     <div className='header'>
         <div className='header-wrapper'>
@@ -121,24 +120,12 @@ const Header = () => {
 
             <MenuLogin isOpen={isOpen} closeModal={closeModal}/>
 
-            {/* <RecoverPassword isOpen={isOpen} closeModal={closeModal}/> */}
-
-
                 {isAuth?
                     
                 <figure className='figure-ingreso' ref={Icon} onClick={openModal} >
                     <FaUser className='fa' />
                     <FaAngleDown className='fa-arrow' />
-                    {/* <div className={`menu-login ${openLogin && 'desplegado'} `} onClick={close}>
-                        <div>
-                            <figure>
-                                <FaUser className='fa' />
-                            </figure>
-                            <p>ALEXANDRA MARTINEZ</p> 
-                        </div>
-                        <p>DNI 323232</p>
-                        <div>ADSFDA- SALIR</div>
-                    </div> */}
+
                 </figure>
                 :
                 <Link to='/usuarios' className='nav-usuario' onClick={cerrarMenu}>
