@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import { listaProductos } from '../../API/SOLICITUD-PRESTAMOS-POR-SEDE/listaProductos';
 import { registrarSolicitudPrestamoPorSede } from '../../API/SOLICITUD-PRESTAMOS-POR-SEDE/Registrar-Solicitud-Prestamo-Por-Sede';
 
+import {BiError} from 'react-icons/bi'
+import {BiCheckCircle} from 'react-icons/bi'
+
 const initialForm = {
     nroCuo: '',
     impSol: '',
@@ -17,6 +20,7 @@ const RegistroDatos = () => {
     const [servicios, setServicios] = useState()
     const [form, setForm] = useState(initialForm)
     const [valueCodigo, setValueCodigo] = useState("");
+    const [response, setResponse] = useState(null)
 
     useEffect(() => {
         listaProductos()
@@ -40,7 +44,7 @@ const RegistroDatos = () => {
         registrarSolicitudPrestamoPorSede(form.nroCuo, form.impSol, form.usuIng, form.liquidez, form.dni, form.ecPtmo)
         .then(res => res.json())
         .then(res => {
-            console.log(res)
+            setResponse(res)
         })
     }
 
@@ -119,6 +123,25 @@ const RegistroDatos = () => {
                 </div>
             </div>
         </form>
+
+        <center>
+                  <div>
+                    { response ? 
+                        (response.code === '200'?
+                        
+                        <div className='success-message'>
+                            <figure><BiCheckCircle className='fasearch' style={{color:"#1BE9B8"}}/></figure>
+                            <p>{response.message}</p>
+                        </div> 
+                        :
+                        <div className='error-message'>
+                            <figure><BiError className='fasearch' style={{color:"#CA3937"}}/></figure>
+                            <p>{response.message}</p>
+                        </div>
+                        )
+                    : '' }
+                  </div>
+                </center>
 
         <div className='linea'></div>
     </div>

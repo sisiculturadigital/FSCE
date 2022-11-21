@@ -53,8 +53,8 @@ const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} 
                         <div>
                             <center>
                             <Link to={"/saldo"}>
-                                    <figure> <IoMdCheckboxOutline className='fasearch'/> </figure>
-                                    <p>SALDO</p>
+                                <figure> <IoMdCheckboxOutline className='fasearch'/> </figure>
+                                <p>SALDO</p>
                             </Link>
                             </center>
 
