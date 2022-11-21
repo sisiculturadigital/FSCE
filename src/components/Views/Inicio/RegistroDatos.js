@@ -60,6 +60,8 @@ const RegistroDatos = () => {
     // Validacion()
     console.log(form)
     submit()
+
+    setForm(initialForm)
     }
 
   return (
