@@ -15,8 +15,12 @@ const Noticias = (props) => {
     .then(data=>setNews(data))
   },[])
 
-  
-  console.log(news)
+
+  function ShowContent(index){
+    const element = document.querySelector(`#parrafo-container-${index}`)
+    element.classList.toggle('show')
+    console.log(document.querySelector(`#parrafo-container-${index}`).className) 
+  }
   
 
   return (
@@ -32,15 +36,31 @@ const Noticias = (props) => {
             <div key={index}>
 
               <div>
-                <img src={el.img} alt="imagen" />
+                <img src={el.img1} alt="imagen" />
               </div>
 
               <div className='noticias-info'>
                 <h3>{el.titulo}</h3>
-                <p>"Lrem ipsum dolor sit amet, consectetur adipiscing...</p>
+
+                <div className='parrafos-container' id={`parrafo-container-${index}`}>
+                  <p>{el.parrafo1}</p>
+                  <p>{el.parrafo2}</p>
+                  <p>{el.parrafo3}</p>
+                  <p>{el.parrafo4}</p>
+                  <p>{el.parrafo4}</p>
+                  <p>{el.parrafo5}</p>
+                  <p>{el.parrafo6}</p>
+                </div>
+
                 <div className='read-more'>
-                  <p> LEER MÁS...</p>
-     
+                  <p onClick={()=>ShowContent(index)}> 
+                    {/* { index &&
+                      document.querySelector(`#parrafo-container-${index}`).classList.contains('show') ?
+                      'Mostrar menos':
+                      'Mostrar más'
+                    } */}
+                    Mostrar más..
+                  </p>
                 </div>
               </div>
 

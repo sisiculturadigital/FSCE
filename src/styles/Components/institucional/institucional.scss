@@ -285,6 +285,7 @@
     }
 
     .noticias {
+
         h2 {
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -309,14 +310,26 @@
                 .noticias-info {
                     background-color: rgba(239,241,241, 0.6);
                     padding: 20px 10px;
+                    
                     h3 {
                         text-align: left;
                         margin: 0;
                         padding: 5px auto;
                     }
-                    p {
-                        text-align: left;
-      
+                    .parrafos-container{
+                        height: 150px;
+                        overflow-y: hidden;
+                        p {
+                            text-align: justify;
+                        }
+
+                    }
+                    .show{
+                        height: auto;
+                        overflow-y: visible;
+                        p {
+                            text-align: justify;
+                        }
                     }
                     .read-more {
                         display: flex;
@@ -325,10 +338,15 @@
                         p {
                             border: 3px solid #FFFFFF;
                             padding: 5px 10px;
+                            cursor: pointer;
                         }
                     }
                 }
             }
         }
+
+
     }
 }
+
+
