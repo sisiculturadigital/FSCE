@@ -125,7 +125,7 @@ const DetalleSaldo = ({ datosPersona=[{}] }) => {
       )}
 
             <div className='dowloand-saldo'>
-                <a href="https://backend-app-v1.herokuapp.com/publico/pdf/80467508">
+                <a href="https://backend-app-v1.herokuapp.com/publico/pdf/622999900/80467508/10339868-2017-3">
                     <p>DESCARGAS</p>
                 </a>
             </div>
@@ -219,7 +219,7 @@ const DetalleSaldo = ({ datosPersona=[{}] }) => {
 
                 
             <div className='dowloand-saldo'>
-                <a href="https://backend-app-v1.herokuapp.com/publico/pdf/80467508">
+                <a href="https://backend-app-v1.herokuapp.com/publico/pdf/622999900/80467508/10339868-2017-3">
                     <p>DESCARGAS</p>
                 </a>
             </div>
