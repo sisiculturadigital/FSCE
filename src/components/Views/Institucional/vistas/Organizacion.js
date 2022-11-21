@@ -10,11 +10,9 @@ const organizacion = () => {
         <div></div>
         <div className='flex'>
             <div className='flex-column'>
-                <div className='OneImg'><img src={OneImagen} alt="" /></div>
-                <div className='ThreeImg'><img src={ThreeImagen} alt="" /></div>
-            </div>
-            <div className='flex-only'>
-                <div className='TwoImg'><img src={TwoImagen} alt="" /></div>
+                <div className='gray'>Fondo de Seguro</div>
+                <div className='gray'>Apyo Economico </div>
+                <div className='gray'>Tesorería</div>
             </div>
         </div>
     </div>

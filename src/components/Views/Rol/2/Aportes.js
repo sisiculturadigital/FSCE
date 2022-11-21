@@ -72,7 +72,6 @@ const Pago = () => {
     function DesplegarMenu (index){
 
         let nav = document.querySelector(`#h3_container_${index}`)
-        console.log(nav)
 
         let menu = nav.nextElementSibling
 

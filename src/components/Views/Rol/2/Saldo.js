@@ -43,6 +43,18 @@ const Saldo = () => {
      
     }, [])
 
+    function totalPrestamo (nrcheP) {
+
+        console.log(((consultaPrestamo).filter((aporte) => aporte.codigoPrestamo === nrcheP)).map(e => e.prestamos)[0].map(e => e.impSol))
+        const response = (((consultaPrestamo).filter((aporte) => aporte.codigoPrestamo === nrcheP)).map(e => e.prestamos)[0].map(e => e.impSol))
+        // const result = ((consultaPrestamo).filter((aporte) => aporte.codigoPrestamo === nrcheP)).map(e => e.prestamos)[0].map(e => e.impSol).reduce((previousValue, currentValue) => previousValue + currentValue)
+        // console.log(result);
+
+        const valueImpApoLiq = response ==  null || response== null ? '': e => e.impSol
+
+
+        // return result
+    }
 
     return (
         <div className='Saldo-wrapper'>
@@ -171,17 +183,17 @@ const Saldo = () => {
                                             </tbody>
                                         )
                                     }
-                                    <tbody>
+                                    {/* <tbody>
                                         <tr className='content-info-total'>
                                             <th></th>
-                                            <th>8,000.00</th>
+                                            <th>{ totalPrestamo(element.codigoPrestamo)}</th>
                                             <th></th>
                                             <th></th>
                                             <th>7,999.99</th>
                                             <th>8720.00</th>
                                             <th></th>
                                         </tr>
-                                    </tbody>
+                                    </tbody> */}
                                 </table>
                             </div>
                             <div className='prestamo-saldo-pendiente__prestamo-disponible'>
