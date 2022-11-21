@@ -124,26 +124,26 @@ const RegistroDatos = () => {
             </div>
         </form>
 
-        <center>
-                  <div>
-                    { response ? 
-                        (response.code === '200'?
-                        
-                        <div className='success-message'>
-                            <figure><BiCheckCircle className='fasearch' style={{color:"#1BE9B8"}}/></figure>
-                            <p>{response.message}</p>
-                        </div> 
-                        :
-                        <div className='error-message'>
-                            <figure><BiError className='fasearch' style={{color:"#CA3937"}}/></figure>
-                            <p>{response.message}</p>
-                        </div>
-                        )
-                    : '' }
-                  </div>
-                </center>
-
         <div className='linea'></div>
+
+        <center>
+            <div>
+            { response ? 
+                (response.code === '200'?
+                
+                <div className='success-message'>
+                    <figure><BiCheckCircle className='fasearch' style={{color:"#1BE9B8"}}/></figure>
+                    <p>{response.message}</p>
+                </div> 
+                :
+                <div className='error-message'>
+                    <figure><BiError className='fasearch' style={{color:"#CA3937"}}/></figure>
+                    <p>{response.message}</p>
+                </div>
+                )
+            : '' }
+            </div>
+        </center>
     </div>
   )
 }
