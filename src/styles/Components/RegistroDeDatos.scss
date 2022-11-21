@@ -3,7 +3,33 @@
     padding: 30px;
     background-color: white;
     min-height: calc(100vh - 200px);
+    .success-message {
+        margin-top: 10px;
+        background-color: #E6FDF8;
+        p {
+            color: #1BE9B8;
+            margin: 0;
+            padding: 2px;
+        }
+        figure {
+            margin: 0;
+            padding: 5px;
+        }
 
+    }
+    .error-message {
+        margin-top: 10px;
+        background-color: #ff9b99;
+        p {
+            color: #CA3937;
+            margin: 0;
+            padding: 2px;
+        }
+        figure {
+            margin: 0;
+            padding: 5px;
+        }
+    }
     .button-back-perfil {
         display: flex;
         justify-content: flex-end;

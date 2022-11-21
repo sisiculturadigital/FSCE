@@ -45,12 +45,14 @@ const RegistroDatos = () => {
         .then(res => res.json())
         .then(res => {
             setResponse(res)
+            if(res.code === '200') {
+                setForm(initialForm)
+            }
         })
     }
 
     const HandleSubmit = (e) =>{
     e.preventDefault()
-    // valueCodigo === '' ?  form.ecPtmo = '0001' : form.ecPtmo = valueCodigo;
     valueCodigo === '' ?  form.ecPtmo = '8650' : form.ecPtmo = valueCodigo;
     form.nroCuo = parseFloat(form.nroCuo)
     form.impSol = parseFloat(form.impSol)
@@ -60,8 +62,6 @@ const RegistroDatos = () => {
     // Validacion()
     console.log(form)
     submit()
-
-    setForm(initialForm)
     }
 
   return (

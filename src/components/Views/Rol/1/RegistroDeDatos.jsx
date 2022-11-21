@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { SolicitudDs } from '../../../API/SOLICITUD-PRESTAMOS-POR-SEDE/SolicitudDs';
+import {BiError} from 'react-icons/bi'
+import {BiCheckCircle} from 'react-icons/bi'
 
 const InitialValue = {
 cci: "",
@@ -17,6 +19,7 @@ provincia: ""
 const RegistroDeDatos = () => {
 
   const [form, setForm] = useState(InitialValue)
+  const [response, setResponse] = useState(null)
 
 
   const HandleChange = (e) =>{
@@ -29,8 +32,24 @@ const RegistroDeDatos = () => {
 
   const HandleSubmit = (e) =>{
     e.preventDefault()
-    console.log(form)
-    setForm(InitialValue)
+    SolicitudDs(    
+      form.entidad,
+      form.numeroCta,
+      form.cci,
+      form.numeroContacto,
+      form.correo,
+      form.departamento,
+      form.provincia,
+      form.distrito,
+      form.direccion
+      )
+    .then(res => res.json())
+    .then(res => {
+        setResponse(res)
+        if(res.code === '200') {
+            setForm(InitialValue)
+        }
+    })
 
   } 
 
@@ -114,7 +133,24 @@ const RegistroDeDatos = () => {
 
       </form>
 
-
+      <center>
+            <div>
+            { response ? 
+                (response.code === '200'?
+                
+                <div className='success-message'>
+                    <figure><BiCheckCircle className='fasearch' style={{color:"#1BE9B8"}}/></figure>
+                    <p>{response.message}</p>
+                </div> 
+                :
+                <div className='error-message'>
+                    <figure><BiError className='fasearch' style={{color:"#CA3937"}}/></figure>
+                    <p>{response.message}</p>
+                </div>
+                )
+            : '' }
+            </div>
+        </center>
 
     </div>
   )
