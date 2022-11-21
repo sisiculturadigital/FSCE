@@ -103,6 +103,31 @@
             }
 
         }
+
+
+        .button-registrar-container{
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+
+
+            .button-registrar{
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                background-color: #F50C10;
+                color: #FFF;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                padding: 15px 10px;
+                border-radius: 15px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+
+            }
+        }
+
+
     }
 
 
