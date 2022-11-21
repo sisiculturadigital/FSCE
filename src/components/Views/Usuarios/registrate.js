@@ -13,7 +13,6 @@ const initialForm = {
   DateOfBirth:'',
   codAdm:'',
   password:'',
-  repeat_password:'',
   codRole: '2'
   }
   
@@ -102,7 +101,6 @@ const Registrate = () => {
 
               <input type='email'  name='email'  placeholder='Email' autoComplete='off' onChange={HandleChange} value={form.email} onBlur={HandleChange} />
               <input type='password' name='password' placeholder='Contraseña' autoComplete='off'  onChange={HandleChange} value={form.password} onBlur={HandleChange} />
-              <input type='password' name='repeat_password' placeholder='Confirmar contraseña' autoComplete='off' onChange={HandleChange} value={form.repeat_password} onBlur={HandleChange}  />
               <input type='date' name='DateOfBirth' placeholder='Fecha de nacimiento' autoComplete='off' onChange={HandleChange} value={form.DateOfBirth} onBlur={HandleChange} />
               <input type='text' name='dni' placeholder='DNI' autoComplete='off' onChange={HandleChange} value={form.dni} onBlur={HandleChange} />
               <input type='text' name='codAdm' placeholder='Cod Adm' autoComplete='off' onChange={HandleChange} value={form.codAdm} onBlur={HandleChange} />
