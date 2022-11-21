@@ -339,6 +339,9 @@
                             border: 3px solid #FFFFFF;
                             padding: 5px 10px;
                             cursor: pointer;
+                            &:hover{
+                                color: red;
+                            }
                         }
                     }
                 }

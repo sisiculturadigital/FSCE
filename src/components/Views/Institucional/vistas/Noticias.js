@@ -1,14 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import oneImagen from '../../../../imgs/View/Institucional/Noticias/1.png'
-import twoImagen from '../../../../imgs/View/Institucional/Noticias/2.png'
-import threeImagen from '../../../../imgs/View/Institucional/Noticias/3.png'
 import {urlFSCE} from '../../../API/url-API'
 
 
 const Noticias = (props) => {
   
   const [news, setNews] = useState(null)
-  
+  const [newDate, setNewDate] = useState(null)
+
   useEffect(()=>{
     fetch(`${urlFSCE}/publico/noticias`)
     .then(res=>res.json())
@@ -19,57 +17,73 @@ const Noticias = (props) => {
   function ShowContent(index){
     const element = document.querySelector(`#parrafo-container-${index}`)
     element.classList.toggle('show')
-    console.log(document.querySelector(`#parrafo-container-${index}`).className) 
+
+    element.classList.contains('show')?
+    document.querySelector(`.read-more-${index}`).textContent = 'Mostrar menos':
+    document.querySelector(`.read-more-${index}`).textContent = 'Mostrar más'
   }
+
+
+  const meses = ['', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ]
+
+
+
+  function fechaFullName(date) {
+    let array = date.split('-') 
+    let newDateConcat =  `${array[2]} ${meses[parseInt(array[1])]} ${array[0]}`
+
+    return newDateConcat
   
+  }
 
   return (
     <div>
       <div className='noticias'>
-
         <center>
+
           <div className='noticias__flex'>
   
+            {news && news.map((el, index) =>(      
 
-          {news && news.map((el, index) =>(      
+              <div key={index}>
 
-            <div key={index}>
-
-              <div>
-                <img src={el.img1} alt="imagen" />
-              </div>
-
-              <div className='noticias-info'>
-                <h3>{el.titulo}</h3>
-
-                <div className='parrafos-container' id={`parrafo-container-${index}`}>
-                  <p>{el.parrafo1}</p>
-                  <p>{el.parrafo2}</p>
-                  <p>{el.parrafo3}</p>
-                  <p>{el.parrafo4}</p>
-                  <p>{el.parrafo4}</p>
-                  <p>{el.parrafo5}</p>
-                  <p>{el.parrafo6}</p>
+                <div>
+                  <img src={el.img1} alt="imagen" />
                 </div>
 
-                <div className='read-more'>
-                  <p onClick={()=>ShowContent(index)}> 
-                    {/* { index &&
-                      document.querySelector(`#parrafo-container-${index}`).classList.contains('show') ?
-                      'Mostrar menos':
-                      'Mostrar más'
-                    } */}
-                    Mostrar más..
+                <div className='noticias-info'>
+                  <h3>{el.titulo}</h3>
+
+                  <p style={{textAlign:'left'}}> 
+
+                    {      
+                      fechaFullName(el.fechPubl.slice(0,10))
+                    }
+
                   </p>
-                </div>
-              </div>
 
-            </div>
+                  <div className='parrafos-container' id={`parrafo-container-${index}`}>
+                    {el.parrafo1 && <p>{el.parrafo1}</p>} 
+                    {el.parrafo2 && <p>{el.parrafo2}</p>} 
+                    {el.parrafo3 && <p>{el.parrafo3}</p>} 
+                    {el.parrafo4 && <p>{el.parrafo4}</p>} 
+                    {el.parrafo5 && <p>{el.parrafo5}</p>} 
+                    {el.parrafo6 && <p>{el.parrafo6}</p>} 
+                  </div>
+
+                  <div className={`read-more`}>
+                    <p onClick={()=>ShowContent(index)} className={`read-more-${index}`}> 
+                      Mostrar más
+                    </p>
+                  </div>
+                </div>
+
+              </div>
 
             ))}
 
 
-          </div>
+          </div>  
         </center>
 
 
