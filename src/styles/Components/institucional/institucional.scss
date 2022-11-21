@@ -156,12 +156,12 @@
     .organizacion-imagenes {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
         .flex {
             display: flex;
             padding: 10px 30px;
             align-items: center;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
     
             .OneImg{
