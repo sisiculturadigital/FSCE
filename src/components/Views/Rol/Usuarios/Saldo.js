@@ -165,17 +165,6 @@ const Saldo = () => {
                                             </tbody>
                                         )
                                     }
-                                    {/* <tbody>
-                                        <tr className='content-info-total'>
-                                            <th></th>
-                                            <th>{ totalPrestamo(element.codigoPrestamo)}</th>
-                                            <th></th>
-                                            <th></th>
-                                            <th>7,999.99</th>
-                                            <th>8720.00</th>
-                                            <th></th>
-                                        </tr>
-                                    </tbody> */}
                                 </table>
                             </div>
                             <div className='prestamo-saldo-pendiente__prestamo-disponible'>
@@ -217,7 +206,7 @@ const Saldo = () => {
                                 {element.prestamos &&  (element.prestamos).map((elm, index) =>
                                     <div>
 
-                                        <div className='container-map__element'>
+                                        <div className='container-map__element' key={index}>
 
                                             <div className='container-map__element__child' >
                                                 <p className='child_key'>N° PRESTAMO</p>
@@ -257,23 +246,6 @@ const Saldo = () => {
                                                         } } />
                                             </div>
                                         </div>
-
-                                        <div className='total-container'>
-                                            <div className='total-container__child'>
-                                                <div className='child_key'>TOTAL Imp.Solicitado</div>
-                                                <div className='child_value'>$$.$$$</div>
-                                            </div>
-
-                                            <div className='total-container__child'  >
-                                                <div className='child_key'>TOTAL Saldo Capital</div>
-                                                <div className='child_value'>$$.$$$</div>
-                                            </div>
-                                            <div className='total-container__child' >
-                                                <div className='child_key'>TOTAL Saldo Total</div>
-                                                <div className='child_value'>$$.$$$</div>
-                                            </div>
-                                        </div>
-
 
                                         <div className='prestamo-saldo-pendiente__prestamo-disponible_media'>
                                             <p>Prestamo</p>

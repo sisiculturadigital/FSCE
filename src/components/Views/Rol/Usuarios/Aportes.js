@@ -24,6 +24,10 @@ const Pago = () => {
         aportes(codAdm , token)
         .then(res => res.json())
         .then(res => {
+            console.log('res', res)
+            console.log('datosPersona', datosPersona)
+
+
             let arr = res.aportes
             setServicios(res)
             setMinYear(arr.map((aporte) => parseInt(aporte.aaApa)))
@@ -99,7 +103,7 @@ const Pago = () => {
                         <span className='dato'>{datosPersona.nombreApe}</span>
                         <span className='title'>Nº CPI</span>
                         <span>######</span>
-                        <span>suspención de pago</span>
+                        <span>{datosPersona.situacion}</span>
                     </div>
 
                     <div className='datos-personales'>
@@ -108,7 +112,7 @@ const Pago = () => {
                     <span className='title'>Nº DNI</span>
                     <span>{datosPersona.dni}</span>
                     <span className='title fecha'>Fec. NomBram</span>
-                    <span></span>
+                    <span>{(datosPersona.fechIngreso).replace('T00:00:00.000+00:00', '')}</span>
                     <span className='title fecha'>Fec. de baja Ep</span>
                     <span>##/##/##</span>
                 </div>

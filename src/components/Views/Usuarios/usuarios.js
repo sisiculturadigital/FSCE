@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import RecoverPassword from '../../accesos-comunes/modals/RecoverPassword';
 import { useModal } from '../../accesos-comunes/modals/useModal';
 import { useUserContext } from '../../../context/UserProvider';
-import { postLogin } from '../../../components/API/POST-Login2';
+import { postLogin } from '../../../components/API/POST-Login';
 import decode from "jwt-decode";
 
 const initialForm = {

@@ -36,11 +36,11 @@ import ApoyoEconomico from '../components/Views/Beneficios/ApoyoEconomico';
 import { useUserContext } from '../context/UserProvider';
 
 // Consulta , codRole : usuario Normal
-import Pago from '../components/Views/Rol/2/Pago.js';
-import Aportes from '../components/Views/Rol/2/Aportes.js';
-import Saldo from '../components/Views/Rol/2/Saldo.js';
-import RegistroDatos from '../components/Views/Inicio/RegistroDatos';
-import RegistroDeDatos from '../components/Views/Rol/1/RegistroDeDatos';
+import Pago from '../components/Views/Rol/Usuarios/Pago.js';
+import Aportes from '../components/Views/Rol/Usuarios/Aportes.js';
+import Saldo from '../components/Views/Rol/Usuarios/Saldo.js';
+import RegistroDatos from '../components/Views/Rol/Administrador/RegistroDatos';
+import RegistroDeDatos from '../components/Views/Rol/Administrador/RegistroDeDatos';
 import ActualizarContrasenia from '../components/Views/ActualizarContrasenia/ActualizarContrasenia';
 
 const Router = () => {
