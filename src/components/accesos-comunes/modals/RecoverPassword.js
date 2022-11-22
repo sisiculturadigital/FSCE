@@ -31,7 +31,6 @@ const RecoverPassword = ({ isOpen, closeModal}) => {
             setResponse(res)
         })
     }
-    console.log(response)
 
     return (
         <article className = {`modal ${isOpen && 'is-open'}`} onClick={closeModal}>

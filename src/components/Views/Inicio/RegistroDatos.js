@@ -30,14 +30,10 @@ const RegistroDatos = () => {
         listaProductos(token)
         .then(res => res.json())
         .then(res => {
-                console.log(res)
                 setServicios(res)
             })
     }, [])
 
-    const onKeyUpValue = (e) => {
-        console.log(e.target.value)
-    }
     const HandleChange = (e) =>{
         setForm({
             ...form,
@@ -63,8 +59,6 @@ const RegistroDatos = () => {
     form.liquidez = parseFloat(form.liquidez)
  
     setForm(form);
-    // Validacion()
-    console.log(form)
     submit()
     }
 
@@ -82,7 +76,7 @@ const RegistroDatos = () => {
                 <div className='input_container'>
                     <div>
                         <label htmlFor="dni"> DNI </label>
-                        <input type="text" name='dni' autoComplete='off' onKeyUp={onKeyUpValue} onChange={HandleChange} value={form.dni} onBlur={HandleChange}/>
+                        <input type="text" name='dni' autoComplete='off' onChange={HandleChange} value={form.dni} onBlur={HandleChange}/>
                     </div>
 
                     <div>

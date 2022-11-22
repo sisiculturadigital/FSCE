@@ -14,8 +14,6 @@ const CambiarContrasenia = () => {
   
     const handleSubmit =(e) =>{
       e.preventDefault()
-      console.log('validando formulario')
-      console.log(recoveryForm)
     }
   
 

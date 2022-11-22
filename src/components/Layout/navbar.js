@@ -12,7 +12,7 @@ import { useModal } from '../accesos-comunes/modals/useModal';
 
 const Header = () => {
 
-    const {user, setUser, isAuth}=useUserContext()
+    const {isAuth}=useUserContext()
 
     const [open, setOpen] = useState(false)
     const [isOpen, openModal, closeModal] = useModal(false)
@@ -21,7 +21,6 @@ const Header = () => {
 
     function openMenu(){
         setOpen(!open)
-        // document.querySelector('.header-navbar').classList.toggle('open')
     }
 
     function cerrarMenu(e){

@@ -18,11 +18,9 @@ const Registrate = () => {
   const [form, setForm] = useState(initialForm)
 
   const registroUsuarioFx = () => {
-    console.log(form)
     registroUsuario(form.dni, form.DateOfBirth, form.codAdm, form.email, form.password, form.name, form.lastName, form.codRole)
     .then(res => res.json())
     .then(res => {
-      console.log(res)
     })
   }
 
@@ -37,7 +35,6 @@ const Registrate = () => {
 
   const HandleSubmit = (e) =>{
     e.preventDefault()
-    console.log(form.DateOfBirth)
     const arrDate = (form.DateOfBirth.split("-"))
     const newDateBirth = `${arrDate[2]}/${arrDate[1]}/${arrDate[0]}`
     form.DateOfBirth = newDateBirth;

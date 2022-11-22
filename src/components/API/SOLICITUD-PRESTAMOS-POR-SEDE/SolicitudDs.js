@@ -2,7 +2,6 @@ import { urlFSCE } from "../url-API";
 
 export const SolicitudDs = async (
     token,
-    // vCodAdm,
     tipoBanco,
     nroCuenta,
     nroCii,

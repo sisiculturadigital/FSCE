@@ -94,7 +94,6 @@
     &__navbar{
         max-width: 900px;
         display: flex;
-        // flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
         .linea {
@@ -295,8 +294,6 @@
         @media only screen and (max-width: 600px) {
             div {
                 margin: auto 7px;
-                // padding-left: 10px;
-                // padding-right: 10px;
             }
         }
     }

@@ -20,8 +20,6 @@ const Pago = () => {
     const matches = useMediaQuery("(min-width: 1060px)");
 
 
-    console.log(servicios)
-
     useEffect(() => {
         aportes(codAdm , token)
         .then(res => res.json())
@@ -68,8 +66,6 @@ const Pago = () => {
         let nav = document.querySelector(`#h3_container_${index}`)
 
         let menu = nav.nextElementSibling
-
-        console.log(menu)
 
         if(menu.clientHeight === 0){
           menu.style.height = `${menu.scrollHeight}px`

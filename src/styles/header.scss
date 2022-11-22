@@ -6,7 +6,6 @@
     height: 80px;
     justify-content: space-between;
     align-items: center;
-    // background-color: gray;
     box-shadow: -1px 10px 5px 3px rgba(0,0,0,0.72);
 
     img {
@@ -28,7 +27,6 @@
         .nav {
             @include link-basic-style;
             @include nav-btn;
-            // @include nav-btn;
         }
     }
 }

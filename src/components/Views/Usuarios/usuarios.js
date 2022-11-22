@@ -25,11 +25,9 @@ const Usuarios = () => {
     postLogin(form.dni, form.password)
     .then(res => res.json())
     .then(res => {
-      console.log(res)
       if(res.token) {
         setToken(res.token)
         const decoded = decode(res.token);
-        console.log(decoded)
         if (decoded) {
           setUser(decode(res.token))
           setIsAuth(true)

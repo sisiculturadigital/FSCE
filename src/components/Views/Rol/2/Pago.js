@@ -14,15 +14,12 @@ const Pago = () => {
     
     const [servicios, setServicios] = useState()
     const codAdmin = 120507200;
-    
-    console.log(datosPersona)
-    
+        
 
     useEffect(() => {
         pago(codAdmin, token)
         .then(res => res.json())
         .then(res => {
-                console.log(res)
                 setServicios(res)
             })
     }, [])

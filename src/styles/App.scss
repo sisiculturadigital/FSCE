@@ -4,7 +4,6 @@ body {
   margin: 0px;
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 400;
-  // background: linear-gradient(90deg, rgba(84,6,6,1) 0%, rgba(31,11,15,1) 63%, rgba(9,0,3,1) 100%);
   background: #212121;
 
   color:white;
@@ -25,9 +24,6 @@ body {
 
     cursor: pointer;
   }
-}
-
-.not-found {
 }
 
 @import "./Components/header.scss";

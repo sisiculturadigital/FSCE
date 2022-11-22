@@ -26,8 +26,6 @@ const {user, datosPersona, setDatosPersona, token} = useUserContext()
         })
     }, [])
     
-    console.log(user);
-
     return (
         <div className='Inicio-wrapper'>
 

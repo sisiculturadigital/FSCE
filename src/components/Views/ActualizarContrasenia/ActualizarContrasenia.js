@@ -68,7 +68,6 @@ const ActualizarContrasenia = () => {
     
     const HandleSubmit = (e) =>{
       e.preventDefault()
-      console.log(form)
       email = form.email
       password = form.password
 

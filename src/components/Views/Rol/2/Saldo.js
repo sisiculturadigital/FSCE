@@ -17,9 +17,7 @@ const Saldo = () => {
 
     const matches = useMediaQuery("(min-width: 600px)");
     const matches2 = useMediaQuery("(min-width: 890px)");
-    
-    console.log('datosPersona', datosPersona.codAdm, datosPersona.dni)
-    
+        
     const dni = 44234811;
 
     function scrollToSection(elementRef){
@@ -34,7 +32,6 @@ const Saldo = () => {
         consultaPrestamosPorPersona(dni, token)
         .then(res => res.json())
         .then(res => {
-            console.log('consultaPrestamosPorPersona', res)
             SetConsultaPrestamo(res)
         })
 

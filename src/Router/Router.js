@@ -40,13 +40,12 @@ import Pago from '../components/Views/Rol/2/Pago.js';
 import Aportes from '../components/Views/Rol/2/Aportes.js';
 import Saldo from '../components/Views/Rol/2/Saldo.js';
 import RegistroDatos from '../components/Views/Inicio/RegistroDatos';
-import DetalleSaldo from '../components/Views/Rol/2/DetalleSaldo';
 import RegistroDeDatos from '../components/Views/Rol/1/RegistroDeDatos';
 import ActualizarContrasenia from '../components/Views/ActualizarContrasenia/ActualizarContrasenia';
 
-const Router = ({x}) => {
+const Router = () => {
     
-    const {user, setUser, isAuth}=useUserContext()
+    const {user, isAuth}=useUserContext()
 
   return (
     <BrowserRouter>
@@ -57,9 +56,9 @@ const Router = ({x}) => {
             <Route path='/usuarios' element={!isAuth ? <Usuarios/> : <Inicio />} />
             <Route path='/recuperar-contrasenia' element={ <RecuperarContrasenia /> } />
             <Route path='/institucional/*' element={<Institucional />}>
-                <Route path='mision' element={<Mision context={x.matches}/>} />
-                <Route path='organizacion' element={<Organizacion context={x.matches}/>} />
-                <Route path='noticias' element={<Noticias context={x.matches}/>} />
+                <Route path='mision' element={<Mision />} />
+                <Route path='organizacion' element={<Organizacion />} />
+                <Route path='noticias' element={<Noticias />} />
             </Route>
             <Route path='/beneficios/*' element={<Beneficios />}>
                 <Route path='beneficios' element={<SubBeneficio />} />

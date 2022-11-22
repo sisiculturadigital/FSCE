@@ -26,8 +26,6 @@ const DetalleSaldo = ({ datosPersona=[{}] }) => {
   },[idDetalle])
 
 
-  console.log(detallePago)
-
   return (
 
 <div>

@@ -17,7 +17,6 @@ const MenuLogin = ({ isOpen, closeModal}) => {
         closeModal()
     } 
 
-    console.log(datosPersona)    
 
     return (
         <article className = {`menuLogin ${isOpen && 'is-open'}`} onClick={closeModal}>
