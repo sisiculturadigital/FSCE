@@ -118,7 +118,7 @@ const RegistroDeDatos = () => {
 
 
     if( Object.keys(error).length === 0){
-      setForm(InitialValue)
+      // setForm(InitialValue)
 
     // SolicitudDs( 
     //   token,   
@@ -149,20 +149,19 @@ const RegistroDeDatos = () => {
   
 
   function OnkeyUpError (element){ 
-    let erros = {}
     var ExpRegSoloNumeros="^[0-9]+$";
     var ExpRegEmail=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
 
     // cci
     if (form.cci !== '' && element === 'cci') {
-        erros.cci =  null
+        error.cci =  null
         console.log(error)
         console.log(error.cci)
 
 
     
     
-    setError(erros) 
+    setError(error) 
 
     }
     // else if ( !(form.cci).match(ExpRegSoloNumeros)  ){
@@ -177,8 +176,8 @@ const RegistroDeDatos = () => {
 
   
   
-        erros.numeroCta =  null
-    setError(erros) 
+      error.numeroCta =  null
+    setError(error) 
 
     }
     // else if ( !(form.numeroCta).match(ExpRegSoloNumeros)  ){
@@ -189,8 +188,8 @@ const RegistroDeDatos = () => {
 
     // numeroContacto
     if (form.numeroContacto !== '' && element == 'numeroContacto') {
-        erros.numeroContacto =  null
-    setError(erros) 
+      error.numeroContacto =  null
+    setError(error) 
 
     }
     // else if ( !(form.numeroContacto).match(ExpRegSoloNumeros)  ){
@@ -201,8 +200,8 @@ const RegistroDeDatos = () => {
 
     // email
     if (form.email !== '' && element == 'email') {
-        erros.email =  null
-    setError(erros) 
+      error.email =  null
+    setError(error) 
 
     }
     // else if ( !(form.email).match(ExpRegEmail)  ){
@@ -212,33 +211,33 @@ const RegistroDeDatos = () => {
 
 
     // departamento
-    if (form.departamento !== '' && element == 'email') {
-      erros.departamento =  null
-    setError(erros) 
+    if (form.departamento !== '' && element == 'departamento') {
+      error.departamento =  null
+    setError(error) 
 
     }
     // provincia
     if (form.provincia !== '' && element == 'provincia') {
-      erros.provincia =  null
-    setError(erros) 
+      error.provincia =  null
+    setError(error) 
 
     }
     // distrito
     if (form.distrito !== '' && element == 'distrito') {
-      erros.distrito =  null
-    setError(erros) 
+      error.distrito =  null
+    setError(error) 
 
     }
     // direccion
     if (form.direccion !== '' && element == 'direccion') {
-      erros.direccion =  null
-    setError(erros) 
+      error.direccion =  null
+    setError(error) 
 
     }
     // entidad
     if (form.entidad !== '' && element == 'entidad') {
-      erros.entidad =  null
-    setError(erros) 
+      error.entidad =  null
+    setError(error) 
 
     }
     

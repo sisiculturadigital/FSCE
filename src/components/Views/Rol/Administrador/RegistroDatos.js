@@ -23,7 +23,6 @@ const initialError = {
     usuIng: '',
     liquidez: '',
     dni: '',
-    ecPtmo: ''
 }
 
 const RegistroDatos = () => {
@@ -61,36 +60,53 @@ const RegistroDatos = () => {
     }
 
     function validator () {
+        let errors = {}
+
         var reg = /^\d+$/
 
         if (form.dni === '') {
-            error.dni =  '** No puede estar el campo vacío'
-            setError(error)
+            errors.dni =  '** No puede estar el campo vacío'
+            
         }
         else if ( !(form.dni).match(reg)  ){
-            console.log((form.dni).match(reg))
-            error.dni =  '** Solo se acepta números'
-            setError(error) 
+            errors.dni =  '** Solo se acepta números'     
         }
         // usuIng
         if (form.usuIng === '') {
-            error.usuIng =  '** No puede estar el campo vacío'
-            setError(error)
+            errors.usuIng =  '** No puede estar el campo vacío'
+            
         }
 
         // impSol
         if (form.impSol === '') {
-            error.impSol =  '** No puede estar el campo vacío'
-            setError(error)
+            errors.impSol =  '** No puede estar el campo vacío'
         }
         else if ( !(form.impSol).match(reg)  ){
-            console.log((form.impSol).match(reg))
-            error.impSol =  '** Solo se acepta números'
-            setError(error) 
+            errors.impSol =  '** Solo se acepta números'
         }
+        // nroCuo
+        if(form.nroCuo === '') {
+            errors.nroCuo =  '** No puede estar el campo vacío'
+        }
+        else if ( !(form.nroCuo).match(reg)  ){
+            errors.nroCuo =  '** Solo se acepta números'
+        }
+        // liquidez
+        if(form.liquidez === '') {
+            errors.liquidez =  '** No puede estar el campo vacío'
+        }
+        else if ( !(form.liquidez).match(reg)  ){
+            errors.liquidez =  '** Solo se acepta números'
+        }
+
+        setError(errors)
+
+        Object.keys(errors).length === 0 ? submit() : setResponse(null)
+
     }
-    function changeInput () {        
-        if(form.dni !== '') {
+
+    function changeInput (elemento) {        
+        if(form.dni !== ''  && elemento === 'dni') {
             error.dni = null
             setError(error)
         }
@@ -98,8 +114,16 @@ const RegistroDatos = () => {
             error.usuIng = null
             setError(error)
         }
-        if(form.impSol !== '') {
+        if(form.impSol !== '' && elemento === 'impSol') {
             error.impSol = null
+            setError(error)
+        }
+        if(form.nroCuo !== ''  && elemento === 'nroCuo') {
+            error.nroCuo = null
+            setError(error)
+        }
+        if(form.liquidez !== ''  && elemento === 'liquidez') {
+            error.liquidez = null
             setError(error)
         }
     }
@@ -107,10 +131,11 @@ const RegistroDatos = () => {
     const HandleSubmit = (e) =>{
         e.preventDefault()
         valueCodigo === '' ?  form.ecPtmo = '8650' : form.ecPtmo = valueCodigo;
+        setError(error)
+
+        console.log(form)
 
         validator()
-
-        submit()
     }
 
   return (
@@ -128,7 +153,7 @@ const RegistroDatos = () => {
                     <div>
                         <div className='label-input'>
                             <label htmlFor="dni"> DNI </label>
-                            <input type="text" name='dni' autoComplete='off' onChange={HandleChange} value={form.dni} onBlur={HandleChange} onKeyUp={changeInput}/>
+                            <input type="text" name='dni' autoComplete='off' onChange={HandleChange} value={form.dni} onBlur={HandleChange} onKeyUp={()=> {changeInput('dni')}}/>
                         </div>
                         <p className='error-message-input'>{error && error.dni}</p>
                     </div>
@@ -136,8 +161,9 @@ const RegistroDatos = () => {
                     <div>
                         <div className='label-input'>
                             <label htmlFor=""> Usuario ingresado </label>
-                            <input type="text" name='usuIng' autoComplete='off' onChange={HandleChange} value={form.usuIng} onBlur={HandleChange}/>
+                            <input type="text" name='usuIng' autoComplete='off' onChange={HandleChange} value={form.usuIng} onBlur={HandleChange} onKeyUp={changeInput}/>
                         </div>
+                        <p className='error-message-input'>{error && error.usuIng}</p>
                     </div>
 
                 </div>
@@ -146,7 +172,7 @@ const RegistroDatos = () => {
                     <div>
                         <div className='label-input'>
                             <label htmlFor=""> Importe solicitado </label>
-                            <input type="text" name='impSol' autoComplete='off' onChange={HandleChange} value={form.impSol} onBlur={HandleChange} onKeyUp={changeInput}/>
+                            <input type="text" name='impSol' autoComplete='off' onChange={HandleChange} value={form.impSol} onBlur={HandleChange} onKeyUp={ () => {changeInput('impSol')}}/>
                         </div>
                         <p className='error-message-input'>{error && error.impSol}</p>
                     </div>
@@ -154,8 +180,9 @@ const RegistroDatos = () => {
                     <div>
                         <div className='label-input'>
                             <label htmlFor=""> Nº de Cuotas </label>
-                            <input type="number"  name='nroCuo' autoComplete='off' onChange={HandleChange} value={form.nroCuo} onBlur={HandleChange} />
+                            <input type="text"  name='nroCuo' autoComplete='off' onChange={HandleChange} value={form.nroCuo} onBlur={HandleChange} onKeyUp={() => changeInput('nroCuo')}/>
                         </div>
+                        <p className='error-message-input'>{error && error.nroCuo}</p>
                     </div>
 
                 </div>
@@ -164,8 +191,9 @@ const RegistroDatos = () => {
                     <div>
                         <div className='label-input'>
                             <label htmlFor=""> Liquidez </label>
-                            <input type="number" name='liquidez' autoComplete='off' onChange={HandleChange} value={form.liquidez} onBlur={HandleChange}  />
+                            <input type="text" name='liquidez' autoComplete='off' onChange={HandleChange} value={form.liquidez} onBlur={HandleChange} onKeyUp={() => changeInput('liquidez')} />
                         </div>
+                        <p className='error-message-input'>{error && error.liquidez}</p>
                     </div>
 
                     <div>
@@ -187,9 +215,9 @@ const RegistroDatos = () => {
                 </div>
 
                 <div className='button-back-perfil  register'>
-                <Link to={"/inicio"}>
+
                     <p onClick={HandleSubmit}>REGISTRAR</p>
-                </Link>
+
                 </div>
             </div>
         </form>
