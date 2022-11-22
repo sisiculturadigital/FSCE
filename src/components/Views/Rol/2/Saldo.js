@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from "react";
 import { useUserContext } from '../../../../context/UserProvider';
-import { consultaPrestamosPorPersona , consultaDetallePago } from '../../../API/Roles/Commun/Saldo.js';
+import { consultaPrestamosPorPersona } from '../../../API/Roles/Commun/Saldo.js';
 import DetalleSaldo from './DetalleSaldo';
 import useMediaQuery from './useMediaQuery.js';
 
@@ -10,7 +10,7 @@ import useMediaQuery from './useMediaQuery.js';
 
 const Saldo = () => {
     
-    const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} = useUserContext()
+    const {datosPersona, token} = useUserContext()
     const [consultaPrestamo, SetConsultaPrestamo] = useState(null)
     const [idDetalle, setIdDetalle] = useState(null)
     const container = useRef(null)
@@ -21,8 +21,6 @@ const Saldo = () => {
     console.log('datosPersona', datosPersona.codAdm, datosPersona.dni)
     
     const dni = 44234811;
-    const codAdm = 622999900;
-
 
     function scrollToSection(elementRef){
         window.scrollTo({
@@ -33,7 +31,7 @@ const Saldo = () => {
 
 
     useEffect(() => {
-        consultaPrestamosPorPersona(dni)
+        consultaPrestamosPorPersona(dni, token)
         .then(res => res.json())
         .then(res => {
             console.log('consultaPrestamosPorPersona', res)
@@ -42,19 +40,6 @@ const Saldo = () => {
 
      
     }, [])
-
-    function totalPrestamo (nrcheP) {
-
-        console.log(((consultaPrestamo).filter((aporte) => aporte.codigoPrestamo === nrcheP)).map(e => e.prestamos)[0].map(e => e.impSol))
-        const response = (((consultaPrestamo).filter((aporte) => aporte.codigoPrestamo === nrcheP)).map(e => e.prestamos)[0].map(e => e.impSol))
-        // const result = ((consultaPrestamo).filter((aporte) => aporte.codigoPrestamo === nrcheP)).map(e => e.prestamos)[0].map(e => e.impSol).reduce((previousValue, currentValue) => previousValue + currentValue)
-        // console.log(result);
-
-        const valueImpApoLiq = response ==  null || response== null ? '': e => e.impSol
-
-
-        // return result
-    }
 
     return (
         <div className='Saldo-wrapper'>

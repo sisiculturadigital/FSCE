@@ -8,7 +8,7 @@ import useMediaQuery from './useMediaQuery.js';
 
 const Pago = () => {
 
-    const {user, setUser, logOut, datosPersona} = useUserContext()
+    const {datosPersona, token} = useUserContext()
     const matches = useMediaQuery("(min-width: 700px)");
 
     
@@ -19,7 +19,7 @@ const Pago = () => {
     
 
     useEffect(() => {
-        pago(codAdmin)
+        pago(codAdmin, token)
         .then(res => res.json())
         .then(res => {
                 console.log(res)

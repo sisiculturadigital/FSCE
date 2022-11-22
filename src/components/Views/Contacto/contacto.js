@@ -1,20 +1,15 @@
 import React from 'react';
 import { GrPhone, GrLocation, GrFormClock } from "react-icons/gr"
-import './mapView.css'
-// import MapView from './MapView';
 
 const Contacto = () => {
-
-//  width="640" height="480"
 
   return (
     <div className='contacto-wrapper'> 
 
         <div className='sup_section'>
             
-            {/* <MapView/> */}
             <div className='iframe-container'>
-                <iframe src="https://www.google.com/maps/d/embed?mid=1UF4Nb_yzmq7dyuBi9Q3NUYV38e9sU9Fc&ehbc=2E312F"></iframe>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1UF4Nb_yzmq7dyuBi9Q3NUYV38e9sU9Fc&ehbc=2E312F" title="Mapa de las Sedes FSCE"/>
             </div>
 
             <div className='formulario_container'>

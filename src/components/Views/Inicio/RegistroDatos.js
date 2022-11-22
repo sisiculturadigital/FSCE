@@ -7,6 +7,8 @@ import { registrarSolicitudPrestamoPorSede } from '../../API/SOLICITUD-PRESTAMOS
 import {BiError} from 'react-icons/bi'
 import {BiCheckCircle} from 'react-icons/bi'
 
+import { useUserContext } from '../../../context/UserProvider';
+
 const initialForm = {
     nroCuo: '',
     impSol: '',
@@ -22,8 +24,10 @@ const RegistroDatos = () => {
     const [valueCodigo, setValueCodigo] = useState("");
     const [response, setResponse] = useState(null)
 
+    const {token} = useUserContext()
+
     useEffect(() => {
-        listaProductos()
+        listaProductos(token)
         .then(res => res.json())
         .then(res => {
                 console.log(res)
@@ -41,7 +45,7 @@ const RegistroDatos = () => {
         })
     }
     function submit () {
-        registrarSolicitudPrestamoPorSede(form.nroCuo, form.impSol, form.usuIng, form.liquidez, form.dni, form.ecPtmo)
+        registrarSolicitudPrestamoPorSede(form.nroCuo, form.impSol, form.usuIng, form.liquidez, form.dni, form.ecPtmo, token)
         .then(res => res.json())
         .then(res => {
             setResponse(res)

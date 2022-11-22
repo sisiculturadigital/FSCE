@@ -1,14 +1,15 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState} from 'react'
 import { urlFSCE } from '../../API/url-API'
 import {BiError} from 'react-icons/bi'
 import {BiCheckCircle} from 'react-icons/bi'
+import { useUserContext } from '../../../context/UserProvider';
 
 const InitialValue = {
   email:'',
   password:''
 }
 
-const FetchActualizar = async (email, newPwd) => {
+const FetchActualizar = async (email, newPwd, token) => {
 
   const response = fetch(`${urlFSCE}/private/u/actualizar/pass`, {  
     method: 'PUT', 
@@ -21,7 +22,7 @@ const FetchActualizar = async (email, newPwd) => {
     headers: { 
       "Content-type": "application/json", 
       "Access-Control-Allow-Origin": "*" ,
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      Authorization: `Bearer ${token}`,
     } 
   })
   return response
@@ -30,6 +31,9 @@ const FetchActualizar = async (email, newPwd) => {
 
 
 const ActualizarContrasenia = () => {
+
+  const {token} = useUserContext()
+
 
   const [form, setForm] = useState(InitialValue)
   const [response, setResponse] = useState(null)
@@ -40,7 +44,7 @@ const ActualizarContrasenia = () => {
 
 
   function updatePwd () {
-    FetchActualizar(email, password)
+    FetchActualizar(email, password, token)
     .then(res => res.json())
     .then(res => {
       setResponse(res)

@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import escudo from "../../../../imgs/Layout/NavBar/escudo.png";
-import { consultaPrestamosPorPersona , consultaDetallePago } from '../../../API/Roles/Commun/Saldo.js';
+import { consultaDetallePago } from '../../../API/Roles/Commun/Saldo.js';
 import useMediaQuery from './useMediaQuery.js';
+import { useUserContext } from '../../../../context/UserProvider';
+
 
 
 const DetalleSaldo = ({ datosPersona=[{}] }) => {
@@ -11,13 +13,14 @@ const DetalleSaldo = ({ datosPersona=[{}] }) => {
   const matches = useMediaQuery("(min-width: 1110px)");
 
 
+  const {token} = useUserContext()
 
   const codAdm = '622999900';
   const idDetalle = '10339868-2017-3'
 
 
   useEffect(()=>{
-    consultaDetallePago(codAdm, idDetalle)
+    consultaDetallePago(codAdm, idDetalle, token)
     .then(response => response.json())
     .then(data => setDetallePago(data));
   },[idDetalle])

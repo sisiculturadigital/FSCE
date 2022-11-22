@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { SolicitudDs } from '../../../API/SOLICITUD-PRESTAMOS-POR-SEDE/SolicitudDs';
 import {BiError} from 'react-icons/bi'
 import {BiCheckCircle} from 'react-icons/bi'
+import { useUserContext } from '../../../../context/UserProvider';
 
 const InitialValue = {
 cci: "",
@@ -21,6 +22,7 @@ const RegistroDeDatos = () => {
   const [form, setForm] = useState(InitialValue)
   const [response, setResponse] = useState(null)
 
+  const {token} = useUserContext()
 
   const HandleChange = (e) =>{
     e.preventDefault()
@@ -32,7 +34,8 @@ const RegistroDeDatos = () => {
 
   const HandleSubmit = (e) =>{
     e.preventDefault()
-    SolicitudDs(    
+    SolicitudDs( 
+      token,   
       form.entidad,
       form.numeroCta,
       form.cci,

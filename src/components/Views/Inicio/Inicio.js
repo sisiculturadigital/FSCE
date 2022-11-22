@@ -14,12 +14,12 @@ import { datosPersonaFx } from '../../../components/API/Datos-Persona';
 
 const Inicio = () => {
 
-const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} = useUserContext()
+const {user, datosPersona, setDatosPersona, token} = useUserContext()
 
     const email = user.sub
 
     useEffect(() => {
-        datosPersonaFx(email)
+        datosPersonaFx(email, token)
         .then(res => res.json())
         .then(res => {
             setDatosPersona(res)

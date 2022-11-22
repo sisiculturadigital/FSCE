@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { aportes } from '../../../API/Roles/Commun/Aportes.js';
 import useMediaQuery from './useMediaQuery.js';
 
@@ -9,7 +9,7 @@ import Polygon from '../../../../imgs/Layout/NavBar/Polygon.png'
 
 const Pago = () => {
     
-    const {user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona} = useUserContext()
+    const {datosPersona, token} = useUserContext()
 
     const codAdm = 806964600;
 
@@ -23,21 +23,15 @@ const Pago = () => {
     console.log(servicios)
 
     useEffect(() => {
-        aportes(codAdm)
+        aportes(codAdm , token)
         .then(res => res.json())
         .then(res => {
-            // console.log(res)
             let arr = res.aportes
-            // console.log(arr)
-            let xx = arr.map((aporte) => parseFloat(aporte.impApa)).reduce((previousValue, currentValue) => previousValue + currentValue)
-            // console.log(xx)
             setServicios(res)
             setMinYear(arr.map((aporte) => parseInt(aporte.aaApa)))
 
-
             const xxl = arr.map((aporte) => parseInt(aporte.aaApa))
-            const mySet2 = [... new Set(xxl)];
-            // console.log(mySet2)
+            const mySet2 = [... new Set(xxl)]
 
             const arrYearMap = (mySet2.sort(function(a, b){return a - b}))
 

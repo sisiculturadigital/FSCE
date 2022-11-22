@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import escudo from "../../imgs/Layout/NavBar/escudo.png"
 import { Link } from 'react-router-dom';
 import arrow from "../../imgs/Layout/NavBar/arrow.svg"
@@ -8,8 +8,6 @@ import {FaUser} from 'react-icons/fa'
 import { FaAngleDown } from 'react-icons/fa'
 import MenuLogin from './menuLogin';
 import { useModal } from '../accesos-comunes/modals/useModal';
-import RecoverPassword from '../accesos-comunes/modals/RecoverPassword';
-
 
 
 const Header = () => {
@@ -17,14 +15,8 @@ const Header = () => {
     const {user, setUser, isAuth}=useUserContext()
 
     const [open, setOpen] = useState(false)
-    const [openLogin, setOpenLogin] = useState(false)
     const [isOpen, openModal, closeModal] = useModal(false)
     const Icon = useRef(null)
-
-
-    function openLoginMenu(e){
-        setOpenLogin(!openLogin)
-    }
 
 
     function openMenu(){

@@ -27,16 +27,12 @@ import imgPreview10 from "../../../imgs/View/descargas/Archivos_Imagen-Preview/C
 import imgPreview11 from "../../../imgs/View/descargas/Archivos_Imagen-Preview/COMPROMISO_PAGO_OBLIGATORIO.png";
 
 import React from 'react';
-import { useRef, useEffect,useState } from "react";
-
-// import data from './Json/archivos.json';
-// import archivos from './Archivos-Downloand/archivos.js';
+import { useRef, useEffect } from "react";
 
 //icons extension files
 import iconPDF from '../../../imgs/View/descargas/icon-archivos-extension/pdf.png';
 
 const Descargas = () => {
-    // console.log(pdf)
     const count = useRef();
 
     useEffect(() => {

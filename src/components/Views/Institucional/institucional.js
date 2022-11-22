@@ -33,8 +33,6 @@ const Institucional = () => {
         case "organizacion" :
           x.matches === true ? response() : bgDesktop();
           break;
-        case "mision" :
-          break;
         default:
           break;
       }
@@ -48,10 +46,6 @@ const Institucional = () => {
   }
   function backgroundChange (value) { 
     setBackground(value);
-    // background: url('../../imgs/View/descargas/bg-descargas.png') no-repeat center center fixed;
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // height: calc( 100vh - 265px);
     switch(value) {
       case "mision" :
         elementDomBg.current.style.background = `url(${backgroundMision}) no-repeat center center fixed`;
@@ -62,8 +56,6 @@ const Institucional = () => {
         elementDomBg.current.style.background = `url(${backgroundOrganizacion}) no-repeat center center fixed`;
         elementDomBg.current.style.backgroundRepeat = 'no-repeat';
         elementDomBg.current.style.backgroundSize = 'cover';
-        break;
-      case "mision" :
         break;
       default:
         break;

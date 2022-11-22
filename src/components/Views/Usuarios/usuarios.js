@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import RecoverPassword from '../../accesos-comunes/modals/RecoverPassword';
 import { useModal } from '../../accesos-comunes/modals/useModal';
 import { useUserContext } from '../../../context/UserProvider';
@@ -16,33 +16,23 @@ const Usuarios = () => {
   const [isOpen, openModal, closeModal] = useModal(false)
   const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState({})
-  const [data, setData] = useState(null)
 
-  const navigate = useNavigate()
-  const {user, setUser, isAuth, setIsAuth} = useUserContext();
+  const { setUser, isAuth, setIsAuth, setToken} = useUserContext();
 
 
   const Validacion = () =>{
-
-    // if(Object.keys(errors).length === 0) {
-    //     setIsAuth(true)
-    //     setForm(initialForm)
-    // }
 
     postLogin(form.dni, form.password)
     .then(res => res.json())
     .then(res => {
       console.log(res)
       if(res.token) {
-        localStorage.setItem('token', res.token);
-        localStorage.setItem('key', form.dni);
-  
+        setToken(res.token)
         const decoded = decode(res.token);
         console.log(decoded)
         if (decoded) {
           setUser(decode(res.token))
           setIsAuth(true)
-          sessionStorage.setItem('session_key', true);
           setForm(initialForm)   
         }
       }

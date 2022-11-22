@@ -1,22 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-//componentes
-import MainHeader from "./home-components/mainHeader";
-import Mision from "./home-components/mision";
-
-//img
-
 const Home = (props) => {
-  // console.log("window.height", window.innerHeight)
-  // console.log("window.width", window.innerWidth)
-
-  // let {isMobile, isOrientationVertical} = props.data
-  // console.log(props.data);
-  // window.addEventListener("orientationchange", function() {
-  //   isMobile = true && window.orientation ===  0 ? isOrientationVertical = true : isOrientationVertical = false;
-  //   console.log('isOrientationVertical', isOrientationVertical);
-  // }, false)
 
   return (
     <div className='container-home'>

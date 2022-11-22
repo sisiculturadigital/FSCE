@@ -13,13 +13,14 @@ export function UserProvider(props) {
     const [user, setUser] = useState(null);
     const [isAuth, setIsAuth] = useState(false);
     const [datosPersona, setDatosPersona] = useState(null);
+    const [token, setToken] = useState(null);
 
     const logOut =()=>{
         setUser(null)
         setIsAuth(false)
     }
     
-    const valor={user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona}
+    const valor={user, setUser, logOut, isAuth, setIsAuth, datosPersona, setDatosPersona, token, setToken}
 
     return (
         <userContext.Provider value={valor}>

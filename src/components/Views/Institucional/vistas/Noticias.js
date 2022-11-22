@@ -5,7 +5,6 @@ import {urlFSCE} from '../../../API/url-API'
 const Noticias = (props) => {
   
   const [news, setNews] = useState(null)
-  const [newDate, setNewDate] = useState(null)
 
   useEffect(()=>{
     fetch(`${urlFSCE}/publico/noticias`)

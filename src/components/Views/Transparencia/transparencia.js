@@ -7,10 +7,7 @@ import pdf1 from "./Archivos-Downloand/D.S.048.pdf";
 import imgPreview from "../../../imgs/View/transparencia/Archivos_Imagen-Preview/D.S.041.png";
 import imgPreview1 from "../../../imgs/View/transparencia/Archivos_Imagen-Preview/D.S.048.png";
 import React from 'react';
-import { useRef, useEffect,useState } from "react";
-
-// import data from './Json/archivos.json';
-// import archivos from './Archivos-Downloand/archivos.js';
+import { useRef, useEffect } from "react";
 
 //icons extension files
 import iconPDF from '../../../imgs/View/descargas/icon-archivos-extension/pdf.png';

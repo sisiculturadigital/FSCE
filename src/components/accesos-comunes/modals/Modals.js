@@ -5,7 +5,6 @@ import Modal from './RecoverPassword'
 const Modals = () => {
 
   const [isOpen, openModal, closeModal] = useModal(false) 
-//   const [isOpen2, openModal2, closeModal3] = useModal(false) 
 
   return (
     <div>

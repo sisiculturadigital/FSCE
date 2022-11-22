@@ -1,8 +1,4 @@
 import React from 'react'
-import OneImagen from '../../../../imgs/View/Institucional/Organizacion/1.png'
-import TwoImagen from '../../../../imgs/View/Institucional/Organizacion/2.png'
-import ThreeImagen from '../../../../imgs/View/Institucional/Organizacion/3.png'
-
 
 const organizacion = () => {
   return (

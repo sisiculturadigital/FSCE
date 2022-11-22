@@ -13,7 +13,7 @@ const Footer = () => {
         <div className='icons-container'>
             <FaFacebookSquare />
             <FaInstagram />
-            <a target='_blank' href ='https://wa.me/+51987958344'>
+            <a target='_blank' href ='https://wa.me/+51987958344' rel='noreferrer'>
               <FaWhatsapp className='wpp'/>
             </a> 
         </div>

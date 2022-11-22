@@ -1,8 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
-import { useForm } from '../form/useForm';
-import data from '../../Views/Usuarios/UserList';
-import { type } from '@testing-library/user-event/dist/type';
+import { useState } from 'react';
 import {recoverPassword} from '../../API/USUARIO/Enviar-Correo-Olvide-Password';
 
 
@@ -11,29 +8,11 @@ const initialForm = {
 }
 
 
-const ValidationsForm = (form) =>{
-
-let errors = {}
-let regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/
-// let user = data.filter(user=>user.dni === form.dni)
-
-if(!form.email.trim()) errors.email = "No puede estar vacío"
-else if(!regexEmail.test(form.email.trim())) errors.email = "No es un formato email válido"
-
-
-return errors
-}
-
 
 const RecoverPassword = ({ isOpen, closeModal}) => {
     const [form, setForm] = useState(initialForm)
     const [response, setResponse] = useState(null)
 
-    // useEffect(() => {
-
-
-     
-    // }, [])
 
     const handleModalContainerClick = (e) =>  e.stopPropagation()
     const handleChange = (e) =>{
@@ -43,7 +22,6 @@ const RecoverPassword = ({ isOpen, closeModal}) => {
         })
       }
     
-    // const {form, errors, handleSubmit, handleBlur, handleChange} = useForm(initialForm, ValidationsForm )
     function handleSubmit (e) {
         e.preventDefault()
 

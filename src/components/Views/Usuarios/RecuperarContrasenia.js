@@ -1,7 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useForm } from '../../accesos-comunes/form/useForm';
 import { recuperarContraseniaPost } from '../../API/USUARIO/Recuperar-Contrasenia';
 
 

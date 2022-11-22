@@ -5,10 +5,7 @@ import { useState } from 'react';
 const CambiarContrasenia = () => {
 
     const [recoveryForm, setRecoveryForm] = useState({});
-    
-    
-    const handleModalContainerClick = (e) =>  e.stopPropagation()
-    
+        
     const handleChange = (e) => {
         setRecoveryForm({
         ...recoveryForm,

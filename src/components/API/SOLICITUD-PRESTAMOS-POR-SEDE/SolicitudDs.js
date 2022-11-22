@@ -1,6 +1,7 @@
 import { urlFSCE } from "../url-API";
 
 export const SolicitudDs = async (
+    token,
     // vCodAdm,
     tipoBanco,
     nroCuenta,
@@ -16,7 +17,7 @@ export const SolicitudDs = async (
     const result =  await fetch(`${urlFSCE}/private/solicitud/ds`, {
         method: 'POST',
         headers: { 
-            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            Authorization: `Bearer ${token}`,
             "Content-type": "application/json", 
             "Access-Control-Allow-Origin": "*"
         },
