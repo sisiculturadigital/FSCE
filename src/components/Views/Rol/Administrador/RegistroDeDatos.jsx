@@ -108,100 +108,81 @@ const RegistroDeDatos = () => {
     if (Object.keys(error).length === 0) {
       setForm(InitialValue);
 
-      // SolicitudDs(
-      //   token,
-      //   form.entidad,
-      //   form.numeroCta,
-      //   form.cci,
-      //   form.numeroContacto,
-      //   form.correo,
-      //   form.departamento,
-      //   form.provincia,
-      //   form.distrito,
-      //   form.direccion
-      //   )
-      // .then(res => res.json())
-      // .then(res => {
-      //     setResponse(res)
-      //     if(res.code === '200') {
-      //         setForm(InitialValue)
-      //     }
-      // })
-
-      return;
-    } else console.log("hay errores");
+      SolicitudDs(
+        token,
+        form.entidad,
+        form.numeroCta,
+        form.cci,
+        form.numeroContacto,
+        form.correo,
+        form.departamento,
+        form.provincia,
+        form.distrito,
+        form.direccion
+        )
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+          setResponse(res)
+          if(res.code === '200') {
+              setForm(InitialValue)
+          }
+      })
+    } else {
+      setResponse(null)
+    }
   }
 
   function OnkeyUpError(element) {
-    var ExpRegSoloNumeros = "^[0-9]+$";
-    var ExpRegEmail =
-      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
-
     // cci
     if (form.cci !== "" && element === "cci") {
       error.cci = null;
 
       setError(error);
     }
-    // else if ( !(form.cci).match(ExpRegSoloNumeros)  ){
-    //     console.log((form.cci).match(ExpRegSoloNumeros))
-    //     error.cci =  null
-    // }
 
     // numeroCta
-    if (form.numeroCta !== "" && element == "numeroCta") {
+    if (form.numeroCta !== "" && element === "numeroCta") {
       console.log(element);
 
       error.numeroCta = null;
       setError(error);
     }
-    // else if ( !(form.numeroCta).match(ExpRegSoloNumeros)  ){
-    //     console.log((form.numeroCta).match(ExpRegSoloNumeros))
-    //     error.numeroCta =  null
-    // }
 
     // numeroContacto
-    if (form.numeroContacto !== "" && element == "numeroContacto") {
+    if (form.numeroContacto !== "" && element === "numeroContacto") {
       error.numeroContacto = null;
       setError(error);
     }
-    // else if ( !(form.numeroContacto).match(ExpRegSoloNumeros)  ){
-    //     console.log((form.numeroContacto).match(ExpRegSoloNumeros))
-    //     error.numeroContacto =  null
-    // }
 
     // email
-    if (form.email !== "" && element == "email") {
+    if (form.email !== "" && element === "email") {
       error.email = null;
       setError(error);
     }
-    // else if ( !(form.email).match(ExpRegEmail)  ){
-    //     console.log((form.email).match(ExpRegEmail))
-    //     error.email =  null
-    // }
 
     // departamento
-    if (form.departamento !== "" && element == "departamento") {
+    if (form.departamento !== "" && element === "departamento") {
       error.departamento = null;
       setError(error);
     }
     // provincia
-    if (form.provincia !== "" && element == "provincia") {
+    if (form.provincia !== "" && element === "provincia") {
       error.provincia = null;
       setError(error);
     }
     // distrito
-    if (form.distrito !== "" && element == "distrito") {
+    if (form.distrito !== "" && element === "distrito") {
       error.distrito = null;
       setError(error);
     }
     // direccion
-    if (form.direccion !== "" && element == "direccion") {
+    if (form.direccion !== "" && element === "direccion") {
       error.direccion = null;
       setError(error);
     }
     // entidad
-    if (form.entidad !== "" && element == "entidad") {
+    if (form.entidad !== "" && element === "entidad") {
       error.entidad = null;
       setError(error);
     }
