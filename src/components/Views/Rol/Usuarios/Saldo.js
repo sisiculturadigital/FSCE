@@ -13,12 +13,13 @@ const Saldo = () => {
     const {datosPersona, token} = useUserContext()
     const [consultaPrestamo, SetConsultaPrestamo] = useState(null)
     const [idDetalle, setIdDetalle] = useState(null)
+    const [fechaDetalle, setFechaDetalle] = useState(null)
     const container = useRef(null)
 
     const matches = useMediaQuery("(min-width: 600px)");
     const matches2 = useMediaQuery("(min-width: 890px)");
         
-    const dni = 44234811;
+    const dni = datosPersona.dni;
 
     function scrollToSection(elementRef){
         window.scrollTo({
@@ -157,6 +158,7 @@ const Saldo = () => {
                                                         container.current.style.display='block'
                                                         scrollToSection(container)
                                                         setIdDetalle(elm.nroChe)
+                                                        setFechaDetalle(elm.fecAprob.replace('T00:00:00.000+00:00', ''))
                                                         } }>
                                                         DETALLE
                                                     </th>
@@ -243,6 +245,7 @@ const Saldo = () => {
                                                         container.current.style.display='block'
                                                         scrollToSection(container)
                                                         setIdDetalle(elm.nroChe)
+                                                        setFechaDetalle(elm.fecAprob.replace('T00:00:00.000+00:00', ''))
                                                         } } />
                                             </div>
                                         </div>
@@ -271,7 +274,7 @@ const Saldo = () => {
 
 
             <div ref={container}  style={{display:'none'}} >
-                <DetalleSaldo datosPersona={datosPersona} idDetalle={idDetalle}  />
+                <DetalleSaldo  props = {{datosPersona, idDetalle, fechaDetalle}} />
             </div>
 
  

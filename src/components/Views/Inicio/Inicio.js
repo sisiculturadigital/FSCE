@@ -34,19 +34,16 @@ const {user, datosPersona, setDatosPersona, token} = useUserContext()
                     <FaUser className='fa' />
                 </figure>
                 <div>
-                    {/* <p> { user.name ?? 'Alexandra Martinez' } </p> */}
                     <p> {datosPersona && datosPersona.nombreApe} </p>
                     <p> {datosPersona && datosPersona.grado} </p>
-                    {/* <p>DNI {user.dni ?? '232453445'}</p> */}
                     <p>DNI {datosPersona && datosPersona.dni}</p>
                 </div>
-            {/* <input type='button' onClick={logOut} value='Salir' /> */}
         </div>
 
             <div className='menu-container'>
                 <h2>Opciones de Menú</h2>
-                {/* {
-                    user && user.rol === "USUARIO" ?  */}
+                {
+                    user && user.rol === "USUARIO" ?
                     <section>
                         <div>
                             <center>
@@ -71,7 +68,7 @@ const {user, datosPersona, setDatosPersona, token} = useUserContext()
                             </Link>
                         </div>
                     </section>
-                    {/* : */}
+                    :
                     <section>
                     <div>
                             <Link to={'/registro-datos'}>
@@ -86,7 +83,7 @@ const {user, datosPersona, setDatosPersona, token} = useUserContext()
                             </Link>
                         </div>
                     </section>
-                {/* } */}
+                }
             </div>
 
         </div>

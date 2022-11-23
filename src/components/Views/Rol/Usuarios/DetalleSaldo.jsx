@@ -1,30 +1,50 @@
 import React, { useState } from 'react'
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import escudo from "../../../../imgs/Layout/NavBar/escudo.png";
 import { consultaDetallePago } from '../../../API/Roles/Commun/Saldo.js';
 import useMediaQuery from './useMediaQuery.js';
 import { useUserContext } from '../../../../context/UserProvider';
 
+import {urlFSCE} from '../../../API/url-API';
 
 
-const DetalleSaldo = ({ datosPersona=[{}] }) => {
+const DetalleSaldo = ({props }) => {
 
-  const [detallePago, setDetallePago] = useState([{}])
+    const {datosPersona , idDetalle, fechaDetalle} = props
+    const {token} = useUserContext()
+
+
+  const [detallePago, setDetallePago] = useState(null)
   const matches = useMediaQuery("(min-width: 1110px)");
+  const enlace = useRef(null)
+
+  let aaCuo
+  let mmCuo
+  let idDetalleConcat
+
+  if (idDetalle) {
+     aaCuo = fechaDetalle.split('-')[0]
+     mmCuo = parseInt(fechaDetalle.split('-')[1])
+     idDetalleConcat = `${idDetalle}-${aaCuo}-${mmCuo}`
+
+  }
 
 
-  const {token} = useUserContext()
-
-  const codAdm = '622999900';
-  const idDetalle = '10339868-2017-3'
+  const codAdm = datosPersona.codAdm;
+  const dni = datosPersona.dni;
 
 
   useEffect(()=>{
-    consultaDetallePago(codAdm, idDetalle, token)
+    consultaDetallePago(codAdm, idDetalleConcat, token)
     .then(response => response.json())
     .then(data => setDetallePago(data));
-  },[idDetalle])
+  },[idDetalleConcat])
 
+
+  function dowloandPdf (uriBase, codAdmin,dni,idDetalle) {
+    const uriRedirect = `${uriBase}/publico/pdf/${codAdmin}/${dni}/${idDetalle}`
+    enlace.current.href = uriRedirect
+  }
 
   return (
 
@@ -71,7 +91,7 @@ const DetalleSaldo = ({ datosPersona=[{}] }) => {
 
 
       {
-        detallePago && detallePago.map((pago, index) =>
+        idDetalle && detallePago.map((pago, index) =>
         <div className='consultaDetallePago__table' key={index}>
             <div className='consultaDetallePago__table__row'>
                 <div className='consultaDetallePago__table__row__header'>CÓDIGO</div>
@@ -166,7 +186,7 @@ const DetalleSaldo = ({ datosPersona=[{}] }) => {
 
             <h2>DETALLE PAGO</h2>
 
-            {detallePago && detallePago.map((pago, index) =>
+            {idDetalle && detallePago.map((pago, index) =>
 
                 <div style={{borderBottom:'1px solid rgba(70, 78, 95, 1)'}}>
 
@@ -220,7 +240,7 @@ const DetalleSaldo = ({ datosPersona=[{}] }) => {
 
                 
             <div className='dowloand-saldo'>
-                <a href="https://backend-app-v1.herokuapp.com/publico/pdf/622999900/80467508/10339868-2017-3">
+                <a onClick={() => dowloandPdf(urlFSCE,codAdm,dni,idDetalleConcat) } ref={enlace} >
                     <p>DESCARGAS</p>
                 </a>
             </div>

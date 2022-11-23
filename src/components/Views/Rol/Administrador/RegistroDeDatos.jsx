@@ -33,7 +33,9 @@ const RegistroDeDatos = () => {
   const [form, setForm] = useState(InitialValue);
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(InitialValueErr);
-  const { token } = useUserContext();
+  const { token, datosPersona } = useUserContext();
+
+  const vCodAdm = datosPersona.codAdm
 
   const HandleChange = (e) => {
     e.preventDefault();
@@ -106,6 +108,7 @@ const RegistroDeDatos = () => {
 
       SolicitudDs(
         token,
+        vCodAdm,
         form.entidad,
         form.numeroCta,
         form.cci,

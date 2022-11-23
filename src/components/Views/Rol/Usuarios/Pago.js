@@ -13,7 +13,7 @@ const Pago = () => {
 
     
     const [servicios, setServicios] = useState()
-    const codAdmin = 120507200;
+    const codAdmin = datosPersona.codAdm;
         
 
     useEffect(() => {

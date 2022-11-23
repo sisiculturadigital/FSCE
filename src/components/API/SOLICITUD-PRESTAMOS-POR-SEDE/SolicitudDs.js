@@ -2,6 +2,7 @@ import { urlFSCE } from "../url-API";
 
 export const SolicitudDs = async (
     token,
+    vCodAdm,
     tipoBanco,
     nroCuenta,
     nroCii,
@@ -22,7 +23,7 @@ export const SolicitudDs = async (
         },
         body: JSON.stringify(
             {
-                vCodAdm : "10739070738",
+                vCodAdm,
                 tipoBanco,
                 nroCuenta,
                 nroCii,

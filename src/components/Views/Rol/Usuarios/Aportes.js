@@ -11,7 +11,7 @@ const Pago = () => {
     
     const {datosPersona, token} = useUserContext()
 
-    const codAdm = 806964600;
+    const codAdm = datosPersona.codAdm;
 
     const [servicios, setServicios] = useState()
     const [minYear, setMinYear] = useState()
@@ -24,9 +24,6 @@ const Pago = () => {
         aportes(codAdm , token)
         .then(res => res.json())
         .then(res => {
-            console.log('res', res)
-            console.log('datosPersona', datosPersona)
-
 
             let arr = res.aportes
             setServicios(res)
