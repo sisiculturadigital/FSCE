@@ -54,7 +54,6 @@ const RegistroDeDatos = () => {
     if (form.cci === "") {
       error.cci = "** No puede estar el campo vacío";
     } else if (!form.cci.match(ExpRegSoloNumeros)) {
-      console.log(form.cci.match(ExpRegSoloNumeros));
       error.cci = "** Solo se acepta números";
     }
 
@@ -62,7 +61,6 @@ const RegistroDeDatos = () => {
     if (form.numeroCta === "") {
       error.numeroCta = "** No puede estar el campo vacío";
     } else if (!form.numeroCta.match(ExpRegSoloNumeros)) {
-      console.log(form.numeroCta.match(ExpRegSoloNumeros));
       error.numeroCta = "** Solo se acepta números";
     }
 
@@ -70,7 +68,6 @@ const RegistroDeDatos = () => {
     if (form.numeroContacto === "") {
       error.numeroContacto = "** No puede estar el campo vacío";
     } else if (!form.numeroContacto.match(ExpRegSoloNumeros)) {
-      console.log(form.numeroContacto.match(ExpRegSoloNumeros));
       error.numeroContacto = "** Solo se acepta números";
     }
 
@@ -78,7 +75,6 @@ const RegistroDeDatos = () => {
     if (form.email === "") {
       error.email = "** No puede estar el campo vacío";
     } else if (!form.email.match(ExpRegEmail)) {
-      console.log(form.email.match(ExpRegEmail));
       error.email = "** Formato email no válido";
     }
 
@@ -122,7 +118,6 @@ const RegistroDeDatos = () => {
         )
       .then(res => res.json())
       .then(res => {
-        console.log(res)
           setResponse(res)
           if(res.code === '200') {
               setForm(InitialValue)
@@ -143,7 +138,6 @@ const RegistroDeDatos = () => {
 
     // numeroCta
     if (form.numeroCta !== "" && element === "numeroCta") {
-      console.log(element);
 
       error.numeroCta = null;
       setError(error);

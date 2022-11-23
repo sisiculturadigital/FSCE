@@ -150,8 +150,8 @@ const Saldo = () => {
                                                     <th>{elm.impSol}</th>
                                                     <th>{elm.fecAprob.replace('T00:00:00.000+00:00', '')}</th>
                                                     <th>{elm.nroCuo}</th>
-                                                    <th>7,999.99</th>
-                                                    <th>8720.00</th>
+                                                    <th></th>
+                                                    <th></th>
                                                     <th>{elm.refinancia}</th>
                                                     <th className='button-detalle' onClick={ ()=>{
                                                         container.current.style.display='block'
@@ -167,10 +167,10 @@ const Saldo = () => {
                                     }
                                 </table>
                             </div>
-                            <div className='prestamo-saldo-pendiente__prestamo-disponible'>
+                            {/* <div className='prestamo-saldo-pendiente__prestamo-disponible'>
                                 <p>Prestamo</p>
-                                <p className='sub-total'>S/ 2,000</p>
-                            </div>
+                                <p className='sub-total'></p>
+                            </div> */}
                         </div>
                     ) 
                 }
@@ -226,11 +226,11 @@ const Saldo = () => {
                                             </div>
                                             <div className='container-map__element__child'>
                                                 <p className='child_key'>SALDO CAPITAL</p>
-                                                <p className='child_value'>##.###</p>
+                                                <p className='child_value'></p>
                                             </div>
                                             <div className='container-map__element__child'>
                                                 <p className='child_key'>SALDO TOTAL</p>
-                                                <p className='child_value'>##.###</p>
+                                                <p className='child_value'></p>
                                             </div>
                                             <div className='container-map__element__child'>
                                                 <p className='child_key'>REFINANCIABLE</p>
@@ -247,10 +247,10 @@ const Saldo = () => {
                                             </div>
                                         </div>
 
-                                        <div className='prestamo-saldo-pendiente__prestamo-disponible_media'>
+                                        {/* <div className='prestamo-saldo-pendiente__prestamo-disponible_media'>
                                             <p>Prestamo</p>
-                                            <p>S/ #,000</p>
-                                        </div>
+                                            <p></p>
+                                        </div> */}
 
                                     </div>
                                 )}

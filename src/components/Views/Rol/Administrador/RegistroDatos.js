@@ -133,8 +133,6 @@ const RegistroDatos = () => {
         valueCodigo === '' ?  form.ecPtmo = '8650' : form.ecPtmo = valueCodigo;
         setError(error)
 
-        console.log(form)
-
         validator()
     }
 

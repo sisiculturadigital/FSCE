@@ -114,12 +114,12 @@ const Pago = () => {
                     <span className='title fecha'>Fec. NomBram</span>
                     <span>{(datosPersona.fechIngreso).replace('T00:00:00.000+00:00', '')}</span>
                     <span className='title fecha'>Fec. de baja Ep</span>
-                    <span>##/##/##</span>
+                    <span></span>
                 </div>
 
                 <div className='datos-personales'>
                     <span className='title fecha'>F. Alta Aportante</span>
-                    <span>##/##/##</span>
+                    <span></span>
                 </div>
 
                 </section>
@@ -233,7 +233,7 @@ const Pago = () => {
 
                 <div className='total-container__child'  >
                     <div className='child_key_response'>Nº CPI</div>
-                    <div className='child_value_response'>####</div>
+                    <div className='child_value_response'></div>
                 </div>
                 <div className='total-container__child' >
                     <div className='child_key_response'>Cargo</div>
@@ -245,11 +245,11 @@ const Pago = () => {
                 </div>
                 <div className='total-container__child' >
                     <div className='child_key_response'>Fec. NomBram</div>
-                    <div className='child_value_response'>#####</div>
+                    <div className='child_value_response'>{(datosPersona.fechIngreso).replace('T00:00:00.000+00:00', '')}</div>
                 </div>
                 <div className='total-container__child' >
                     <div className='child_key_response'>Fec. de baja Ep</div>
-                    <div className='child_value_response'>####</div>
+                    <div className='child_value_response'></div>
                 </div>
             </div>
 
