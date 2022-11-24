@@ -12,7 +12,7 @@ const Pago = () => {
     const matches = useMediaQuery("(min-width: 700px)");
 
     
-    const [servicios, setServicios] = useState()
+    const [servicios, setServicios] = useState(null)
     const codAdmin = datosPersona.codAdm;
         
 
@@ -20,7 +20,10 @@ const Pago = () => {
         pago(codAdmin, token)
         .then(res => res.json())
         .then(res => {
-                setServicios(res)
+                console.log(res)
+                if( res.codAdm !== null ) {
+                    setServicios(res)
+                }
             })
     }, [])
 
@@ -57,7 +60,7 @@ const Pago = () => {
                     </thead>
                     <tbody>
                     {
-                       !servicios ? 'Cargando...' : (servicios.pagos).map((pago, index) =>
+                       servicios &&(servicios.pagos).map((pago, index) =>
                             <tr className='content-info' key={index}>
                                 <th>{pago.concepto}</th>
                                 <th>{pago.fechChe}</th>
@@ -70,13 +73,13 @@ const Pago = () => {
 
                 <div className='sub-total-girado'>
                     <span>Sub. Total Girado / Transferencia</span>
-                    <span>{!servicios ? 'Cargando...' :  `S/ ${servicios.pagoTotal}` } </span>
+                    <span>{ servicios &&   `S/ ${servicios.pagoTotal}` } </span>
                 </div>
                 
                 <table>
                     <tbody>
                     {
-                       !servicios ? 'Cargando...' : (servicios.devoluciones).map((pago, index) =>
+                       servicios &&(servicios.devoluciones).map((pago, index) =>
                             <tr className='content-pago-devolucion' key={index}>
                                 <th>{pago.concepto}</th>
                                 <th>{pago.fechChe}</th>
@@ -89,13 +92,13 @@ const Pago = () => {
                 <div className='concepto-pago-sub-total'>
                     <p>Sub. Total Girado / Transferencia</p>
                     <p>
-                        { !servicios ? 'Cargando...' : <span className='sub-total'>S/ {servicios.devolucionTotal}</span> }
+                        { servicios &&<span className='sub-total'>S/ {servicios.devolucionTotal}</span> }
                     </p>
                 </div>
                 <div className='concepto-pago-sub-total'>
                     <p>Total Girado / Transferencia</p>
                     <p>
-                        { !servicios ? 'Cargando...' : <span className='sub-total'>S/ {servicios.totalTransferido}</span> }
+                        { servicios &&<span className='sub-total'>S/ {servicios.totalTransferido}</span> }
                     </p>
                 </div>
 
@@ -109,7 +112,7 @@ const Pago = () => {
             <section className='pago-container__Concepto_Pago_media'>
                 <table>
                     {
-                        !servicios ? 'Cargando...' : (servicios.pagos).map((pago, index) =>
+                        servicios &&(servicios.pagos).map((pago, index) =>
                         <tbody key={index}>
                                 <tr className='content-info' >
                                     <th>Concepto Pago</th>
@@ -131,13 +134,13 @@ const Pago = () => {
 
                 <div className='sub-total-girado'>
                     <span>Sub. Total Girado / Transferencia</span>
-                    <span>{!servicios ? 'Cargando...' :  `S/ ${servicios.pagoTotal}` } </span>
+                    <span>{servicios && `S/ ${servicios.pagoTotal}` } </span>
                 </div>
                 
                 <table>
 
                 {
-                    !servicios ? 'Cargando...' : (servicios.devoluciones).map((pago, index) =>
+                    servicios &&(servicios.devoluciones).map((pago, index) =>
                     
                     <table className='content-pago-devolucion' key={index}>
                         <thead>
@@ -161,13 +164,13 @@ const Pago = () => {
                 <div className='concepto-pago-sub-total'>
                     <p>Sub. Total Girado / Transferencia</p>
                     <p>
-                        { !servicios ? 'Cargando...' : <span className='sub-total'>S/ {servicios.devolucionTotal}</span> }
+                        { servicios &&<span className='sub-total'>S/ {servicios.devolucionTotal}</span> }
                     </p>
                 </div>
                 <div className='concepto-pago-sub-total'>
                     <p>Total Girado / Transferencia</p>
                     <p>
-                        { !servicios ? 'Cargando...' : <span className='sub-total'>S/ {servicios.totalTransferido}</span> }
+                        { servicios &&<span className='sub-total'>S/ {servicios.totalTransferido}</span> }
                     </p>
                 </div>
 

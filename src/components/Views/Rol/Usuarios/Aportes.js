@@ -13,9 +13,8 @@ const Pago = () => {
 
     const codAdm = datosPersona.codAdm;
 
-    const [servicios, setServicios] = useState()
-    const [minYear, setMinYear] = useState()
-    const [arrYear, SetArrYear] = useState()
+    const [servicios, setServicios] = useState(null)
+    const [arrYear, SetArrYear] = useState(null)
 
     const matches = useMediaQuery("(min-width: 1060px)");
 
@@ -25,19 +24,22 @@ const Pago = () => {
         .then(res => res.json())
         .then(res => {
 
-            let arr = res.aportes
-            setServicios(res)
-            setMinYear(arr.map((aporte) => parseInt(aporte.aaApa)))
+            if (res.aportes !== null ){
+                let arr = res.aportes
+                setServicios(res)    
 
-            const xxl = arr.map((aporte) => parseInt(aporte.aaApa))
-            const mySet2 = [... new Set(xxl)]
+                const xxl = arr.map((aporte) => parseInt(aporte.aaApa))
+                const mySet2 = [... new Set(xxl)]
+    
+                const arrYearMap = (mySet2.sort(function(a, b){return a - b}))
+    
+                SetArrYear(arrYearMap)
+            }
 
-            const arrYearMap = (mySet2.sort(function(a, b){return a - b}))
-
-            SetArrYear(arrYearMap)
 
         })
     }, [])
+    
 
     function detalleAporteValueImpApoLiq (year , value) {
 
@@ -123,7 +125,7 @@ const Pago = () => {
 
                 <section className='prestamo-saldo-pendiente'>
                     <div className='prestamo-saldo-pendiente__title'>
-                        PERIODO {minYear && Math.min(...minYear) }
+                        PERIODO
                     </div>
 
                     <div className='container-info-prestamo'>
@@ -150,7 +152,7 @@ const Pago = () => {
                                     <tr height="15" ></tr>
                                 </thead>
                                 {
-                                    !servicios ? 'Cargando...' : arrYear.map((year , index) =>
+                                    servicios && arrYear.map((year , index) =>
                                         <tbody key={index}>
                                             <tr className='content-info'>
                                                 <th>{year}</th>
@@ -250,10 +252,10 @@ const Pago = () => {
                 </div>
             </div>
 
-            <div className='title'>PERIODO {minYear && Math.min(...minYear) }</div>
+            <div className='title'>PERIODO </div>
 
             {
-                !servicios ? 'Cargando...' : arrYear.map((year , index) =>
+                servicios && arrYear.map((year , index) =>
 
                 <div className='total-container'>
 
